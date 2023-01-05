@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.9bc12c4f.css",
+    "main.js": "/Portfolio/static/js/main.080841c0.js",
+    "static/js/787.d9a20797.chunk.js": "/Portfolio/static/js/787.d9a20797.chunk.js",
+    "static/media/design-illustration.png": "/Portfolio/static/media/design-illustration.24d9c203ceae6e923c0d.png",
+    "static/media/business-illustration.png": "/Portfolio/static/media/business-illustration.c8907017ec7554edba95.png",
+    "static/media/e-commerce-illustration.png": "/Portfolio/static/media/e-commerce-illustration.df8f84c82b03260223fa.png",
+    "static/media/person-illustration.png": "/Portfolio/static/media/person-illustration.38fba933ce64c84f31ea.png",
+    "static/media/pngwing.com-react-logo.png": "/Portfolio/static/media/pngwing.com-react-logo.becbab0ab5d2271d2831.png",
+    "static/media/pngwing.com-mongodb.png": "/Portfolio/static/media/pngwing.com-mongodb.6170bacefd8a1f69ca74.png",
+    "static/media/pictureMe.JPG": "/Portfolio/static/media/pictureMe.58fcf24e3d58ac1360b9.JPG",
+    "static/media/pngwing.com-MySQL.png": "/Portfolio/static/media/pngwing.com-MySQL.167c88550478e6f0f85c.png",
+    "static/media/pngwing.com-PostgreSql.png": "/Portfolio/static/media/pngwing.com-PostgreSql.205c6e1cf88f5fb991e4.png",
+    "static/media/Raven-Screenshot.png": "/Portfolio/static/media/Raven-Screenshot.d64b23484ebacea7a77c.png",
+    "static/media/pngwing.com-java.png": "/Portfolio/static/media/pngwing.com-java.4e332879122f609caa57.png",
+    "static/media/pngfind.com-HTML-CSS.png": "/Portfolio/static/media/pngfind.com-HTML-CSS.ec6f0f83857e9f21d061.png",
+    "static/media/Github_logo.png": "/Portfolio/static/media/Github_logo.b885ed82f1f63060eb8d.png",
+    "static/media/class-work-Screenshot.png": "/Portfolio/static/media/class-work-Screenshot.17bf9a0e293bd9293c42.png",
+    "static/media/GothamBook.ttf": "/Portfolio/static/media/GothamBook.58fb9151c57e59668f17.ttf",
+    "static/media/GothamMedium.ttf": "/Portfolio/static/media/GothamMedium.0a910c0b9d50be6aa3dc.ttf",
+    "static/media/Relic-Films-Screenshot.png": "/Portfolio/static/media/Relic-Films-Screenshot.7bb5ce1b27ebcc97848c.png",
+    "static/media/Gotham-Black.otf": "/Portfolio/static/media/Gotham-Black.c9e42599a779a72eaadc.otf",
+    "static/media/Gotham-Thin.otf": "/Portfolio/static/media/Gotham-Thin.6447770f7eb4c8885d73.otf",
+    "static/media/Gotham-Bold.otf": "/Portfolio/static/media/Gotham-Bold.f9a5c9247af2c80333f4.otf",
+    "static/media/Gotham-Light.otf": "/Portfolio/static/media/Gotham-Light.59aa40045d8df0b87a73.otf",
+    "static/media/Node.js_logo.svg.png": "/Portfolio/static/media/Node.js_logo.svg.20deb7f0a49714f0dfd2.png",
+    "static/media/pngegg-git.png": "/Portfolio/static/media/pngegg-git.7d664489ed331806ddc8.png",
+    "index.html": "/Portfolio/index.html",
+    "main.9bc12c4f.css.map": "/Portfolio/static/css/main.9bc12c4f.css.map",
+    "main.080841c0.js.map": "/Portfolio/static/js/main.080841c0.js.map",
+    "787.d9a20797.chunk.js.map": "/Portfolio/static/js/787.d9a20797.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bc12c4f.css",
+    "static/js/main.080841c0.js"
+  ]
+}
