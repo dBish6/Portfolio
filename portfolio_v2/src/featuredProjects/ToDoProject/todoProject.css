@@ -1,0 +1,225 @@
+/* Designer: David Bishop
+   Todo App
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+
+.todoBackground {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(209, 209, 209, 1);
+  z-index: -99;
+}
+
+.backHome {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.backHome a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.38s ease all;
+}
+
+.backHome a:hover {
+  opacity: 0.7;
+}
+
+.backHome a:active {
+  position: relative;
+  top: 2px;
+}
+
+.backHome a svg {
+  font-size: 2.5rem;
+  color: black;
+}
+
+.backHome a p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(100, 100, 100);
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.list-container h1 {
+  font-family: "Space Mono";
+  font-size: 32px;
+  line-height: 47px;
+  /* font-style: italic; */
+  margin: 5rem auto 4rem auto;
+}
+
+.list-container form {
+  height: 32px;
+  margin-bottom: 2.5rem;
+}
+
+.list-container .todo-input {
+  width: 350px;
+  height: 32px;
+  padding: 0 0.5rem;
+  background-color: rgba(227, 227, 227, 1);
+  border: none;
+  position: relative;
+  bottom: 3px;
+}
+
+.list-container .todo-button {
+  background: rgba(196, 196, 196, 1);
+  padding: 0.5rem;
+  max-height: 32px;
+  border: none;
+  margin-left: 2px;
+}
+
+.list-container .todo-button svg {
+  font-size: 1rem;
+}
+
+.list-container .todo-button:hover {
+  background-color: white;
+}
+
+.list-container .select {
+  float: right;
+  margin-left: 1rem;
+  width: 139px;
+  height: 32px;
+}
+
+.list-container .filter-todo {
+  cursor: pointer;
+  width: 139px;
+  height: 32px;
+  padding: 0.5rem;
+  border: none;
+  background-color: rgba(227, 227, 227, 1);
+}
+
+.list-container .filter-todo:hover {
+  background-color: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-container .todo-list {
+  min-width: 30%;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.todo-container .todo {
+  margin: 0.5rem;
+  background-color: rgba(227, 227, 227, 1);
+  font-family: "Open Sans";
+  font-size: 16px;
+  line-height: 22px;
+  width: 464px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.todo-container .todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background-color: rgba(162, 103, 103, 0.85);
+  color: rgba(81, 81, 81, 1);
+  width: 45px;
+  height: 45px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background-color: rgba(127, 167, 126, 0.85);
+  border-right: 1px solid rgba(81, 81, 81, 1);
+}
+
+.complete-btn:hover {
+  border-top: 1px solid rgba(81, 81, 81, 1);
+  border-left: 1px solid rgba(81, 81, 81, 1);
+  border-bottom: 1px solid rgba(81, 81, 81, 1);
+}
+
+.trash-btn:hover {
+  border-top: 1px solid rgba(81, 81, 81, 1);
+  border-right: 1px solid rgba(81, 81, 81, 1);
+  border-bottom: 1px solid rgba(81, 81, 81, 1);
+}
+
+.todo-container .todo-item {
+  padding: 0.7rem 0.5rem;
+  max-width: 404px;
+  height: 45px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+@media only screen and (max-width: 540px) {
+  .list-container .select {
+    float: none;
+    margin-top: 8px;
+    margin-left: 55%;
+  }
+}
+
+@media only screen and (max-width: 488px) {
+  .todo-container .todo-list {
+    min-width: 30%;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  .todo-container .todo {
+    width: 365px;
+    height: 45px;
+  }
+}
+
+@media only screen and (max-width: 398px) {
+  .todo-container .todo {
+    width: 265px;
+    height: 45px;
+  }
+
+  .list-container .todo-input {
+    width: 250px;
+    height: 32px;
+    background-color: rgba(227, 227, 227, 1);
+    border: none;
+  }
+  .list-container .select {
+    margin-left: 51%;
+  }
+}

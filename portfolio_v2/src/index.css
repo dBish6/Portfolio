@@ -1,0 +1,115 @@
+/* Font Imports */
+@font-face {
+  font-family: "Gotham";
+  src: url(./assets/fonts/Gotham-Thin.otf);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url(./assets/fonts/Gotham-Light.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url(./assets/fonts/GothamBook.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url(./assets/fonts/GothamMedium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url(./assets/fonts/Gotham-Bold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url(./assets/fonts/Gotham-Black.otf);
+  font-weight: 800;
+}
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=PT+Sans&family=PT+Serif&family=Roboto:wght@300;400;500;700&display=swap");
+
+html {
+  background-color: var(--backgroundColour);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* overflow-x: hidden; */
+}
+
+/* 12 Column Grid Layout */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 1.5rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgb(161, 166, 214);
+}
+
+:root {
+  --backgroundColour: #6e78d2;
+
+  /* Primary Colour */
+  --primary50: #fbeeff;
+  --primary100: #cbd9ff;
+  --primary200: #b6bbff;
+  --primary300: #98a0f7;
+  --primary400: #868de6;
+  --primary500Main: #6e78d2;
+  --primary600: #576bc1;
+  --primary700: #4657a7;
+  --primary800: #38438e;
+  --primary900: #1f3073;
+
+  /* Secondary Accent */
+
+  /* Whites */
+  --white100: #fcfcfc;
+  --white200: #fafafa;
+  --white300: #f9f9f9;
+  --white400: #f7f7f7;
+  --white500Main: #f4f4f4;
+  --white600: #ececec;
+
+  /* Blacks */
+  --black200: #bbbbbb;
+  --black300: #adadad;
+  --black400: #8b8b8b;
+  --black500: #6f6f6f;
+  --black600: #494949;
+  --black700Main: #363636;
+  --black800: #1b1b1b;
+
+  /* Words Colour */
+  --wordsBlack: #363636;
+  --wordsWhite: #f4f4f4;
+  --wordsMain: #1f3073;
+
+  --yellowColour: #fff9b6;
+  --redColour: #b23542;
+}

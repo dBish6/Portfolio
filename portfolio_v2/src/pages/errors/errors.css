@@ -1,0 +1,19 @@
+/* Designer: David Bishop
+   Errors
+*/
+
+.errorContainer {
+  margin: 1.5rem 0 0 1rem;
+}
+
+.errorContainer p {
+  font-size: 18px;
+  color: var(--wordsBlackMain);
+}
+
+.errorContainer span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--redColour);
+}
