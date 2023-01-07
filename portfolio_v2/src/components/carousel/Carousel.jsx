@@ -4,6 +4,8 @@ import { useState, useRef } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import personIllustration from "../../assets/images/person-illustration.png";
 import pictureMe from "../../assets/images/pictureMe.JPG";
+import todoScreenshot from "../../assets/images/Todo-Project-Screenshot.png";
+import calculatorScreenshot from "../../assets/images/Calculator-Project-Screenshot.png";
 import "./carousel.css";
 
 const Carousel = () => {
@@ -106,7 +108,11 @@ const Carousel = () => {
               </p>
             </div>
           ) : undefined}
-          <div className="carouselRightSide">
+          <div
+            className={
+              index === 1 ? "carouselRightSide index1" : "carouselRightSide"
+            }
+          >
             {index === 1 ? (
               <>
                 <p>Bay Roberts, Newfoundland CA</p>
@@ -129,6 +135,14 @@ const Carousel = () => {
                   src={pictureMe}
                   alt="pictureMe.JPG"
                 ></img>
+              </div>
+            ) : index === 3 ? (
+              <div className="movingRow">
+                <img src={todoScreenshot} alt="Todo-Project-Screenshot.png" />
+                <img
+                  src={calculatorScreenshot}
+                  alt="Calculator-Project-Screenshot.png"
+                />
               </div>
             ) : undefined}
           </div>

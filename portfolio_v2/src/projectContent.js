@@ -7,7 +7,7 @@ export const content = [
     id: 1,
     title: "Raven E-Commerce Website",
     date: "Dec 2022",
-    tech: "ReactJS, CSS, Java and AWS.",
+    tech: "ReactJS, CSS, Java, Docker and AWS.",
     screenshot: ravenScreenshot,
     gitHub_URL: "https://github.com/dBish6/Full-Stack_SpringAPI_Sprint2_Final",
     deployed_URL:
