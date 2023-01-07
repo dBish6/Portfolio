@@ -13,7 +13,7 @@ import ToDoList from "./components/ToDoList";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 
 import { MdArrowBack } from "react-icons/md";
-import "./todoProject.css";
+import "./todoApp.css";
 
 function TodoIndex(props) {
   useDocumentTitle(`David Bishop | ${props.title}`);
@@ -62,8 +62,8 @@ function TodoIndex(props) {
   return (
     <>
       <div className="todoBackground" />
-      <div className="backHome">
-        <Link to="/home">
+      <div id="backHome">
+        <Link to="/Portfolio/home">
           <MdArrowBack />
           <p>Home</p>
         </Link>

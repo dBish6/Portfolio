@@ -12,34 +12,34 @@
   z-index: -99;
 }
 
-.backHome {
+#backHome {
   position: absolute;
   top: 16px;
   left: 16px;
 }
 
-.backHome a {
+#backHome a {
   display: flex;
   align-items: center;
   text-decoration: none;
   transition: 0.38s ease all;
 }
 
-.backHome a:hover {
+#backHome a:hover {
   opacity: 0.7;
 }
 
-.backHome a:active {
+#backHome a:active {
   position: relative;
   top: 2px;
 }
 
-.backHome a svg {
+#backHome a svg {
   font-size: 2.5rem;
   color: black;
 }
 
-.backHome a p {
+#backHome a p {
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
