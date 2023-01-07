@@ -25,6 +25,10 @@ import Home from "./pages/Home";
 
 import ToDoProject from "./featuredProjects/TodoApp";
 import CalculatorProject from "./featuredProjects/calculatorApp";
+import QuizProjectStart from "./featuredProjects/quizApp/pages/StartScreen";
+import QuizProjectQuestion from "./featuredProjects/quizApp/pages/QuestionScreen";
+import QuizProjectFinal from "./featuredProjects/quizApp/pages/FinalScreen";
+import QuizError500 from "./featuredProjects/quizApp/pages/errors/Error500";
 
 import Error404 from "./pages/errors/Error404";
 
@@ -77,7 +81,23 @@ function App() {
           />
           <Route
             path="/Portfolio/projects/calculator"
-            element={<CalculatorProject />}
+            element={<CalculatorProject title="Calculator App" />}
+          />
+          <Route
+            path="/Portfolio/projects/quiz"
+            element={<QuizProjectStart title="Quiz App" />}
+          />
+          <Route
+            path="/Portfolio/projects/quiz/gameStart"
+            element={<QuizProjectQuestion title="Quiz App" />}
+          />
+          <Route
+            path="/Portfolio/projects/quiz/gameEnd"
+            element={<QuizProjectFinal title="Quiz App" />}
+          />
+          <Route
+            path="/Portfolio/projects/quiz/error500"
+            element={<QuizError500 title="ERROR" />}
           />
         </Routes>
       </BrowserRouter>

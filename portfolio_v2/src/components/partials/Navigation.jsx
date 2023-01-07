@@ -16,6 +16,14 @@ const Navigation = () => {
   const [hamburgerDropdown, toggleHamburgerDropdown] = useState(false);
   const hamburgerDropdownRef = useRef(null);
 
+  const notice = () => {
+    setTimeout(() => {
+      alert(
+        "Sorry! This page isn't styled yet, but the functionally is all there! It will be finish soon:)"
+      );
+    }, 1000);
+  };
+
   return (
     <>
       <header className="navBar gridContainer">
@@ -49,10 +57,17 @@ const Navigation = () => {
                     Calculator App
                   </NavLink>
                 </li>
-                {/* <hr />
+                <hr />
                 <li>
-                  <NavLink to="/Portfolio/projects/quiz">Quiz App</NavLink>
-                </li> */}
+                  <NavLink
+                    to="/Portfolio/projects/quiz"
+                    onClick={() => {
+                      notice();
+                    }}
+                  >
+                    Quiz App
+                  </NavLink>
+                </li>
               </ul>
             </nav>
           </div>

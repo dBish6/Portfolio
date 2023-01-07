@@ -9,10 +9,14 @@ import { Link } from "react-router-dom";
 import Buttons from "./components/Buttons";
 import Footer from "./components/Footer";
 
+import useDocumentTitle from "../../hooks/useDocumentTitle";
+
 import { MdArrowBack } from "react-icons/md";
 import "./calculatorApp.css";
 
-function CalculatorIndex() {
+function CalculatorIndex(props) {
+  useDocumentTitle(`David Bishop | ${props.title}`);
+
   return (
     <>
       <div className="appBackground" />
