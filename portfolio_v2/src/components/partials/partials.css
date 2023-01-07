@@ -240,6 +240,7 @@
   text-align: center;
   padding: 0.8rem 1rem;
   margin-top: 0.5rem;
+  z-index: -99;
 
   border-radius: 6px;
   /* border: 2px solid var(--primary900); */
@@ -249,6 +250,7 @@
 
 .hamburgerDropdown.active nav {
   opacity: 0;
+  z-index: 0;
   animation: fadeInUp 0.4s both;
 }
 
