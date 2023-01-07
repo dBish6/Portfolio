@@ -22,7 +22,6 @@ import Footer from "./components/partials/Footer";
 
 // *Pages/Views*
 import Home from "./pages/Home";
-import Loading from "./pages/Loading";
 
 import ToDoProject from "./featuredProjects/TodoApp";
 import CalculatorProject from "./featuredProjects/calculatorApp";
@@ -61,10 +60,6 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/Portfolio/loading"
-            element={<Loading title="Loading" />}
-          />
           <Route element={<ShowPartials />}>
             <Route path="/Portfolio/" element={<Home title="Home" />} />
             <Route path="/Portfolio/home" element={<Home title="Home" />} />
