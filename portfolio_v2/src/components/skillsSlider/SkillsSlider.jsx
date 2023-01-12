@@ -13,10 +13,6 @@ import mongoDbLogo from "../../assets/images/pngwing.com-mongodb.png";
 import gitLogo from "../../assets/images/pngegg-git.png";
 import gitHubLogo from "../../assets/images/Github_logo.png";
 import dockerLogo from "../../assets/images/pngwing.com-Docker.png";
-import {
-  IoIosArrowDroprightCircle,
-  IoIosArrowDropleftCircle,
-} from "react-icons/io";
 import "./skillsSlider.css";
 
 import { motion } from "framer-motion";
@@ -24,7 +20,6 @@ import { motion } from "framer-motion";
 const SkillsSlider = () => {
   const [width, setWidth] = useState(0);
   const carouselRef = useRef(null);
-  const [rightBtnClicked, setRightBtnClicked] = useState(0);
 
   useEffect(() => {
     carouselRef.current.style.transform =
@@ -36,61 +31,8 @@ const SkillsSlider = () => {
       );
   }, []);
 
-  const moveWithBtn = () => {
-    console.log(carouselRef.current.offsetWidth);
-    // FIXME: Disable at certain width.
-    // console.log(carouselRef.current.scrollWidth);
-    let currentWidth = carouselRef.current.style.transform;
-    console.log(currentWidth);
-
-    const getX = currentWidth.match(/\(([^)]+)\)/g);
-    console.log(getX);
-    if (getX) var x = getX[0];
-    console.log(x);
-
-    // Starting Position
-    if (x.length < 6) {
-      x = x.slice(1, 2);
-      console.log(x);
-      x = parseInt(x);
-      console.log(x);
-    } else if (x.length < 13) {
-      x = x.slice(1, 9);
-      console.log(x);
-      x = parseInt(x);
-      console.log(x);
-    }
-
-    let timesBtnClicked = rightBtnClicked + 1;
-    setRightBtnClicked(timesBtnClicked);
-    console.log("hello " + rightBtnClicked);
-
-    // Starting Position
-    if (rightBtnClicked === 0) {
-      carouselRef.current.style.transform =
-        "translateX(-727px) translateY(0px) translateZ(0px)";
-    }
-    // if (x >= -363) {
-    //   carouselRef.current.style.transform =
-    //     "translateX(-363px) translateY(0px) translateZ(0px)";
-    // }
-    // else if (rightBtnClicked === 1) {
-    //   carouselRef.current.style.right = "60%";
-    // } else if (rightBtnClicked === 2) {
-    //   carouselRef.current.style.right = "81.87%";
-    // }
-  };
-
   return (
     <>
-      <div className="btnsContainer">
-        <button className="actionLeftContainer">
-          <IoIosArrowDropleftCircle />
-        </button>
-        <button className="actionRightContainer" onClick={() => moveWithBtn()}>
-          <IoIosArrowDroprightCircle />
-        </button>
-      </div>
       <div className="sliderContainer">
         <motion.div
           drag="x"
