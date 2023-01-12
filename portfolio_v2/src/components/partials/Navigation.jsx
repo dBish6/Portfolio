@@ -7,6 +7,7 @@ import ContactModal from "../modals/ContactModal";
 // *Design Imports*
 import { ImGithub, ImLinkedin, ImSteam2 } from "react-icons/im";
 import { MdExpandMore } from "react-icons/md";
+import { motion, useScroll, useSpring } from "framer-motion";
 import "./partials.css";
 
 const Navigation = () => {
@@ -15,6 +16,14 @@ const Navigation = () => {
   const projectsDropdownRef = useRef(null);
   const [hamburgerDropdown, toggleHamburgerDropdown] = useState(false);
   const hamburgerDropdownRef = useRef(null);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    // stiffness: 200,
+    stiffness: 150,
+    damping: 20,
+    restDelta: 0.001,
+  });
 
   const notice = () => {
     setTimeout(() => {
@@ -27,6 +36,12 @@ const Navigation = () => {
   return (
     <>
       <header className="navBar gridContainer">
+        <motion.div
+          style={{
+            scaleX,
+          }}
+          className="progressBar"
+        />
         <div className="leftContainer">
           <NavLink to="/Portfolio/home" className="mainTitle">
             <h2>Portfolio</h2>
@@ -158,9 +173,16 @@ const Navigation = () => {
                     Calculator App
                   </NavLink>
                 </li>
-                {/* <li>
-                  <NavLink to="/Portfolio/projects/quiz">Quiz App</NavLink>
-                </li> */}
+                <li>
+                  <NavLink
+                    to="/Portfolio/projects/quiz"
+                    onClick={() => {
+                      notice();
+                    }}
+                  >
+                    Quiz App
+                  </NavLink>
+                </li>
               </ul>
             </nav>
           </div>

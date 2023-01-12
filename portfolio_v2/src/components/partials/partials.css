@@ -3,11 +3,27 @@
 */
 
 .navBar {
+  position: relative;
   background-color: var(--primary100);
   padding: 1.5rem 1rem;
   border-bottom: 2px solid var(--white500Main);
   align-items: center;
-  /* box-shadow: 0px 12px 8px rgba(0, 0, 0, 0.35); */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
+  z-index: 2;
+}
+
+.navBar .progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  /* background-color: rgb(104, 195, 255); */
+  background-color: var(--yellowColour);
+  opacity: 0.9;
+  transform-origin: 0%;
+  z-index: 99;
 }
 
 .navBar a {
@@ -76,7 +92,7 @@
   border-radius: 6px;
   background-color: var(--white500Main);
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-
+  z-index: -3;
   animation: fadeInDown 0.35s both;
 }
 
@@ -174,7 +190,7 @@
   /* color: var(--primary600); */
 }
 
-@media screen and (max-width: 825px) {
+@media screen and (max-width: 900px) {
   .navBar .leftContainer {
     grid-column: 2 / span 3;
   }
@@ -185,9 +201,12 @@
 
 /* ... */
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 700px) {
   .projectsDropdown {
-    display: none;
+    visibility: hidden;
+  }
+  .projectsDropdown.active {
+    visibility: hidden;
   }
   .contact {
     display: none;
@@ -208,7 +227,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 690px) {
+@media screen and (min-width: 700px) {
   .hamburgerDropdown .hamburgerMenu {
     display: none;
   }
@@ -240,7 +259,7 @@
   text-align: center;
   padding: 0.8rem 1rem;
   margin-top: 0.5rem;
-  z-index: -99;
+  /* z-index: -99; */
 
   border-radius: 6px;
   /* border: 2px solid var(--primary900); */
@@ -250,8 +269,14 @@
 
 .hamburgerDropdown.active nav {
   opacity: 0;
-  z-index: 0;
+  z-index: 1;
   animation: fadeInUp 0.4s both;
+}
+
+@media screen and (min-width: 690px) {
+  .hamburgerDropdown nav {
+    visibility: hidden;
+  }
 }
 
 .hamburgerDropdown .dropdownIcons {
