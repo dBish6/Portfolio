@@ -3,9 +3,9 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 
 // *Component Imports*
 import Carousel from "../components/carousel/Carousel";
-import SkillsSlider from "../components/SkillsSlider";
-import ProjectCard from "../components/RepoCard";
-import Services from "../components/Services";
+import SkillsSlider from "../components/skillsSlider/SkillsSlider";
+import ProjectCard from "../components/repoCard/RepoCard";
+import Services from "../components/services/Services";
 
 // *Design Imports*
 import "./home.css";
@@ -20,6 +20,7 @@ const Home = (props) => {
           <Carousel />
         </div>
       </section>
+      {/* <div className="coolDiamond" /> */}
       <section className="UpAndComingContainer gridContainer" id="skills">
         <div className="title">
           <h1>Up and Coming Full-Stack Developer!</h1>

@@ -16,11 +16,24 @@
 main section {
   grid-column: span 12;
   background-color: var(--primary200);
+  z-index: 1;
 }
 
 main section:nth-child(1) {
   display: grid;
   padding: 4rem 0;
+}
+
+.coolDiamond {
+  position: absolute;
+  width: 668px;
+  height: 705px;
+  left: 63%;
+  /* top: 397.68px; */
+  z-index: 0;
+
+  background: var(--primary400);
+  transform: rotate(-45deg);
 }
 
 main h1 {
