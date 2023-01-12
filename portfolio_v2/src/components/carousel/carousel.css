@@ -38,10 +38,6 @@
   height: 382px;
 }
 
-.fade {
-  animation: fade 1.5s ease;
-}
-
 .carouselContainer .gridSplit {
   display: grid;
   grid-template-columns: 1fr minmax(140px, 290px);
@@ -219,15 +215,6 @@
   border-radius: 100%;
   transform: scale(1.2);
   transition: 0.5s ease all;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes movingRow {
