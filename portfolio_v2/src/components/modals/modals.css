@@ -185,6 +185,7 @@
   /* border: 1px solid var(--primary700); */
   border-radius: 6px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 
   width: 65%;
   /* padding: 0.5rem; */
@@ -200,7 +201,7 @@
   background-color: var(--wordsWhite);
   color: var(--primary700);
   transform: translateY(-0.2em);
-  transition: transform 0.1s ease;
+  transition: 0.2s ease transform;
   width: 100%;
 }
 
