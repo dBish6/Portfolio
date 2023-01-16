@@ -6,6 +6,7 @@ import personIllustration from "../../assets/images/person-illustration.png";
 import pictureMe from "../../assets/images/pictureMe.JPG";
 import todoScreenshot from "../../assets/images/Todo-Project-Screenshot.png";
 import calculatorScreenshot from "../../assets/images/Calculator-Project-Screenshot.png";
+import quizScreenshot from "../../assets/images/Quiz-Project-Screenshot.png";
 import { motion, AnimatePresence } from "framer-motion";
 import "./carousel.css";
 
@@ -27,10 +28,9 @@ const Carousel = () => {
 
   return (
     <>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           animate={{ opacity: 1 }}
-          // initial={index ? { opacity: 1 } : { opacity: 0 }}
           initial={{ opacity: 0.3 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
@@ -102,10 +102,12 @@ const Carousel = () => {
                 <p>
                   Ah yes, the projects tab up there is some of my smaller
                   projects, they have their own GitHub repository, but I wanted
-                  to feature them on my Portfolio. Feel free to take a look,
-                  they're probably not too exciting, but I worked very hard on
-                  them and I think they are impressive for the level I'm
-                  currently at. I hope you can like them too and be inspired!
+                  to feature them on my Portfolio. It also shows my progress
+                  because it goes from early to new, the first link is the
+                  earliest. So, feel free to take a look, they're probably not
+                  too exciting, but I worked very hard on them and I think they
+                  are impressive for the level I'm currently at. I hope you can
+                  like them too and be inspired!
                 </p>
               </div>
             ) : undefined}
@@ -144,6 +146,7 @@ const Carousel = () => {
                     src={calculatorScreenshot}
                     alt="Calculator-Project-Screenshot.png"
                   />
+                  <img src={quizScreenshot} alt="Quiz-Project-Screenshot.png" />
                 </div>
               ) : undefined}
             </div>
