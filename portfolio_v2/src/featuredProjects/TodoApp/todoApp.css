@@ -4,7 +4,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
 
-.todoBackground {
+#todoBackground {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -12,34 +12,31 @@
   z-index: -99;
 }
 
-#backHome {
+#todoBackHome {
   position: absolute;
   top: 16px;
   left: 16px;
-}
-
-#backHome a {
   display: flex;
   align-items: center;
   text-decoration: none;
   transition: 0.38s ease all;
 }
 
-#backHome a:hover {
+#todoBackHome:hover {
   opacity: 0.7;
 }
 
-#backHome a:active {
+#todoBackHome:active {
   position: relative;
   top: 2px;
 }
 
-#backHome a svg {
+#todoBackHome svg {
   font-size: 2.5rem;
   color: black;
 }
 
-#backHome a p {
+#todoBackHome p {
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;

@@ -18,7 +18,7 @@
   --whiteWords: rgb(255, 255, 255, 0.9);
 }
 
-.appBackground {
+#calcBackground {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -35,24 +35,27 @@
   place-items: center;
 }
 
-#backHome {
+#calcBackHome {
+  position: absolute;
+  top: 16px;
+  left: 16px;
   display: flex;
   align-items: center;
   text-decoration: none;
   margin-right: 1rem;
 }
 
-#backHome:active {
+#calcBackHome:active {
   transform: translateY(2px);
 }
 
-#backHome svg {
+#calcBackHome svg {
   font-size: 2.5rem;
   color: rgb(255, 255, 255, 0.75);
   transition: 0.38s ease;
 }
 
-#backHome p {
+#calcBackHome p {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -60,8 +63,8 @@
   transition: 0.38s ease;
 }
 
-#backHome:hover svg,
-#backHome:hover p {
+#calcBackHome:hover svg,
+#calcBackHome:hover p {
   color: rgb(255, 255, 255, 0.9);
 }
 
@@ -92,7 +95,7 @@
   text-decoration: none;
   color: var(--whiteWords);
   border-bottom: 1px solid transparent;
-  transition: 0.38s ease all;
+  transition: 0.28s ease all;
 }
 
 .appContainer footer a:hover {

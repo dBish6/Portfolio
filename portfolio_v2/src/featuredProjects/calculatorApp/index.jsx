@@ -19,9 +19,9 @@ function CalculatorIndex(props) {
 
   return (
     <>
-      <div className="appBackground" />
+      <div id="calcBackground" />
       <main className="appContainer">
-        <Link to="/Portfolio/home" id="backHome">
+        <Link to="/Portfolio/home" id="calcBackHome">
           <MdArrowBack />
           <p>Home</p>
         </Link>
