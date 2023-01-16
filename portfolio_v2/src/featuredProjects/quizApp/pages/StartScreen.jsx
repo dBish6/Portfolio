@@ -22,7 +22,7 @@ const StartScreen = (props) => {
 
   return (
     <>
-      <Link to="/Portfolio/home" id="quizBackHome">
+      <Link to="/home" id="quizBackHome">
         <MdArrowBack />
         <p>Home</p>
       </Link>

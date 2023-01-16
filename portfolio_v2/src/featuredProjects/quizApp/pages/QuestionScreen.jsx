@@ -28,7 +28,7 @@ const QuestionScreen = (props) => {
 
   useEffect(() => {
     if (!accessKey) {
-      navigate("/Portfolio/projects/quiz");
+      navigate("/projects/quiz");
       setTimeout(() => {
         alert("You're not allowed on this page yet, sneaky bugger:)");
       }, 1000);

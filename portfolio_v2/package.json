@@ -1,7 +1,7 @@
 {
   "name": "portfolio_v2",
   "version": "1.0.0",
-  "homepage": "http://dBish6.github.io/Portfolio/",
+  "homepage": "https://www.davidbishop.info/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",

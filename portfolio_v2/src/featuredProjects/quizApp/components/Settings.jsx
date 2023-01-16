@@ -45,7 +45,7 @@ const Settings = () => {
         }
       } catch (error) {
         console.error(error);
-        navigate("/Portfolio/projects/quiz/error500");
+        navigate("/projects/quiz/error500");
       }
     };
     fetchQuestions();

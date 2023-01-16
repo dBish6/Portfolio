@@ -20,9 +20,9 @@ const Footer = () => {
             <Link onClick={() => setShow(true)}>Contact Me</Link>|
             <Link
               onClick={() => {
-                window.location.pathname === "/Portfolio/"
-                  ? window.location.replace("/Portfolio/#about")
-                  : window.location.replace("/Portfolio/home#about");
+                window.location.pathname === "/"
+                  ? window.location.replace("/#about")
+                  : window.location.replace("/home#about");
               }}
             >
               About Me
@@ -30,9 +30,9 @@ const Footer = () => {
             |
             <Link
               onClick={() => {
-                window.location.pathname === "/Portfolio/"
-                  ? window.location.replace("/Portfolio#skills")
-                  : window.location.replace("/Portfolio/home#skills");
+                window.location.pathname === "/"
+                  ? window.location.replace("/#skills")
+                  : window.location.replace("/home#skills");
               }}
             >
               Skills
@@ -40,9 +40,9 @@ const Footer = () => {
             |
             <Link
               onClick={() => {
-                window.location.pathname === "/Portfolio/"
-                  ? window.location.replace("/Portfolio#repositories")
-                  : window.location.replace("/Portfolio/home#repositories");
+                window.location.pathname === "/"
+                  ? window.location.replace("/#repositories")
+                  : window.location.replace("/home#repositories");
               }}
             >
               Repos
@@ -50,9 +50,9 @@ const Footer = () => {
             |
             <Link
               onClick={() =>
-                window.location.pathname === "/Portfolio/"
-                  ? window.location.replace("/Portfolio#services")
-                  : window.location.replace("/Portfolio/home#services")
+                window.location.pathname === "/"
+                  ? window.location.replace("/#services")
+                  : window.location.replace("/home#services")
               }
             >
               Services

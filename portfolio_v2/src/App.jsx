@@ -1,4 +1,4 @@
-/* Portfolio_v2
+/* portfolio_v2
 
    Author: David Bishop
    Creation Date: December 24, 2022
@@ -79,41 +79,38 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<PortfolioHome />}>
-            <Route path="/Portfolio/" element={<Home title="Home" />} />
-            <Route path="/Portfolio/home" element={<Home title="Home" />} />
-            <Route
-              path="/Portfolio/error404"
-              element={<Error404 title="ERROR" />}
-            />
+            <Route path="/" element={<Home title="Home" />} />
+            <Route path="/home" element={<Home title="Home" />} />
+            <Route path="/error404" element={<Error404 title="ERROR" />} />
             <Route path="*" element={<Error404 title="ERROR" />} />
             {/* <Route path="*" render={() => <Navigate to="/error404" />} /> */}
           </Route>
 
           <Route
-            path="/Portfolio/projects/todo"
+            path="/projects/todo"
             element={<ToDoProject title="Todo App" />}
           />
 
           <Route
-            path="/Portfolio/projects/calculator"
+            path="/projects/calculator"
             element={<CalculatorProject title="Calculator App" />}
           />
 
           <Route element={<QuizProject />}>
             <Route
-              path="/Portfolio/projects/quiz"
+              path="/projects/quiz"
               element={<QuizProjectStart title="Quiz App" />}
             />
             <Route
-              path="/Portfolio/projects/quiz/gameStart"
+              path="/projects/quiz/gameStart"
               element={<QuizProjectQuestion title="Quiz App" />}
             />
             <Route
-              path="/Portfolio/projects/quiz/gameEnd"
+              path="/projects/quiz/gameEnd"
               element={<QuizProjectFinal title="Quiz App" />}
             />
             <Route
-              path="/Portfolio/projects/quiz/error500"
+              path="/projects/quiz/error500"
               element={<QuizError500 title="ERROR" />}
             />
           </Route>

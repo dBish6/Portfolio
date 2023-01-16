@@ -56,7 +56,7 @@ const Navigation = () => {
           className="progressBar"
         />
         <nav className="leftContainer">
-          <NavLink to="/Portfolio/home" className="mainTitle">
+          <NavLink to="/home" className="mainTitle">
             <h2>Portfolio</h2>
           </NavLink>
           <div
@@ -84,19 +84,15 @@ const Navigation = () => {
                   className="options"
                 >
                   <li>
-                    <NavLink to="/Portfolio/projects/todo">
-                      Todo List App
-                    </NavLink>
+                    <NavLink to="/projects/todo">Todo List App</NavLink>
                   </li>
                   <hr />
                   <li>
-                    <NavLink to="/Portfolio/projects/calculator">
-                      Calculator App
-                    </NavLink>
+                    <NavLink to="/projects/calculator">Calculator App</NavLink>
                   </li>
                   <hr />
                   <li>
-                    <NavLink to="/Portfolio/projects/quiz">Quiz App</NavLink>
+                    <NavLink to="/projects/quiz">Quiz App</NavLink>
                   </li>
                 </motion.ul>
               </AnimatePresence>
@@ -188,17 +184,13 @@ const Navigation = () => {
                 <h3 className="hamburgerHeader">Featured Projects</h3>
                 <ul>
                   <li>
-                    <NavLink to="/Portfolio/projects/todo">
-                      Todo List App
-                    </NavLink>
+                    <NavLink to="/projects/todo">Todo List App</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/Portfolio/projects/calculator">
-                      Calculator App
-                    </NavLink>
+                    <NavLink to="/projects/calculator">Calculator App</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/Portfolio/projects/quiz">Quiz App</NavLink>
+                    <NavLink to="/projects/quiz">Quiz App</NavLink>
                   </li>
                 </ul>
               </motion.nav>

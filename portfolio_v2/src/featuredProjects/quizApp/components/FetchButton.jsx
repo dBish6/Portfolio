@@ -69,7 +69,7 @@ const FetchButton = (props) => {
       type="submit"
       onClick={() => {
         handleQuery();
-        navigate("/Portfolio/projects/quiz/gameStart");
+        navigate("/projects/quiz/gameStart");
       }}
     >
       <span className="btnTop">{props.text}</span>

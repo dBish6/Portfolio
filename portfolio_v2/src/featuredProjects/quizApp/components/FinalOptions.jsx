@@ -24,7 +24,7 @@ const FinalOptions = () => {
   const replay = () => {
     dispatch(SET_INDEX(0));
     dispatch(SET_SCORE(0));
-    navigate("/Portfolio/projects/quiz/gameStart");
+    navigate("/projects/quiz/gameStart");
   };
 
   const reset = () => {
@@ -32,7 +32,7 @@ const FinalOptions = () => {
     dispatch(SET_INDEX(0));
     dispatch(SET_SCORE(0));
     dispatch(SET_ACCESS(false));
-    navigate("/Portfolio/projects/quiz");
+    navigate("/projects/quiz");
   };
 
   return (

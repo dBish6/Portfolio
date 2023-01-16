@@ -21,7 +21,7 @@ function CalculatorIndex(props) {
     <>
       <div id="calcBackground" />
       <main className="appContainer">
-        <Link to="/Portfolio/home" id="calcBackHome">
+        <Link to="/home" id="calcBackHome">
           <MdArrowBack />
           <p>Home</p>
         </Link>

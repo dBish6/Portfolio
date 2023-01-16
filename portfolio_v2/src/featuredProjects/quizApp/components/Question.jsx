@@ -107,7 +107,7 @@ const Question = () => {
     } else {
       setTimeout(() => {
         toggleDisabled(false);
-        navigate("/Portfolio/projects/quiz/gameEnd");
+        navigate("/projects/quiz/gameEnd");
       }, 2200);
     }
   };
@@ -130,7 +130,7 @@ const Question = () => {
           }
         >
           <Link
-            to="/Portfolio/projects/quiz"
+            to="/projects/quiz"
             className="arrowBack"
             onClick={() => reset()}
           >

@@ -63,7 +63,7 @@ function TodoIndex(props) {
     <>
       <div id="todoBackground" />
       <div id="todoBackHome">
-        <Link to="/Portfolio/home">
+        <Link to="/home">
           <MdArrowBack />
           <p>Home</p>
         </Link>
