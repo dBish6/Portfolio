@@ -6,59 +6,45 @@
 */
 
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import useDocumentTitle from "../../../hooks/useDocumentTitle";
-import FetchButton from "../components/FetchButton";
+// *Design Import*
+import "../index.css";
 
+// *Component Imports*
+import FinalOptions from "../components/FinalOptions";
+
+// *Redux Imports*
+import { useSelector, useDispatch } from "react-redux";
+import { SET_FINAL_SCORE } from "../redux/quizSlice";
 import {
-  SET_INDEX,
-  SET_SCORE,
-  SET_QUESTIONS,
-  SET_ACCESS,
-} from "../redux/quizSlice";
-import { selectAccessKey, selectScore } from "../redux/selectors";
+  selectAccessKey,
+  selectScore,
+  selectQuestions,
+} from "../redux/selectors";
 
-const FinalScreen = (props) => {
-  useDocumentTitle(`David Bishop | ${props.title}`);
-  const score = useSelector(selectScore);
+const FinalScreen = () => {
   const accessKey = useSelector(selectAccessKey);
+  const score = useSelector(selectScore);
+  const questions = useSelector(selectQuestions);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
+    // To get final score on render.
+    dispatch(SET_FINAL_SCORE({ score: score, questions: questions }));
+
     if (!accessKey) {
-      navigate("/Portfolio/projects/quiz");
+      navigate("/");
       setTimeout(() => {
         alert("You're not allowed on this page yet, sneaky bugger:)");
       }, 1000);
     }
-  }, [accessKey, navigate]);
-
-  const replay = () => {
-    dispatch(SET_INDEX(0));
-    dispatch(SET_SCORE(0));
-    navigate("/Portfolio/projects/quiz/gameStart");
-  };
-
-  const reset = () => {
-    dispatch(SET_QUESTIONS([]));
-    dispatch(SET_INDEX(0));
-    dispatch(SET_SCORE(0));
-    dispatch(SET_ACCESS(false));
-    navigate("/Portfolio/projects/quiz");
-  };
+  }, [dispatch, questions, accessKey, navigate]);
 
   return (
-    <div>
-      <h3>Final Score: {score}</h3>
-      <h4>Start Again?</h4>
-      <div>
-        <button onClick={() => replay()}>Try again</button>
-        <FetchButton text="Fetch new Questions" />
-      </div>
-      <button onClick={() => reset()}>Back to settings</button>
+    <div className="finalContainer">
+      <FinalOptions />
     </div>
   );
 };

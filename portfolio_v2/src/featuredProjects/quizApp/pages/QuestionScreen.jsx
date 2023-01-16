@@ -8,11 +8,18 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// *Design Import*
+import "../index.css";
+
+// *Custom Hooks Import*
+import useDocumentTitle from "../../../hooks/useDocumentTitle";
+
+// *Component Import*
+import Question from "../components/Question";
+
+// *Redux Imports*
 import { useSelector } from "react-redux";
 import { selectAccessKey } from "../redux/selectors";
-
-import useDocumentTitle from "../../../hooks/useDocumentTitle";
-import Question from "../components/Question";
 
 const QuestionScreen = (props) => {
   useDocumentTitle(`David Bishop | ${props.title}`);
@@ -29,9 +36,9 @@ const QuestionScreen = (props) => {
   }, [accessKey, navigate]);
 
   return (
-    <div className="questionContainer">
+    <>
       <Question />
-    </div>
+    </>
   );
 };
 

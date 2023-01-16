@@ -9,19 +9,23 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate,
+  // Navigate,
   Outlet,
 } from "react-router-dom";
 
 // *Design Imports*
 import "./index.css";
+import "./featuredProjects/quizApp/index.css";
 
 // *Component Imports*
 import Navigation from "./components/partials/Navigation";
 import Footer from "./components/partials/Footer";
 
+import QuizFooter from "./featuredProjects/quizApp/components/partials/Footer";
+
 // *Pages/Views*
 import Home from "./pages/Home";
+import Error404 from "./pages/errors/Error404";
 
 import ToDoProject from "./featuredProjects/TodoApp";
 import CalculatorProject from "./featuredProjects/calculatorApp";
@@ -29,8 +33,6 @@ import QuizProjectStart from "./featuredProjects/quizApp/pages/StartScreen";
 import QuizProjectQuestion from "./featuredProjects/quizApp/pages/QuestionScreen";
 import QuizProjectFinal from "./featuredProjects/quizApp/pages/FinalScreen";
 import QuizError500 from "./featuredProjects/quizApp/pages/errors/Error500";
-
-import Error404 from "./pages/errors/Error404";
 
 function App() {
   const [DomLoading, setDomLoading] = useState(true);
@@ -49,7 +51,7 @@ function App() {
     }
   });
 
-  const ShowPartials = () => (
+  const PortfolioHome = () => (
     <>
       <Navigation />
       {/* Nested routes render out here. */}
@@ -60,14 +62,25 @@ function App() {
     </>
   );
 
+  const QuizProject = () => (
+    <>
+      <div id="quizBackground" />
+      <div className="quizGridContainer">
+        <main className="quizMain">
+          <Outlet />
+        </main>
+        <QuizFooter />
+      </div>
+    </>
+  );
+
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<ShowPartials />}>
+          <Route element={<PortfolioHome />}>
             <Route path="/Portfolio/" element={<Home title="Home" />} />
             <Route path="/Portfolio/home" element={<Home title="Home" />} />
-
             <Route
               path="/Portfolio/error404"
               element={<Error404 title="ERROR" />}
@@ -75,30 +88,35 @@ function App() {
             <Route path="*" element={<Error404 title="ERROR" />} />
             {/* <Route path="*" render={() => <Navigate to="/error404" />} /> */}
           </Route>
+
           <Route
             path="/Portfolio/projects/todo"
             element={<ToDoProject title="Todo App" />}
           />
+
           <Route
             path="/Portfolio/projects/calculator"
             element={<CalculatorProject title="Calculator App" />}
           />
-          <Route
-            path="/Portfolio/projects/quiz"
-            element={<QuizProjectStart title="Quiz App" />}
-          />
-          <Route
-            path="/Portfolio/projects/quiz/gameStart"
-            element={<QuizProjectQuestion title="Quiz App" />}
-          />
-          <Route
-            path="/Portfolio/projects/quiz/gameEnd"
-            element={<QuizProjectFinal title="Quiz App" />}
-          />
-          <Route
-            path="/Portfolio/projects/quiz/error500"
-            element={<QuizError500 title="ERROR" />}
-          />
+
+          <Route element={<QuizProject />}>
+            <Route
+              path="/Portfolio/projects/quiz"
+              element={<QuizProjectStart title="Quiz App" />}
+            />
+            <Route
+              path="/Portfolio/projects/quiz/gameStart"
+              element={<QuizProjectQuestion title="Quiz App" />}
+            />
+            <Route
+              path="/Portfolio/projects/quiz/gameEnd"
+              element={<QuizProjectFinal title="Quiz App" />}
+            />
+            <Route
+              path="/Portfolio/projects/quiz/error500"
+              element={<QuizError500 title="ERROR" />}
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

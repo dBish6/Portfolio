@@ -8,7 +8,8 @@ export const selectType = (store) => store.quiz.initOptions.question_type;
 export const selectAmount = (store) =>
   store.quiz.initOptions.amount_of_questions;
 // store.options...
-export const selectQuestion = (store) => store.quiz.questions;
+export const selectQuestions = (store) => store.quiz.questions;
 export const selectIndex = (store) => store.quiz.index;
 export const selectScore = (store) => store.quiz.score;
+export const selectFinalScore = (store) => store.quiz.final_score;
 export const selectAccessKey = (store) => store.quiz.accessKey;

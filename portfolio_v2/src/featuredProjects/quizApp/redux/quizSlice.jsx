@@ -11,6 +11,7 @@ const initialState = {
   questions: [],
   index: 0,
   score: 0,
+  final_score: 0,
   accessKey: false,
 };
 const quizSlice = createSlice({
@@ -18,7 +19,7 @@ const quizSlice = createSlice({
   initialState,
   reducers: {
     CHANGE_LOADING: (state, action) => {
-      state.initOptions.loading = action.payload; // Payload is whatever coming in.
+      state.initOptions.loading = action.payload;
     },
     CHANGE_CATEGORY: (state, action) => {
       state.initOptions.question_category = action.payload;
@@ -41,13 +42,17 @@ const quizSlice = createSlice({
     SET_SCORE: (state, action) => {
       state.score = action.payload;
     },
+    SET_FINAL_SCORE: (state, action) => {
+      state.final_score = Math.floor(
+        (action.payload.score / action.payload.questions.length) * 100
+      );
+    },
     SET_ACCESS: (state, action) => {
       state.accessKey = action.payload;
     },
   },
 });
 
-// Action creators are generated for each case reducer function.
 export const {
   CHANGE_LOADING,
   CHANGE_CATEGORY,
@@ -57,7 +62,8 @@ export const {
   SET_QUESTIONS,
   SET_INDEX,
   SET_SCORE,
+  SET_FINAL_SCORE,
   SET_ACCESS,
 } = quizSlice.actions;
-// Exports the slice's reducer.
+
 export default quizSlice.reducer;

@@ -5,7 +5,16 @@
    Integration Date: January 7, 2023
 */
 
+import { Link } from "react-router-dom";
+
+// *Design Import*
+import { MdArrowBack } from "react-icons/md";
+import "../index.css";
+
+// *Custom Hooks Import*
 import useDocumentTitle from "../../../hooks/useDocumentTitle";
+
+// *Component Import*
 import Settings from "../components/Settings";
 
 const StartScreen = (props) => {
@@ -13,22 +22,11 @@ const StartScreen = (props) => {
 
   return (
     <>
-      <header>
-        <a
-          href="https://github.com/dBish6/React_Quiz_App"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub Repository
-        </a>
-        <p>
-          <b>Developer:</b> David Bishop
-        </p>
-      </header>
-      <div className="startContainer">
-        <h1>Redux Quiz App</h1>
-        <Settings />
-      </div>
+      <Link to="/Portfolio/home" id="quizBackHome">
+        <MdArrowBack />
+        <p>Home</p>
+      </Link>
+      <Settings />
     </>
   );
 };
