@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <>
       <ContactModal show={show} setShow={setShow} />
-      <footer className="gridContainer">
+      <footer className="homeFooter gridContainer">
         <div>
           <div className="links">
             <Link onClick={() => setShow(true)}>Contact Me</Link>|
