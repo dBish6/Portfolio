@@ -7,7 +7,7 @@ import ContactModal from "../modals/ContactModal";
 // *Design Imports*
 import { ImGithub, ImLinkedin, ImSteam2 } from "react-icons/im";
 import { MdExpandMore } from "react-icons/md";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import "./partials.css";
 
 const Navigation = () => {
@@ -17,20 +17,33 @@ const Navigation = () => {
   const [hamburgerDropdown, toggleHamburgerDropdown] = useState(false);
   const hamburgerDropdownRef = useRef(null);
 
+  // *Animations*
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
-    // stiffness: 200,
     stiffness: 150,
     damping: 20,
     restDelta: 0.001,
   });
 
-  const notice = () => {
-    setTimeout(() => {
-      alert(
-        "Sorry! This page isn't styled yet, but the functionally is all there! It will be finish soon:)"
-      );
-    }, 1000);
+  const fadeIn = {
+    visible: {
+      y: "0",
+      opacity: 1,
+      display: "block",
+      transition: {
+        duration: 0.4,
+        type: "tween",
+      },
+    },
+    hidden: {
+      y: "30px",
+      opacity: 0,
+      transition: {
+        duration: 0.35,
+        type: "tween",
+      },
+      transitionEnd: { display: "none" },
+    },
   };
 
   return (
@@ -42,7 +55,7 @@ const Navigation = () => {
           }}
           className="progressBar"
         />
-        <div className="leftContainer">
+        <nav className="leftContainer">
           <NavLink to="/Portfolio/home" className="mainTitle">
             <h2>Portfolio</h2>
           </NavLink>
@@ -62,31 +75,34 @@ const Navigation = () => {
               Projects <MdExpandMore />
             </button>
             <nav>
-              <ul className="options">
-                <li>
-                  <NavLink to="/Portfolio/projects/todo">Todo List App</NavLink>
-                </li>
-                <hr />
-                <li>
-                  <NavLink to="/Portfolio/projects/calculator">
-                    Calculator App
-                  </NavLink>
-                </li>
-                <hr />
-                <li>
-                  <NavLink
-                    to="/Portfolio/projects/quiz"
-                    onClick={() => {
-                      notice();
-                    }}
-                  >
-                    Quiz App
-                  </NavLink>
-                </li>
-              </ul>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.ul
+                  variants={fadeIn}
+                  animate={projectsDropdown ? "visible" : "hidden"}
+                  initial={projectsDropdown ? "hidden" : "visible"}
+                  exit={projectsDropdown ? "hidden" : "visible"}
+                  className="options"
+                >
+                  <li>
+                    <NavLink to="/Portfolio/projects/todo">
+                      Todo List App
+                    </NavLink>
+                  </li>
+                  <hr />
+                  <li>
+                    <NavLink to="/Portfolio/projects/calculator">
+                      Calculator App
+                    </NavLink>
+                  </li>
+                  <hr />
+                  <li>
+                    <NavLink to="/Portfolio/projects/quiz">Quiz App</NavLink>
+                  </li>
+                </motion.ul>
+              </AnimatePresence>
             </nav>
           </div>
-        </div>
+        </nav>
         <nav className="rightContainer">
           <NavLink className="contact" onClick={() => setShow(true)}>
             Contact Me
@@ -132,59 +148,61 @@ const Navigation = () => {
               <div className="bar middle" />
               <div className="bar bottom" />
             </div>
-            <nav>
-              <div className="dropdownIcons">
-                <a
-                  href="https://github.com/dBish6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ImGithub />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/david-bishop-34a76b237/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ImLinkedin />
-                </a>
-                <a
-                  href="https://steamcommunity.com/profiles/76561198044285142"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ImSteam2 />
-                </a>
-              </div>
-              <NavLink
-                className="dropdownContact"
-                onClick={() => setShow(true)}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.nav
+                variants={fadeIn}
+                animate={hamburgerDropdown ? "visible" : "hidden"}
+                initial={hamburgerDropdown ? "hidden" : "visible"}
+                exit={hamburgerDropdown ? "hidden" : "visible"}
               >
-                Contact Me
-              </NavLink>
-              <hr />
-              <h3 className="hamburgerHeader">Featured Projects</h3>
-              <ul>
-                <li>
-                  <NavLink to="/Portfolio/projects/todo">Todo List App</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/Portfolio/projects/calculator">
-                    Calculator App
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/Portfolio/projects/quiz"
-                    onClick={() => {
-                      notice();
-                    }}
+                <div className="dropdownIcons">
+                  <a
+                    href="https://github.com/dBish6"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Quiz App
-                  </NavLink>
-                </li>
-              </ul>
-            </nav>
+                    <ImGithub />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/david-bishop-34a76b237/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ImLinkedin />
+                  </a>
+                  <a
+                    href="https://steamcommunity.com/profiles/76561198044285142"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ImSteam2 />
+                  </a>
+                </div>
+                <NavLink
+                  className="dropdownContact"
+                  onClick={() => setShow(true)}
+                >
+                  Contact Me
+                </NavLink>
+                <hr />
+                <h3 className="hamburgerHeader">Featured Projects</h3>
+                <ul>
+                  <li>
+                    <NavLink to="/Portfolio/projects/todo">
+                      Todo List App
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/Portfolio/projects/calculator">
+                      Calculator App
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/Portfolio/projects/quiz">Quiz App</NavLink>
+                  </li>
+                </ul>
+              </motion.nav>
+            </AnimatePresence>
           </div>
         </nav>
       </header>

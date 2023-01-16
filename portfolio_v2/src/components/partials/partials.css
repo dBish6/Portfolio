@@ -33,6 +33,7 @@
 .navBar .leftContainer {
   grid-column: 3 / span 3;
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -49,7 +50,6 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
-  /* height: 55px; */
 
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -64,7 +64,6 @@
 .navBar .leftContainer .projectsDropdown.active button {
   justify-content: space-between;
   gap: 1rem;
-  /* font-size: 18px; */
   color: var(--primary800);
   width: 160px;
   transition: 0.38s ease all;
@@ -91,14 +90,6 @@
 
   border-radius: 6px;
   background-color: var(--white500Main);
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  z-index: -3;
-  animation: fadeInDown 0.35s both;
-}
-
-.navBar .leftContainer .projectsDropdown.active nav .options {
-  opacity: 0;
-  animation: fadeInUp 0.4s both;
 }
 
 .navBar li {
@@ -203,10 +194,7 @@
 
 @media screen and (max-width: 700px) {
   .projectsDropdown {
-    visibility: hidden;
-  }
-  .projectsDropdown.active {
-    visibility: hidden;
+    display: none;
   }
   .contact {
     display: none;
@@ -259,18 +247,9 @@
   text-align: center;
   padding: 0.8rem 1rem;
   margin-top: 0.5rem;
-  /* z-index: -99; */
 
   border-radius: 6px;
-  /* border: 2px solid var(--primary900); */
   background-color: var(--primary700);
-  animation: fadeInDown 0.35s both;
-}
-
-.hamburgerDropdown.active nav {
-  opacity: 0;
-  z-index: 1;
-  animation: fadeInUp 0.4s both;
 }
 
 @media screen and (min-width: 690px) {
@@ -312,7 +291,7 @@
 }
 
 .hamburgerDropdown hr {
-  border: solid 1px rgba(192, 192, 192, 0.1);
+  border: solid 1px rgba(192, 192, 192, 0.15);
   margin: 0.5rem 0;
 }
 
@@ -356,9 +335,9 @@
   background-color: var(--primary300);
 }
 
-/* <==========================================/ Footer Start \==========================================> */
+/* <==========================================/ .homeFooter Start \==========================================> */
 
-footer {
+.homeFooter {
   background-color: var(--primary100);
   padding: 1.5rem 1rem;
   border-top: 2px solid var(--white500Main);
@@ -366,57 +345,58 @@ footer {
   margin-top: 6rem;
 }
 
-footer > div:not(.icons) {
+.homeFooter > div:not(.icons) {
   grid-column: 5 / span 4;
   text-align: center;
   margin: 0.5rem 0;
 }
 
-footer > div:not(.icons) .links {
+.homeFooter > div:not(.icons) .links {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   color: var(--primary600);
 }
 
-footer > div:not(.icons) .links a {
+.homeFooter > div:not(.icons) .links a {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
   color: var(--primary600);
-  transition: 0.38s ease;
+  transition: 0.28s ease all;
 }
 
-footer > div:not(.icons) .links a:hover {
-  text-decoration: underline;
+.homeFooter > div:not(.icons) .links a:hover {
+  border-bottom: 1px solid var(--primary800);
   color: var(--primary800);
 }
 
-footer > div:not(.icons) hr {
+.homeFooter > div:not(.icons) hr {
   /* border: 1.5px solid var(--primary400); */
   border: 1.5px solid rgb(244, 244, 244, 0.75);
   border-radius: 100%;
   margin: 1rem 0 2rem 0;
 }
 
-footer > div:not(.icons) p {
+.homeFooter > div:not(.icons) p {
   font-family: "PT Sans", sans-serif;
   font-size: 14px;
   color: var(--primary800);
   color: var(--primary600);
 }
 
-footer > div:not(.icons) p a {
+.homeFooter > div:not(.icons) p a {
   text-decoration: underline;
   color: var(--primary800);
 }
 
-footer > div:not(.icons) p:first-of-type {
+.homeFooter > div:not(.icons) p:first-of-type {
   margin-bottom: 0.5rem;
 }
 
-footer .icons {
+.homeFooter .icons {
   grid-column: 9 / span 4;
   justify-self: flex-end;
   display: flex;
@@ -424,46 +404,46 @@ footer .icons {
   margin: 0 1rem;
 }
 
-footer .icons svg {
+.homeFooter .icons svg {
   font-size: 1.5rem;
   color: var(--primary900);
   transition: 0.28s ease all;
 }
 
-footer .icons svg:hover {
+.homeFooter .icons svg:hover {
   transform: scale(1.3);
 }
 
 @media screen and (max-width: 1355px) {
-  footer > div:not(.icons) {
+  .homeFooter > div:not(.icons) {
     grid-column: 4 / span 6;
   }
-  footer .icons {
+  .homeFooter .icons {
     grid-column: 10 / span 3;
   }
 }
 
 @media screen and (max-width: 1048px) {
-  footer > div:not(.icons) {
+  .homeFooter > div:not(.icons) {
     grid-column: 3 / span 8;
   }
-  footer .icons {
+  .homeFooter .icons {
     grid-column: 11 / span 2;
   }
 }
 
 @media screen and (max-width: 1048px) {
-  footer > div:not(.icons) {
+  .homeFooter > div:not(.icons) {
     grid-column: span 12;
   }
-  footer .dividerContainer {
+  .homeFooter .dividerContainer {
     display: flex;
     justify-content: center;
   }
-  footer > div:not(.icons) hr {
+  .homeFooter > div:not(.icons) hr {
     width: 80%;
   }
-  footer .icons {
+  .homeFooter .icons {
     grid-column: span 12;
     justify-self: center;
     margin-top: 1.5rem;
@@ -471,7 +451,7 @@ footer .icons svg:hover {
 }
 
 @media screen and (max-width: 772px) {
-  footer > div:not(.icons) hr {
+  .homeFooter > div:not(.icons) hr {
     width: 100%;
   }
 }
