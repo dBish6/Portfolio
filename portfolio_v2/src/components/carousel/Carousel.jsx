@@ -17,13 +17,11 @@ const Carousel = () => {
   const handlePrevious = () => {
     const newIndex = index - 1;
     setIndex(index <= 1 ? 3 : newIndex);
-    console.log(index);
   };
 
   const handleNext = () => {
     const newIndex = index + 1;
     setIndex(index >= 3 ? 1 : newIndex);
-    console.log(index);
   };
 
   return (
@@ -31,7 +29,7 @@ const Carousel = () => {
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           animate={{ opacity: 1 }}
-          initial={{ opacity: 0.3 }}
+          initial={{ opacity: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
           key={index}
@@ -103,11 +101,11 @@ const Carousel = () => {
                   Ah yes, the projects tab up there is some of my smaller
                   projects, they have their own GitHub repository, but I wanted
                   to feature them on my Portfolio. It also shows my progress
-                  because it goes from early to new, the first link is the
-                  earliest. So, feel free to take a look, they're probably not
-                  too exciting, but I worked very hard on them and I think they
-                  are impressive for the level I'm currently at. I hope you can
-                  like them too and be inspired!
+                  because it goes from early to new, the first link on top is
+                  the earliest. So, feel free to take a look, they're probably
+                  not too exciting, but I worked very hard on them and I think
+                  they are impressive for the level I'm currently at. I hope you
+                  can like them too and be inspired!
                 </p>
               </div>
             ) : undefined}
