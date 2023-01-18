@@ -10,7 +10,7 @@ const ProjectCard = () => {
       {content.map((value) => {
         return (
           <div className="card" key={value.id}>
-            <img src={value.screenshot} alt="" />
+            <img loading="lazy" src={value.screenshot} alt="" />
             <h3>{value.title}</h3>
             <div className="cardInfo">
               <p>{value.tech}</p>

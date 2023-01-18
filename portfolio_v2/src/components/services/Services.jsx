@@ -9,7 +9,11 @@ const Services = () => {
     <div className="servicesGridContainer">
       <div className="service">
         <div className="imgContain">
-          <img src={ecommerceIllustration} alt="e-commerce-illustration.png" />
+          <img
+            loading="lazy"
+            src={ecommerceIllustration}
+            alt="e-commerce-illustration.png"
+          />
         </div>
         <div className="serviceTxtContainer">
           <h2>E-commerce Websites</h2>
@@ -30,12 +34,20 @@ const Services = () => {
           </p>
         </div>
         <div className="imgContain">
-          <img src={businessIllustration} alt="business-illustration.png" />
+          <img
+            loading="lazy"
+            src={businessIllustration}
+            alt="business-illustration.png"
+          />
         </div>
       </div>
       <div className="service">
         <div className="imgContain">
-          <img src={designIllustration} alt="design-illustration.png" />
+          <img
+            loading="lazy"
+            src={designIllustration}
+            alt="design-illustration.png"
+          />
         </div>
         <div className="serviceTxtContainer">
           <h2>Website Designs</h2>
