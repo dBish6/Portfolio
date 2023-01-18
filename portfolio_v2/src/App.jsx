@@ -6,7 +6,7 @@
 
 import { useState, useEffect } from "react";
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   // Navigate,
@@ -76,7 +76,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<PortfolioHome />}>
             <Route path="/" element={<Home title="Home" />} />
@@ -115,7 +115,7 @@ function App() {
             />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
