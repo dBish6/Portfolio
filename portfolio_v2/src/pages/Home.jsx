@@ -34,8 +34,8 @@ const Home = (props) => {
             better from here!
           </p>
           <p>
-            Many skills I developed over the course of my short coding journey
-            thus far below.
+            Many skills from the latest technologies I developed over the course
+            of my short coding journey thus far; view them below.
           </p>
         </div>
         <SkillsSlider />
