@@ -4,7 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import javaScriptLogo from "../../assets/images/Javascript-shield.png";
 import HTMLAndCSSLogo from "../../assets/images/pngfind.com-HTML-CSS.png";
 import nodeLogo from "../../assets/images/Node.js_logo.svg.png";
+import expressLogo from "../../assets/images/express-logo.png";
 import ReactLogo from "../../assets/images/pngwing.com-react-logo.png";
+import reduxLogo from "../../assets/images/pngwing.com-Redux.png";
 import postgresLogo from "../../assets/images/pngwing.com-PostgreSql.png";
 import mySqlLogo from "../../assets/images/pngwing.com-MySQL.png";
 import awsLogo from "../../assets/images/aws.png";
@@ -41,40 +43,66 @@ const SkillsSlider = () => {
           ref={carouselRef}
         >
           <div>
-            <img src={javaScriptLogo} alt="Javascript-shield.png" />
+            <img
+              loading="lazy"
+              src={javaScriptLogo}
+              alt="Javascript-shield.png"
+            />
           </div>
           <div>
-            <img src={HTMLAndCSSLogo} alt="pngfind.com-HTML-CSS.png" />
+            <img
+              loading="lazy"
+              src={HTMLAndCSSLogo}
+              alt="pngfind.com-HTML-CSS.png"
+            />
           </div>
           <div>
-            <img src={nodeLogo} alt="Node.js_logo.svg.png" />
+            <img loading="lazy" src={nodeLogo} alt="Node.js_logo.svg.png" />
           </div>
           <div>
-            <img src={ReactLogo} alt="pngwing.com-react-logo.png" />
+            <img loading="lazy" src={expressLogo} alt="express-logo.png" />
           </div>
           <div>
-            <img src={postgresLogo} alt="pngwing.com-PostgreSql.png" />
+            <img
+              loading="lazy"
+              src={ReactLogo}
+              alt="pngwing.com-react-logo.png"
+            />
           </div>
           <div>
-            <img src={mySqlLogo} alt="pngwing.com-MySQL.png" />
+            <img loading="lazy" src={reduxLogo} alt="pngwing.com-Redux.png" />
           </div>
           <div>
-            <img src={awsLogo} alt="aws.png" />
+            <img
+              loading="lazy"
+              src={postgresLogo}
+              alt="pngwing.com-PostgreSql.png"
+            />
           </div>
           <div>
-            <img src={javaLogo} alt="pngwing.com-java.png" />
+            <img loading="lazy" src={mySqlLogo} alt="pngwing.com-MySQL.png" />
           </div>
           <div>
-            <img src={mongoDbLogo} alt="pngwing.com-mongodb.png" />
+            <img loading="lazy" src={awsLogo} alt="aws.png" />
           </div>
           <div>
-            <img src={gitLogo} alt="pngegg-git.png" />
+            <img loading="lazy" src={javaLogo} alt="pngwing.com-java.png" />
           </div>
           <div>
-            <img src={gitHubLogo} alt="Github_logo.png" />
+            <img
+              loading="lazy"
+              src={mongoDbLogo}
+              alt="pngwing.com-mongodb.png"
+            />
           </div>
           <div>
-            <img src={dockerLogo} alt="pngwing.com-Docker.png" />
+            <img loading="lazy" src={gitLogo} alt="pngegg-git.png" />
+          </div>
+          <div>
+            <img loading="lazy" src={gitHubLogo} alt="Github_logo.png" />
+          </div>
+          <div>
+            <img loading="lazy" src={dockerLogo} alt="pngwing.com-Docker.png" />
           </div>
         </motion.div>
       </div>
