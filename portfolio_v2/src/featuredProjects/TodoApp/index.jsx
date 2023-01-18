@@ -62,12 +62,11 @@ function TodoIndex(props) {
   return (
     <>
       <div id="todoBackground" />
-      <div id="todoBackHome">
-        <Link to="/home">
-          <MdArrowBack />
-          <p>Home</p>
-        </Link>
-      </div>
+      <Link to="/home" id="todoBackHome">
+        <MdArrowBack />
+        <p>Home</p>
+      </Link>
+
       <div className="list-container">
         <header>
           <h1>My Todo List</h1>

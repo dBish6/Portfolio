@@ -19,21 +19,16 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  transition: 0.38s ease all;
-}
-
-#todoBackHome:hover {
-  opacity: 0.7;
 }
 
 #todoBackHome:active {
-  position: relative;
-  top: 2px;
+  transform: translateY(2px);
 }
 
 #todoBackHome svg {
   font-size: 2.5rem;
   color: black;
+  transition: 0.38s ease;
 }
 
 #todoBackHome p {
@@ -41,6 +36,12 @@
   font-weight: 500;
   font-size: 16px;
   color: rgb(100, 100, 100);
+  transition: 0.38s ease;
+}
+
+#todoBackHome:hover svg,
+#todoBackHome:hover p {
+  opacity: 0.6;
 }
 
 .list-container {
