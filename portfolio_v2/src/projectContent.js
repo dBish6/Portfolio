@@ -19,7 +19,7 @@ export const content = [
     date: "Oct 2022",
     tech: "ReactJS, CSS, and NodeJS.",
     screenshot: relicFilmsScreenshot,
-    gitHub_URL: "",
+    gitHub_URL: "https://github.com/dBish6/Relic_Films_Full-Stack_App",
   },
   {
     id: 3,
