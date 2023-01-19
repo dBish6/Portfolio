@@ -61,7 +61,7 @@
   border-left: 1px solid var(--primary600); */
 }
 
-@media screen and (max-width: 1819px) {
+@media screen and (max-width: 1740px) {
   .carouselContainer #about {
     overflow-y: scroll;
     padding-right: 0.5rem;

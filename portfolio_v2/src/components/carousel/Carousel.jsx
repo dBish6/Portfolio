@@ -51,23 +51,22 @@ const Carousel = () => {
                   Currently, I am <b>20</b> years of age and I'm a fresh
                   graduate from my Software Development course at Keyin College
                   where we learned about several different coding languages;
-                  Python, Javascript, Java, NodeJS, Sql, etc. The course really
+                  Python, Javascript, Java, NodeJS, SQL, etc. The course really
                   gives you an insight into the tech field and a feel of what's
                   to come. We learned about full-stack and that is what I will
                   strive to be, a full-stack developer. I found love and passion
-                  in making full-stack applications especially <b>designing</b>{" "}
+                  in making full-stack applications and I love <b>designing</b>{" "}
                   them. I think I have a natural knack for design, ever since I
                   was a kid I thought I was creative. I also think I have the
                   ability to be a leader, I set up all the projects for the team
                   of our sprint projects at school. I have knowledge of agile
-                  principles, I was basically the scrum master. On a side note,
-                  I'm also interested in learning mobile development, not just
-                  web, but that's not on my schedule right now. Basically, I
-                  want to be able to code through the development lifecycle,
-                  although I am interested in the designing phase. Currently,
-                  learning more about ReactJS, I'm really interested in
-                  developing with React, and a back-end language; Java. Check
-                  out my GitHub if you have the time, it has many projects -{" "}
+                  principles, I was basically the scrum master at the time of
+                  those sprints. Basically, I want to be able to code through
+                  the development lifecycle, although I am interested in the
+                  designing phase. Currently, learning more about ReactJS, I'm
+                  really interested in developing with React, which is all I use
+                  now, and I'm also learning Chakra UI. Check out my GitHub if
+                  you have the time, it has many projects;{" "}
                   <a
                     href="https://github.com/dBish6"
                     target="_blank"
