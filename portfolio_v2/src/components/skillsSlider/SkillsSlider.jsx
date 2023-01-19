@@ -15,6 +15,7 @@ import mongoDbLogo from "../../assets/images/pngwing.com-mongodb.png";
 import gitLogo from "../../assets/images/pngegg-git.png";
 import gitHubLogo from "../../assets/images/Github_logo.png";
 import dockerLogo from "../../assets/images/pngwing.com-Docker.png";
+import figmaLogo from "../../assets/images/pngwing.com-figma.png";
 import "./skillsSlider.css";
 
 import { motion } from "framer-motion";
@@ -103,6 +104,9 @@ const SkillsSlider = () => {
           </div>
           <div>
             <img loading="lazy" src={dockerLogo} alt="pngwing.com-Docker.png" />
+          </div>
+          <div>
+            <img loading="lazy" src={figmaLogo} alt="pngwing.com-figma.png" />
           </div>
         </motion.div>
       </div>
