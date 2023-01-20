@@ -26,12 +26,11 @@ const Home = (props) => {
           <h1>Up and Coming Full-Stack Developer!</h1>
           <p>
             This is what I am striving to be, a full-stack developer! I can
-            already make a entire intermediated full-stack application and I
-            love designing them when I am making these applications. I would
-            like to be in with the designing process because I think I have a
-            knack for designing. As a new developer, I think, my designs are
-            good for the level I'm currently at, I can only get better and
-            better from here!
+            already make a entire full-stack application and I love designing
+            them when I am making these applications. I would like to be in with
+            the designing process because I think I have a knack for designing.
+            As a new developer, I think, my designs are good for the level I'm
+            currently at, I can only get better and better from here!
           </p>
           <p>
             Many skills from the latest technologies I developed over the course

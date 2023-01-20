@@ -40,7 +40,7 @@
 }
 
 .servicesContainer .service .imgContain img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .servicesContainer .service .imgContain:nth-child(1),

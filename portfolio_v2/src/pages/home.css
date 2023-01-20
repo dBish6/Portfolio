@@ -2,17 +2,6 @@
    Home
 */
 
-/* main { */
-/* max-width: 1360px; */
-/* margin: 3rem 1rem; */
-/* } */
-
-/* @media screen and (min-width: 1360px) {
-  main section {
-    grid-column: span 12;
-  }
-} */
-
 main section {
   grid-column: span 12;
   background-color: var(--primary200);
