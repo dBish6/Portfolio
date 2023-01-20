@@ -51,7 +51,7 @@ const Carousel = () => {
                   Currently, I am <b>20</b> years of age and I'm a fresh
                   graduate from my Software Development course at Keyin College
                   where we learned about several different coding languages;
-                  Python, Javascript, Java, NodeJS, SQL, etc. The course really
+                  Python, Javascript, Java, NodeJS, Sql, etc. The course really
                   gives you an insight into the tech field and a feel of what's
                   to come. We learned about full-stack and that is what I will
                   strive to be, a full-stack developer. I found love and passion
@@ -118,7 +118,7 @@ const Carousel = () => {
                   <p>Bay Roberts, Newfoundland CA</p>
                   <p>
                     Full-Stack Software Development <br /> Keyin College
-                    <br /> Sep 2021 — Dec
+                    <br /> Sep 2021 — Dec 2022
                   </p>
                   <div>
                     <img
