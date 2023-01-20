@@ -120,25 +120,33 @@
   color: var(--primary800);
 }
 
-@keyframes fadeInUp {
-  from {
-    transform: translateY(30px);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
+.navBar .leftContainer .projectsDropdown .datePopupContainer {
+  position: absolute;
+  background-color: none;
+  padding: 0.3rem;
+  right: 10%;
+  left: 10%;
+  transition: 0.28s ease;
 }
 
-@keyframes fadeInDown {
-  from {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(20px);
-    opacity: 0;
-  }
+.navBar .leftContainer .projectsDropdown .datePopupContainer#link1 {
+  right: 25%;
+  left: 25%;
+}
+
+.navBar .leftContainer .projectsDropdown .datePopupContainer#link2 {
+  right: 13%;
+  left: 13%;
+}
+
+.navBar .leftContainer .projectsDropdown .datePopupContainer.bg {
+  background-color: var(--white500Main);
+}
+
+.navBar .leftContainer .projectsDropdown .datePopup {
+  font-family: "PT Sans", sans-serif;
+  font-style: italic;
+  color: var(--wordsBlack);
 }
 
 /* ... */
@@ -335,7 +343,7 @@
   background-color: var(--primary300);
 }
 
-/* <==========================================/ .homeFooter Start \==========================================> */
+/* <==========================================/ HomeFooter Start \==========================================> */
 
 .homeFooter {
   background-color: var(--primary100);
