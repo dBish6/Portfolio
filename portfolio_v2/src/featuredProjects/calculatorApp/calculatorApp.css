@@ -77,6 +77,12 @@
   color: var(--whiteWords);
 }
 
+@media screen and (max-width: 648px) {
+  .appContainer header {
+    transform: translateY(24px);
+  }
+}
+
 .appContainer footer {
   display: flex;
   justify-content: center;

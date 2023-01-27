@@ -66,7 +66,7 @@ const SkillsSlider = () => {
           className="actionRightContainer"
           onClick={() => {
             position.getPrevious() <= -941
-              ? position.set(-1880)
+              ? position.set(-1882)
               : position.set(position.get() - 941);
             setBtnClicked(true);
             setTimeout(() => {
