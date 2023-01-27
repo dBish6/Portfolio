@@ -16,30 +16,87 @@ import gitLogo from "../../assets/images/pngegg-git.png";
 import gitHubLogo from "../../assets/images/Github_logo.png";
 import dockerLogo from "../../assets/images/pngwing.com-Docker.png";
 import figmaLogo from "../../assets/images/pngwing.com-figma.png";
+import {
+  IoIosArrowDroprightCircle,
+  IoIosArrowDropleftCircle,
+} from "react-icons/io";
 import "./skillsSlider.css";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 const SkillsSlider = () => {
   const [width, setWidth] = useState(0);
+  const [btnClicked, setBtnClicked] = useState(false);
+  const [responsiveSlider, setResponsiveSlider] = useState(false);
   const carouselRef = useRef(null);
 
+  const position = useMotionValue(0);
+
   useEffect(() => {
-    carouselRef.current.style.transform =
-      "translateX(0px) translateY(0px) translateZ(0px)";
-    // console.log(carouselRef.current.style.scrollWidth);
     carouselRef !== null &&
       setWidth(
         carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
       );
-  }, []);
+  }, [responsiveSlider]);
+
+  // useEffect(() => {
+  //   console.log(position.get(), btnClicked);
+  // }, [position, btnClicked]);
 
   return (
     <>
+      <div className="btnsContainer">
+        <button
+          disabled={btnClicked ? true : false}
+          className="actionLeftContainer"
+          onClick={() => {
+            position.getPrevious() >= -941
+              ? position.set(0)
+              : position.set(position.get() + 941);
+            setBtnClicked(true);
+            setTimeout(() => {
+              setBtnClicked(false);
+            }, 1000);
+          }}
+        >
+          <IoIosArrowDropleftCircle />
+        </button>
+        <button
+          disabled={btnClicked ? true : false}
+          className="actionRightContainer"
+          onClick={() => {
+            position.getPrevious() <= -941
+              ? position.set(-1880)
+              : position.set(position.get() - 941);
+            setBtnClicked(true);
+            setTimeout(() => {
+              setBtnClicked(false);
+            }, 1000);
+          }}
+        >
+          <IoIosArrowDroprightCircle />
+        </button>
+      </div>
       <div className="sliderContainer">
         <motion.div
           drag="x"
+          dragMomentum={false}
           dragConstraints={{ right: 0, left: -width }}
+          // Sets new position of the slider.
+          onDragEnd={(e, { offset }) => {
+            position.set(position.get() + offset.x);
+            // console.log("Drag End", offset);
+            // console.log(position.get(), btnClicked);
+            setResponsiveSlider(!responsiveSlider);
+          }}
+          animate={btnClicked && { x: position.get() }}
+          transition={
+            btnClicked && {
+              duration: 1,
+              type: "spring",
+              stiffness: 45,
+            }
+          }
           className="slider"
           ref={carouselRef}
         >
