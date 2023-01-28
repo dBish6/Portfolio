@@ -2,9 +2,9 @@ import { content } from "../../projectContent";
 
 // *Design Imports*
 import { ImGithub } from "react-icons/im";
-import "./repoCard.css";
+import "./appCard.css";
 
-const ProjectCard = () => {
+const AppCard = () => {
   return (
     <div className="cardContainer">
       {content.map((value) => {
@@ -52,4 +52,4 @@ const ProjectCard = () => {
   );
 };
 
-export default ProjectCard;
+export default AppCard;

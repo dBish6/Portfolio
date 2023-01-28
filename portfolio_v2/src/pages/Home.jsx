@@ -4,7 +4,7 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 // *Component Imports*
 import Carousel from "../components/carousel/Carousel";
 import SkillsSlider from "../components/skillsSlider/SkillsSlider";
-import ProjectCard from "../components/repoCard/RepoCard";
+import ProjectCard from "../components/appCard/AppCard";
 import Services from "../components/services/Services";
 
 // *Design Imports*
@@ -41,7 +41,7 @@ const Home = (props) => {
       </section>
       <section className="projectsContainer gridContainer" id="repositories">
         <div className="title">
-          <h1>Applications/Repositories</h1>
+          <h1>Applications</h1>
           <p>
             These are some of my recent full-stack web applications/repositories
             I want to showcase to show my progress! Check out their GitHub

@@ -41,12 +41,7 @@ main .UpAndComingContainer {
 main .UpAndComingContainer .title {
   grid-column: 2 / span 10;
   margin: 0 0.5rem;
-}
-
-@media screen and (min-width: 1200px) {
-  main .UpAndComingContainer .title {
-    grid-column: 3 / span 8;
-  }
+  word-break: keep-all;
 }
 
 main .UpAndComingContainer .title p {
@@ -63,12 +58,7 @@ main .UpAndComingContainer .title p {
   flex-direction: column;
   gap: 1rem;
   margin: 3rem 0.5rem 3rem 0.5rem;
-}
-
-@media screen and (min-width: 1200px) {
-  .projectsContainer .title {
-    grid-column: 3 / span 8;
-  }
+  word-break: keep-all;
 }
 
 .projectsContainer .title h1,
