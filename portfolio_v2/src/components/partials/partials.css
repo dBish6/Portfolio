@@ -400,6 +400,18 @@
   color: var(--primary800);
 }
 
+@media screen and (max-width: 470px) {
+  .homeFooter > div:not(.icons) .links a {
+    font-size: 14px;
+  }
+  .homeFooter > div:not(.icons) .links a span {
+    display: none;
+  }
+  .homeFooter > div:not(.icons) p {
+    font-size: 12px;
+  }
+}
+
 .homeFooter > div:not(.icons) p:first-of-type {
   margin-bottom: 0.5rem;
 }

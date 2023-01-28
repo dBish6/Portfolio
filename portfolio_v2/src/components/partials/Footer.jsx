@@ -17,7 +17,10 @@ const Footer = () => {
       <footer className="homeFooter gridContainer">
         <div>
           <div className="links">
-            <Link onClick={() => setShow(true)}>Contact Me</Link>|
+            <Link onClick={() => setShow(true)}>
+              Contact <span>Me</span>
+            </Link>
+            |
             <Link
               onClick={() => {
                 window.location.pathname === "/"
@@ -25,7 +28,7 @@ const Footer = () => {
                   : window.location.replace("/home#about");
               }}
             >
-              About Me
+              About <span>Me</span>
             </Link>
             |
             <Link
