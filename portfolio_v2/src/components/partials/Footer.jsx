@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+// *Custom Hooks Imports*
+import useScrollTo from "../../hooks/useScrollTo";
+
 // *Component Imports*
 import ContactModal from "../modals/ContactModal";
 
@@ -10,6 +13,7 @@ import "./partials.css";
 
 const Footer = () => {
   const [show, setShow] = useState(false);
+  const handleScroll = useScrollTo();
 
   return (
     <>
@@ -21,45 +25,12 @@ const Footer = () => {
               Contact <span>Me</span>
             </Link>
             |
-            <Link
-              onClick={() => {
-                window.location.pathname === "/"
-                  ? window.location.replace("/#about")
-                  : window.location.replace("/home#about");
-              }}
-            >
+            <Link onClick={() => handleScroll("about")}>
               About <span>Me</span>
             </Link>
-            |
-            <Link
-              onClick={() => {
-                window.location.pathname === "/"
-                  ? window.location.replace("/#skills")
-                  : window.location.replace("/home#skills");
-              }}
-            >
-              Skills
-            </Link>
-            |
-            <Link
-              onClick={() => {
-                window.location.pathname === "/"
-                  ? window.location.replace("/#repositories")
-                  : window.location.replace("/home#repositories");
-              }}
-            >
-              Repos
-            </Link>
-            |
-            <Link
-              onClick={() =>
-                window.location.pathname === "/"
-                  ? window.location.replace("/#services")
-                  : window.location.replace("/home#services")
-              }
-            >
-              Services
-            </Link>
+            |<Link onClick={() => handleScroll("skills")}>Skills</Link>|
+            <Link onClick={() => handleScroll("repositories")}>Repos</Link>|
+            <Link onClick={() => handleScroll("services")}>Services</Link>
           </div>
           <div className="dividerContainer">
             <hr />

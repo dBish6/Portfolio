@@ -5,13 +5,7 @@
 */
 
 import { useState, useEffect } from "react";
-import {
-  HashRouter,
-  Routes,
-  Route,
-  // Navigate,
-  Outlet,
-} from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 
 // *Design Imports*
 import "./index.css";
@@ -79,11 +73,10 @@ function App() {
       <HashRouter>
         <Routes>
           <Route element={<PortfolioHome />}>
-            <Route path="/" element={<Home title="Home" />} />
+            <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home title="Home" />} />
             <Route path="/error404" element={<Error404 title="ERROR" />} />
-            <Route path="*" element={<Error404 title="ERROR" />} />
-            {/* <Route path="*" render={() => <Navigate to="/error404" />} /> */}
+            <Route path="*" element={<Navigate to="/error404" />} />
           </Route>
 
           <Route
