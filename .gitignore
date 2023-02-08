@@ -180,5 +180,7 @@ dist
 # .prettierignore
 # .gitignore
 
-# End of https://www.toptal.com/developers/gitignore/api/node
 .DS_Store
+portfolio_v1
+# End of https://www.toptal.com/developers/gitignore/api/node
+
