@@ -2,7 +2,7 @@ import { useState, useLayoutEffect } from "react";
 import { useSpring } from "framer-motion";
 
 const useScrollTo = () => {
-  const [moveTo, setScrollTo] = useState(null);
+  const [moveTo, setMoveTo] = useState(null);
   useSpring(moveTo, { damping: 300, stiffness: 200 });
 
   useLayoutEffect(() => {
@@ -17,7 +17,7 @@ const useScrollTo = () => {
 
   const handleScroll = (id) => {
     const targetElement = document.getElementById(id);
-    setScrollTo(targetElement.offsetTop - 100);
+    setMoveTo(targetElement.offsetTop - 100);
   };
 
   return handleScroll;

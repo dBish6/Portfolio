@@ -22,9 +22,9 @@
   "scripts": {
     "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
-    "clean": "rmdir /s /q node_modules",
-    "deploy": "gh-pages -d build"
+    "clean": "rmdir /s /q node_modules"
   },
   "eslintConfig": {
     "extends": [

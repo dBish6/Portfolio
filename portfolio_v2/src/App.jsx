@@ -9,7 +9,6 @@ import { HashRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 
 // *Design Imports*
 import "./index.css";
-import "./featuredProjects/quizApp/index.css";
 
 // *Component Imports*
 import Navigation from "./components/partials/Navigation";
