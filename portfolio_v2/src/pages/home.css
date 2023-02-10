@@ -52,7 +52,11 @@ main .UpAndComingContainer .title p {
   margin: 1rem 0 0 1.3rem;
 }
 
-.projectsContainer .title {
+main .applicationsContainer {
+  padding: 0 1rem;
+}
+
+.applicationsContainer .title {
   grid-column: 2 / span 10;
   display: flex;
   flex-direction: column;
@@ -61,13 +65,13 @@ main .UpAndComingContainer .title p {
   word-break: keep-all;
 }
 
-.projectsContainer .title h1,
+.applicationsContainer .title h1,
 .UpAndComingContainer .title h1 {
   border-left: 8px solid var(--yellowColour);
   padding-left: 0.5rem;
 }
 
-.projectsContainer .title p {
+.applicationsContainer .title p {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: var(--wordsWhite);
@@ -92,14 +96,14 @@ main .UpAndComingContainer .title p {
   main .UpAndComingContainer .title p {
     font-size: 18px;
   }
-  .projectsContainer .title p {
+  .applicationsContainer .title p {
     font-size: 18px;
   }
 
   main h1 {
     font-size: 2rem;
   }
-  .projectsContainer .title h1,
+  .applicationsContainer .title h1,
   .UpAndComingContainer .title h1 {
     border-left: 6px solid var(--yellowColour);
   }

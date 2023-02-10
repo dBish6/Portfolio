@@ -39,7 +39,10 @@ const Home = (props) => {
         </div>
         <SkillsSlider />
       </section>
-      <section className="projectsContainer gridContainer" id="repositories">
+      <section
+        className="applicationsContainer gridContainer"
+        id="repositories"
+      >
         <div className="title">
           <h1>Applications</h1>
           <p>

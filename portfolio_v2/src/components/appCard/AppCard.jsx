@@ -1,4 +1,4 @@
-import { content } from "../../projectContent";
+import { content } from "../../applicationContent";
 
 // *Design Imports*
 import { ImGithub } from "react-icons/im";

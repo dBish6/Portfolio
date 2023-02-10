@@ -1,11 +1,21 @@
-import ravenScreenshot from "./assets/images/Raven-Screenshot.png";
-import relicFilmsScreenshot from "./assets/images/Relic-Films-Screenshot.png";
 import classWorkScreenshot from "./assets/images/class-work-Screenshot.png";
+import relicFilmsScreenshot from "./assets/images/Relic-Films-Screenshot.png";
+import ravenScreenshot from "./assets/images/Raven-Screenshot.png";
+import openWeatherScreenshot from "./assets/images/Open-Weather-Screenshot.png";
 
 export const content = [
   {
-    id: 1,
-    title: "Raven E-Commerce Website",
+    id: 4,
+    title: "Open Weather App",
+    date: "Feb 5, 2023",
+    tech: "ReactJS, PostCSS",
+    screenshot: openWeatherScreenshot,
+    gitHub_URL: "https://github.com/dBish6/Open_Weather_App",
+    deployed_URL: "https://dbish6.github.io/Open_Weather_App",
+  },
+  {
+    id: 3,
+    title: "Raven E-Commerce Full-Stack App",
     date: "Dec 2022",
     tech: "ReactJS, CSS, Java, Docker and AWS.",
     screenshot: ravenScreenshot,
@@ -15,14 +25,14 @@ export const content = [
   },
   {
     id: 2,
-    title: "Relic Films Website",
+    title: "Relic Films Full-Stack App",
     date: "Oct 2022",
     tech: "ReactJS, CSS, and NodeJS.",
     screenshot: relicFilmsScreenshot,
     gitHub_URL: "https://github.com/dBish6/Relic_Films_Full-Stack_App",
   },
   {
-    id: 3,
+    id: 1,
     title: "class-work",
     date: "Sep 2021 - Dec 2022",
     tech: "A collection of all my assignments and sprints while at school.",
