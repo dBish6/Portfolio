@@ -46,9 +46,10 @@ const Home = (props) => {
         <div className="title">
           <h1>Applications</h1>
           <p>
-            These are some of my recent full-stack web applications/repositories
-            I want to showcase to show my progress! Check out their GitHub
-            repository below for more info.
+            Here are my latest applications and full-stack applications, each
+            reflecting my growing skills and experience. Check out their GitHub
+            repository below for more info or click "view website", if
+            available.
           </p>
         </div>
         <ProjectCard />
