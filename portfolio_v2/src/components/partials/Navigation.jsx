@@ -35,7 +35,6 @@ const Navigation = () => {
     visible: {
       y: "0",
       opacity: 1,
-      display: "block",
       transition: {
         duration: 0.4,
         type: "tween",
@@ -48,7 +47,6 @@ const Navigation = () => {
         duration: 0.35,
         type: "tween",
       },
-      transitionEnd: { display: "none" },
     },
   };
 
@@ -73,28 +71,15 @@ const Navigation = () => {
       },
       transitionEnd: { display: "none" },
     },
-    // exit: {
-    //   y: "12px",
-    //   // opacity: 0.3,
-    //   fontSize: "0px",
-    //   transition: {
-    //     duration: 1,
-    //     type: "tween",
-    //   },
-    //   transitionEnd: { display: "none" },
-    // },
   };
 
   return (
     <>
       <header className="navBar gridContainer">
-        <motion.div
-          style={{
-            scaleX,
-          }}
-          className="progressBar"
-        />
-        <nav className="leftContainer">
+        {/* Scroll Progress */}
+        <motion.div style={{ scaleX }} className="progressBar" />
+
+        <div className="leftContainer">
           <NavLink to="/home" className="mainTitle">
             <h2>Portfolio</h2>
           </NavLink>
@@ -114,86 +99,96 @@ const Navigation = () => {
               Projects <MdExpandMore />
             </button>
             <nav>
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.ul
-                  variants={fadeIn}
-                  animate={projectsDropdown ? "visible" : "hidden"}
-                  initial="hidden"
-                  // exit={projectsDropdown ? "hidden" : "visible"}
-                  className="options"
-                >
-                  <motion.li
-                    onHoverStart={() => toggleDatePopup({ link1: true })}
-                    onHoverEnd={() => toggleDatePopup({ link1: false })}
+              <AnimatePresence initial={false}>
+                {projectsDropdown && (
+                  <motion.ul
+                    variants={fadeIn}
+                    animate="visible"
+                    initial="hidden"
+                    exit="hidden"
+                    className="options"
                   >
-                    <NavLink to="/projects/todo">Todo List App</NavLink>
-                  </motion.li>
-                  <div
-                    className={
-                      !showDatePopup.link1
-                        ? "datePopupContainer"
-                        : "datePopupContainer bg"
-                    }
-                    id="link1"
-                  >
-                    <motion.p
-                      variants={popup}
-                      animate={showDatePopup.link1 ? "visible" : "hidden"}
-                      initial="hidden"
-                      // exit="exit"
-                      className="datePopup"
+                    <motion.li
+                      onHoverStart={() => toggleDatePopup({ link1: true })}
+                      onHoverEnd={() => toggleDatePopup({ link1: false })}
                     >
-                      April, 2022
-                    </motion.p>
-                  </div>
-                  <hr />
-                  <motion.li
-                    onHoverStart={() => toggleDatePopup({ link2: true })}
-                    onHoverEnd={() => toggleDatePopup({ link2: false })}
-                  >
-                    <NavLink to="/projects/calculator">Calculator App</NavLink>
-                  </motion.li>
-                  <div
-                    className={
-                      !showDatePopup.link2
-                        ? "datePopupContainer"
-                        : "datePopupContainer bg"
-                    }
-                    id="link2"
-                  >
-                    <motion.p
-                      variants={popup}
-                      animate={showDatePopup.link2 ? "visible" : "hidden"}
-                      initial="hidden"
-                      // exit="exit"
-                      className="datePopup"
+                      <NavLink to="/projects/todo">Todo List App</NavLink>
+                    </motion.li>
+
+                    {/* Date Popup Text */}
+                    <div
+                      className={
+                        !showDatePopup.link1
+                          ? "datePopupContainer"
+                          : "datePopupContainer bg"
+                      }
+                      id="link1"
                     >
-                      October 29, 2022
-                    </motion.p>
-                  </div>
-                  <hr />
-                  <motion.li
-                    onHoverStart={() => toggleDatePopup({ link3: true })}
-                    onHoverEnd={() => toggleDatePopup({ link3: false })}
-                  >
-                    <NavLink to="/projects/quiz">Quiz App</NavLink>
-                  </motion.li>
-                  <div className={"datePopupContainer"}>
-                    <motion.p
-                      variants={popup}
-                      animate={showDatePopup.link3 ? "visible" : "hidden"}
-                      initial="hidden"
-                      // exit="exit"
-                      className="datePopup"
+                      <motion.p
+                        variants={popup}
+                        animate={showDatePopup.link1 ? "visible" : "hidden"}
+                        initial="hidden"
+                        className="datePopup"
+                      >
+                        April, 2022
+                      </motion.p>
+                    </div>
+                    <hr />
+
+                    <motion.li
+                      onHoverStart={() => toggleDatePopup({ link2: true })}
+                      onHoverEnd={() => toggleDatePopup({ link2: false })}
                     >
-                      November, 2022
-                    </motion.p>
-                  </div>
-                </motion.ul>
+                      <NavLink to="/projects/calculator">
+                        Calculator App
+                      </NavLink>
+                    </motion.li>
+
+                    {/* Date Popup Text */}
+                    <div
+                      className={
+                        !showDatePopup.link2
+                          ? "datePopupContainer"
+                          : "datePopupContainer bg"
+                      }
+                      id="link2"
+                    >
+                      <motion.p
+                        variants={popup}
+                        animate={showDatePopup.link2 ? "visible" : "hidden"}
+                        initial="hidden"
+                        className="datePopup"
+                      >
+                        October 29, 2022
+                      </motion.p>
+                    </div>
+                    <hr />
+
+                    <motion.li
+                      onHoverStart={() => toggleDatePopup({ link3: true })}
+                      onHoverEnd={() => toggleDatePopup({ link3: false })}
+                    >
+                      <NavLink to="/projects/quiz">Quiz App</NavLink>
+                    </motion.li>
+
+                    {/* Date Popup Text */}
+                    <div className="datePopupContainer">
+                      <motion.p
+                        variants={popup}
+                        animate={showDatePopup.link3 ? "visible" : "hidden"}
+                        initial="hidden"
+                        className="datePopup"
+                      >
+                        November, 2022
+                      </motion.p>
+                    </div>
+                  </motion.ul>
+                )}
               </AnimatePresence>
             </nav>
           </div>
-        </nav>
+        </div>
+
         <nav className="rightContainer">
           <NavLink className="contact" onClick={() => setShow(true)}>
             Contact Me
@@ -221,6 +216,7 @@ const Navigation = () => {
               <ImSteam2 />
             </a>
           </div>
+
           <div
             className={
               hamburgerDropdown
@@ -239,56 +235,60 @@ const Navigation = () => {
               <div className="bar middle" />
               <div className="bar bottom" />
             </div>
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.nav
-                variants={fadeIn}
-                animate={hamburgerDropdown ? "visible" : "hidden"}
-                initial={hamburgerDropdown ? "hidden" : "visible"}
-                // exit={hamburgerDropdown ? "hidden" : "visible"}
-              >
-                <div className="dropdownIcons">
-                  <a
-                    href="https://github.com/dBish6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ImGithub />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/david-bishop-34a76b237/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ImLinkedin />
-                  </a>
-                  <a
-                    href="https://steamcommunity.com/profiles/76561198044285142"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ImSteam2 />
-                  </a>
-                </div>
-                <NavLink
-                  className="dropdownContact"
-                  onClick={() => setShow(true)}
+            <AnimatePresence initial={false}>
+              {hamburgerDropdown && (
+                <motion.nav
+                  variants={fadeIn}
+                  animate="visible"
+                  initial="hidden"
+                  exit="hidden"
                 >
-                  Contact Me
-                </NavLink>
-                <hr />
-                <h3 className="hamburgerHeader">Featured Projects</h3>
-                <ul>
-                  <li>
-                    <NavLink to="/projects/todo">Todo List App</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/projects/calculator">Calculator App</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/projects/quiz">Quiz App</NavLink>
-                  </li>
-                </ul>
-              </motion.nav>
+                  <div className="dropdownIcons">
+                    <a
+                      href="https://github.com/dBish6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ImGithub />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/david-bishop-34a76b237/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ImLinkedin />
+                    </a>
+                    <a
+                      href="https://steamcommunity.com/profiles/76561198044285142"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ImSteam2 />
+                    </a>
+                  </div>
+                  <NavLink
+                    className="dropdownContact"
+                    onClick={() => setShow(true)}
+                  >
+                    Contact Me
+                  </NavLink>
+                  <hr />
+                  <h3 className="hamburgerHeader">Featured Projects</h3>
+                  <ul>
+                    <li>
+                      <NavLink to="/projects/todo">Todo List App</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/projects/calculator">
+                        Calculator App
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/projects/quiz">Quiz App</NavLink>
+                    </li>
+                  </ul>
+                </motion.nav>
+              )}
             </AnimatePresence>
           </div>
         </nav>
