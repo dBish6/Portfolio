@@ -19,7 +19,6 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  margin: 1rem;
 }
 
 .closeBtn {
@@ -42,8 +41,6 @@
 }
 
 .modalHeader {
-  /* background-color: var(--primary100);
-  border-bottom: 2px solid var(--white500Main); */
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   padding: 1rem;

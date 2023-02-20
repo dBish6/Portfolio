@@ -30,10 +30,7 @@
 @media screen and (max-width: 516px) {
   .cardContainer {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .card {
-    transform: scale(1);
+    gap: 1rem;
   }
 }
 

@@ -50,10 +50,17 @@ const SkillsSlider = () => {
           disabled={btnClicked ? true : false}
           className="actionLeftContainer"
           onClick={() => {
-            position.getPrevious() >= -941
-              ? position.set(0)
-              : position.set(position.get() + 941);
+            if (window.innerWidth > 780) {
+              position.getPrevious() >= -628
+                ? position.set(0)
+                : position.set(position.get() + 628);
+            } else {
+              position.getPrevious() >= -390
+                ? position.set(0)
+                : position.set(position.get() + 314);
+            }
             setBtnClicked(true);
+            setResponsiveSlider(!responsiveSlider);
             setTimeout(() => {
               setBtnClicked(false);
             }, 1000);
@@ -65,10 +72,17 @@ const SkillsSlider = () => {
           disabled={btnClicked ? true : false}
           className="actionRightContainer"
           onClick={() => {
-            position.getPrevious() <= -941
-              ? position.set(-1882)
-              : position.set(position.get() - 941);
+            if (window.innerWidth > 780) {
+              position.getPrevious() <= -1254
+                ? position.set(-width)
+                : position.set(position.get() - 628);
+            } else {
+              position.getPrevious() <= -2274
+                ? position.set(-width)
+                : position.set(position.get() - 314);
+            }
             setBtnClicked(true);
+            setResponsiveSlider(!responsiveSlider);
             setTimeout(() => {
               setBtnClicked(false);
             }, 1000);
@@ -80,8 +94,12 @@ const SkillsSlider = () => {
       <div className="sliderContainer">
         <motion.div
           drag="x"
-          dragMomentum={false}
+          dragElastic={0.2}
           dragConstraints={{ right: 0, left: -width }}
+          dragTransition={{
+            type: "inertia",
+            power: 0.2,
+          }}
           // Sets new position of the slider.
           onDragEnd={(e, { offset }) => {
             position.set(position.get() + offset.x);
