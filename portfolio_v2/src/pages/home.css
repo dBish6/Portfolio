@@ -108,3 +108,9 @@ main .applicationsContainer {
     border-left: 6px solid var(--yellowColour);
   }
 }
+
+@media screen and (max-width: 586px) {
+  .applicationsContainer .title {
+    margin-bottom: 2rem;
+  }
+}
