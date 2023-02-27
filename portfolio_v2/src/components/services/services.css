@@ -75,11 +75,20 @@
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   color: var(--wordsWhite);
-  /* text-align: center; */
+  text-align: center;
 }
 
 @media screen and (min-width: 708px) {
-  .servicesContainer .service .serviceTxtContainer p {
-    text-align: center;
+}
+
+@media screen and (max-width: 710px) {
+  .servicesContainer .service {
+    flex-direction: column-reverse;
+  }
+  .servicesContainer .service:nth-child(2) {
+    flex-direction: column;
+  }
+  .servicesContainer .service .imgContain {
+    margin-top: 1rem;
   }
 }
