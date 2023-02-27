@@ -35,12 +35,12 @@ const FinalScreen = () => {
     dispatch(SET_FINAL_SCORE({ score: score, questions: questions }));
 
     if (!accessKey) {
-      navigate("/");
+      navigate("/projects/quiz");
       setTimeout(() => {
         alert("You're not allowed on this page yet, sneaky bugger:)");
       }, 1000);
     }
-  }, [dispatch, questions, accessKey, navigate]);
+  }, [dispatch, score, questions, accessKey, navigate]);
 
   return (
     <div className="finalContainer">
