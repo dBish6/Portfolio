@@ -1,9 +1,18 @@
-import classWorkScreenshot from "./assets/images/class-work-Screenshot.png";
-import relicFilmsScreenshot from "./assets/images/Relic-Films-Screenshot.png";
-import ravenScreenshot from "./assets/images/Raven-Screenshot.png";
-import openWeatherScreenshot from "./assets/images/Open-Weather-Screenshot.png";
+import classWorkScreenshot from "../assets/images/class-work-Screenshot.png";
+import relicFilmsScreenshot from "../assets/images/Relic-Films-Screenshot.png";
+import ravenScreenshot from "../assets/images/Raven-Screenshot.png";
+import openWeatherScreenshot from "../assets/images/Open-Weather-Screenshot.png";
+import questCasinoScreenshot from "../assets/images/Quest-Casino-Screenshot.png";
 
 export const content = [
+  {
+    id: 5,
+    title: "Quest Casino Full-Stack App",
+    date: "Feb, 2023 - Current",
+    tech: "ReactJS, Chakra UI, NodeJS, Firebase",
+    screenshot: questCasinoScreenshot,
+    gitHub_URL: "https://github.com/dBish6/Quest_Casino_Full-Stack_App",
+  },
   {
     id: 4,
     title: "Open Weather App",
