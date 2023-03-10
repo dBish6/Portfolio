@@ -199,21 +199,21 @@ const Navigation = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ImGithub />
+              <ImGithub aria-label="My Github" />
             </a>
             <a
               href="https://www.linkedin.com/in/david-bishop-34a76b237/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ImLinkedin />
+              <ImLinkedin aria-label="My Linkedin" />
             </a>
             <a
               href="https://steamcommunity.com/profiles/76561198044285142"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ImSteam2 />
+              <ImSteam2 aria-label="My Steam" />
             </a>
           </div>
 
@@ -230,7 +230,7 @@ const Navigation = () => {
             }
             ref={hamburgerDropdownRef}
           >
-            <div className="hamburgerMenu">
+            <div className="hamburgerMenu" aria-label="Menu">
               <div className="bar top" />
               <div className="bar middle" />
               <div className="bar bottom" />
@@ -249,21 +249,21 @@ const Navigation = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <ImGithub />
+                      <ImGithub aria-label="My Github" />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/david-bishop-34a76b237/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <ImLinkedin />
+                      <ImLinkedin aria-label="My Linkedin" />
                     </a>
                     <a
                       href="https://steamcommunity.com/profiles/76561198044285142"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <ImSteam2 />
+                      <ImSteam2 aria-label="My Steam" />
                     </a>
                   </div>
                   <NavLink
