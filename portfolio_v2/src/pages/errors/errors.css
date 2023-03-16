@@ -3,17 +3,18 @@
 */
 
 .errorContainer {
-  margin: 1.5rem 0 0 1rem;
-}
-
-.errorContainer p {
+  font-family: "PT Sans", sans-serif;
   font-size: 18px;
-  color: var(--wordsBlackMain);
+  color: var(--wordsWhite);
+  margin: 1.5rem 0 0 1rem;
+  width: max-content;
 }
 
 .errorContainer span {
+  display: inline-block;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 24px;
   color: var(--redColour);
+  text-shadow: 1px 1px 0 #000;
 }

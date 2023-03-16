@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 // *Custom Hooks Imports*
 import useScrollTo from "../../hooks/useScrollTo";
@@ -13,12 +13,23 @@ import "./partials.css";
 
 const Footer = () => {
   const [show, setShow] = useState(false);
+  const location = useLocation();
+  const footerRef = useRef(null);
   const handleScroll = useScrollTo();
+
+  useEffect(() => {
+    if (location.pathname === "/error404") {
+      footerRef.current.classList.add("ifError");
+    } else {
+      footerRef.current.classList.contains("ifError") &&
+        footerRef.current.classList.remove("ifError");
+    }
+  }, [location.pathname]);
 
   return (
     <>
       <ContactModal show={show} setShow={setShow} />
-      <footer className="homeFooter gridContainer">
+      <footer className="homeFooter gridContainer" ref={footerRef}>
         <div>
           <div className="links">
             <Link onClick={() => setShow(true)}>

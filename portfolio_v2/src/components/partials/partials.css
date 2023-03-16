@@ -346,6 +346,12 @@
   margin-top: 6rem;
 }
 
+.homeFooter.ifError {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
 .homeFooter > div:not(.icons) {
   grid-column: 5 / span 4;
   text-align: center;
