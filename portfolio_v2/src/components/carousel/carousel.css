@@ -19,19 +19,18 @@
   }
 }
 
+.carouselContainer .arrowLeftContainer,
+.carouselContainer .arrowRightContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
 .carouselContainer .arrowLeftContainer .arrowLeft,
 .carouselContainer .arrowRightContainer .arrowRight {
   font-size: 1.8rem;
   color: var(--primary800);
-  cursor: pointer;
-}
-
-.carouselContainer .arrowLeftContainer {
-  align-self: center;
-}
-
-.carouselContainer .arrowRightContainer {
-  align-self: center;
 }
 
 .carouselContainer .flexContainer {

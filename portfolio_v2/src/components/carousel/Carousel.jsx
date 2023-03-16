@@ -14,16 +14,6 @@ const Carousel = () => {
   const [index, setIndex] = useState(1);
   const slideshowRef = useRef(null);
 
-  const handlePrevious = () => {
-    const newIndex = index - 1;
-    setIndex(index <= 1 ? 3 : newIndex);
-  };
-
-  const handleNext = () => {
-    const newIndex = index + 1;
-    setIndex(index >= 3 ? 1 : newIndex);
-  };
-
   return (
     <>
       <AnimatePresence mode="wait" initial={false}>
@@ -36,11 +26,11 @@ const Carousel = () => {
           className="flexContainer"
           ref={slideshowRef}
         >
-          <div className="arrowLeftContainer">
-            <SlArrowLeft
-              className="arrowLeft"
-              onClick={() => handlePrevious()}
-            />
+          <div
+            className="arrowLeftContainer"
+            onClick={() => setIndex(index <= 1 ? 3 : index - 1)}
+          >
+            <SlArrowLeft className="arrowLeft" />
           </div>
           <div className="gridSplit">
             {index === 1 ? (
@@ -148,8 +138,11 @@ const Carousel = () => {
               ) : undefined}
             </div>
           </div>
-          <div className="arrowRightContainer">
-            <SlArrowRight className="arrowRight" onClick={() => handleNext()} />
+          <div
+            className="arrowRightContainer"
+            onClick={() => setIndex(index >= 3 ? 1 : index + 1)}
+          >
+            <SlArrowRight className="arrowRight" />
           </div>
         </motion.div>
       </AnimatePresence>
