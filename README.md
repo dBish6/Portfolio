@@ -13,4 +13,6 @@ The second version of my portfolio, which is the one you would want to look at. 
 ### portfolio_v3 - *Coming Soon*
 Is currently in the design phase!
 
+<br />
+
 _**Deployed Stable Version of the Website:** [www.davidbishop.info](https://www.davidbishop.info)_
