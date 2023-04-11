@@ -10,4 +10,7 @@ My first portfolio version was created early in my coding journey and while it m
 ### portfolio_v2
 The second version of my portfolio, which is the one you would want to look at. This also shows how much I have improved compared to the first version. This version improves everything by a long shot and uses a custom 12 column grid layout in css that I have been learning, first time I used it here. This portfolio has a more refined and visually appealing design. Take a look and see how much progress I've made since the first version of my portfolio!
 
+### portfolio_v3 - *Coming Soon*
+Is currently in it's design phase!
+
 _**Deployed Stable Version of the Website:** [www.davidbishop.info](https://www.davidbishop.info)_
