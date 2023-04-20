@@ -93,7 +93,7 @@ const GameStartModal = (props) => {
                     props.playerCards.length > 0 &&
                     dispatch(START_GAME());
 
-                  dispatch(GAME_TYPE("match"));
+                  props.gameType !== "Match" && dispatch(GAME_TYPE("match"));
                   props.wallet !== null &&
                     props.setShow({ ...props.show, gameStart: false });
                 }}
@@ -123,8 +123,7 @@ const GameStartModal = (props) => {
                       setNeedToFinish({ ...needToFinish, clicked: false });
                     }, 601);
                   } else {
-                    props.playerCards.length > 0 && dispatch(START_GAME());
-                    dispatch(GAME_TYPE("fun"));
+                    props.gameType !== "Fun" && dispatch(GAME_TYPE("fun"));
                     props.setShow({ ...props.show, gameStart: false });
                   }
                 }}
@@ -139,7 +138,6 @@ const GameStartModal = (props) => {
                     duration: 0.6,
                   },
                 }}
-                key={needToFinish.state ? "animation-on" : "animation-off"}
                 variant="secondary"
                 bgColor={needToFinish.state ? "r500" : "transparent"}
                 _active={{ bgColor: needToFinish.state ? "r500" : "g500" }}

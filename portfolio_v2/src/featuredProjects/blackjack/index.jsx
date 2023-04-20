@@ -136,6 +136,7 @@ const BlackjackIndex = () => {
         !playerHasNatural &&
         !madeAceDecision
       ) {
+        // To not update the score for the ace, but update for the second card.
         dispatch(UPDATE_SCORE({ player: true, wants11: 0 }));
       } else {
         waitForAceDecision(showAcePrompt).then(() => {

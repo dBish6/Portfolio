@@ -12,7 +12,6 @@ import {
   Box,
   UnorderedList,
   ListItem,
-  HStack,
   Text,
   chakra,
   Popover,
@@ -271,9 +270,10 @@ const RulesOverlay = (props) => {
                 </UnorderedList>
               </Box>
 
-              <HStack
+              <Flex
                 gridColumn={{ base: "", md: "span 2", xl: "span 2" }}
                 justify="space-between"
+                align="center"
                 flexWrap="wrap-reverse"
                 gap="1rem 1.5rem"
                 w="100%"
@@ -283,7 +283,7 @@ const RulesOverlay = (props) => {
                   Bishop
                 </Text>
 
-                <Popover>
+                <Popover m="0 !important">
                   <PopoverTrigger>
                     <Link variant="simple" ml="0 !important">
                       Davy Blackjack v1.0.6
@@ -316,10 +316,13 @@ const RulesOverlay = (props) => {
                           it did only reset on Match mode.
                         </ListItem>
                         <ListItem>
-                          Fixed when the player has no cash after they bet and
-                          when the dealer get a natural, the player can bet
-                          multiple when they're supposed only allow to have one
-                          bet.
+                          Fixed when you have no cash to double. It used to just
+                          not render the button when you have no cash to double,
+                          but that cause some unnecessary re-renders because of
+                          changing the DOM and caused, for example, the natural
+                          checks to not work right. Now the double button just
+                          gets disabled and not takin out of the dom on an
+                          condition.
                         </ListItem>
                         <ListItem>
                           Fixed when changing modes that it just resets the game
@@ -445,7 +448,7 @@ const RulesOverlay = (props) => {
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
-              </HStack>
+              </Flex>
             </Grid>
           </Container>
         )}

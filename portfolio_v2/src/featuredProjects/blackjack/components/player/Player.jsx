@@ -46,7 +46,6 @@ const Player = (props) => {
     props.playerViewWidthOnMoreCards,
     isHeightSmallerThan910
   );
-  const [disableDoubleOnNoCash, setDisableDoubleOnNoCash] = useState(false);
   const [showcaseRunning, toggleShowcaseRunning] = useState(false);
 
   const [prevAcesInHandLength, setPrevAcesInHandLength] = useState(-1);
@@ -59,19 +58,13 @@ const Player = (props) => {
   }, [acesInCurrentHand, props.winner]);
 
   useEffect(() => {
-    if (props.winner) {
-      setAcesInCurrentHand([]);
-      setDisableDoubleOnNoCash(false);
-    }
+    if (props.winner) setAcesInCurrentHand([]);
   }, [props.winner]);
 
   // Checks if any aces are in the players hand.
   useEffect(() => {
     if (props.playerCards.length && prevAcesInHandLength !== -1) {
-      console.log("props.playerCards.length", props.playerCards.length);
       const currentAces = props.playerCards.filter((card) => card.face === "A");
-      console.log("currentAces.length", currentAces.length);
-      console.log("prevAcesInHandLength", prevAcesInHandLength);
       if (
         // So Ace Prompt doesn't show when the player has blackjack on first turn.
         (props.playerCards.length === 2 &&
@@ -104,7 +97,6 @@ const Player = (props) => {
         props.setShowAcePrompt(true);
         setAcesInCurrentHand(currentAces);
       }
-      // setAcesInCurrentHand(currentAces);
     }
   }, [props.playerCards, prevAcesInHandLength, props.showAcePrompt]);
 
@@ -124,16 +116,6 @@ const Player = (props) => {
       }
     }
   }, [props.playerScore]);
-
-  useEffect(() => {
-    if (props.playerBet && props.wallet < props.playerBet) {
-      setDisableDoubleOnNoCash(true);
-    }
-  }, [props.playerBet]);
-
-  useEffect(() => {
-    console.log("disableDoubleOnNoCash", disableDoubleOnNoCash);
-  }, [disableDoubleOnNoCash]);
 
   return (
     <>
@@ -265,11 +247,9 @@ const Player = (props) => {
                 }}
                 isDisabled={
                   props.playerCards.length === 1 ||
-                  disableDoubleOnNoCash ||
+                  props.wallet < props.playerBet ||
                   isDealerTurn ||
                   props.showAcePrompt
-                  //  ||
-                  // props.dealerHasNatural
                 }
                 variant="blackjackBlue"
                 w="100%"
