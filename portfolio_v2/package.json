@@ -3,6 +3,7 @@
   "version": "2.1.5",
   "homepage": "https://www.davidbishop.info/#/",
   "private": true,
+  "author": "David Bishop",
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
     "@emailjs/browser": "^3.10.0",
