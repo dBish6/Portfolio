@@ -15,12 +15,12 @@ const Navigation = () => {
   const [projectsDropdown, toggleProjectsDropdown] = useState(false);
   const projectsDropdownRef = useRef(null);
   const [hamburgerDropdown, toggleHamburgerDropdown] = useState(false);
-  const hamburgerDropdownRef = useRef(null);
 
   const [showDatePopup, toggleDatePopup] = useState({
     link1: false,
     link2: false,
     link3: false,
+    link4: false,
   });
 
   // *Animations*
@@ -109,8 +109,12 @@ const Navigation = () => {
                     className="options"
                   >
                     <motion.li
-                      onHoverStart={() => toggleDatePopup({ link1: true })}
-                      onHoverEnd={() => toggleDatePopup({ link1: false })}
+                      onHoverStart={() =>
+                        toggleDatePopup((prev) => ({ ...prev, link1: true }))
+                      }
+                      onHoverEnd={() =>
+                        toggleDatePopup((prev) => ({ ...prev, link1: false }))
+                      }
                     >
                       <NavLink to="/projects/todo">Todo List App</NavLink>
                     </motion.li>
@@ -136,8 +140,12 @@ const Navigation = () => {
                     <hr />
 
                     <motion.li
-                      onHoverStart={() => toggleDatePopup({ link2: true })}
-                      onHoverEnd={() => toggleDatePopup({ link2: false })}
+                      onHoverStart={() =>
+                        toggleDatePopup((prev) => ({ ...prev, link2: true }))
+                      }
+                      onHoverEnd={() =>
+                        toggleDatePopup((prev) => ({ ...prev, link2: false }))
+                      }
                     >
                       <NavLink to="/projects/calculator">
                         Calculator App
@@ -159,20 +167,31 @@ const Navigation = () => {
                         initial="hidden"
                         className="datePopup"
                       >
-                        October 29, 2022
+                        October, 2022
                       </motion.p>
                     </div>
                     <hr />
 
                     <motion.li
-                      onHoverStart={() => toggleDatePopup({ link3: true })}
-                      onHoverEnd={() => toggleDatePopup({ link3: false })}
+                      onHoverStart={() =>
+                        toggleDatePopup((prev) => ({ ...prev, link3: true }))
+                      }
+                      onHoverEnd={() =>
+                        toggleDatePopup((prev) => ({ ...prev, link3: false }))
+                      }
                     >
                       <NavLink to="/projects/quiz">Quiz App</NavLink>
                     </motion.li>
 
                     {/* Date Popup Text */}
-                    <div className="datePopupContainer">
+                    <div
+                      className={
+                        !showDatePopup.link3
+                          ? "datePopupContainer"
+                          : "datePopupContainer bg"
+                      }
+                      id="link3"
+                    >
                       <motion.p
                         variants={popup}
                         animate={showDatePopup.link3 ? "visible" : "hidden"}
@@ -180,6 +199,30 @@ const Navigation = () => {
                         className="datePopup"
                       >
                         November, 2022
+                      </motion.p>
+                    </div>
+                    <hr />
+
+                    <motion.li
+                      onHoverStart={() =>
+                        toggleDatePopup((prev) => ({ ...prev, link4: true }))
+                      }
+                      onHoverEnd={() =>
+                        toggleDatePopup((prev) => ({ ...prev, link4: false }))
+                      }
+                    >
+                      <NavLink to="/projects/blackjack">Davy Blackjack</NavLink>
+                    </motion.li>
+
+                    {/* Date Popup Text */}
+                    <div className="datePopupContainer" id="link4">
+                      <motion.p
+                        variants={popup}
+                        animate={showDatePopup.link4 ? "visible" : "hidden"}
+                        initial="hidden"
+                        className="datePopup"
+                      >
+                        March, 2023
                       </motion.p>
                     </div>
                   </motion.ul>
@@ -218,22 +261,48 @@ const Navigation = () => {
           </div>
 
           <div
-            className={
-              hamburgerDropdown
-                ? "hamburgerDropdown active"
-                : "hamburgerDropdown"
-            }
-            onClick={() =>
-              !hamburgerDropdownRef.current.classList.contains("active")
-                ? toggleHamburgerDropdown(true)
-                : toggleHamburgerDropdown(false)
-            }
-            ref={hamburgerDropdownRef}
+            className="hamburgerDropdown"
+            onClick={() => toggleHamburgerDropdown(!hamburgerDropdown)}
           >
-            <div className="hamburgerMenu" aria-label="Menu">
-              <div className="bar top" />
-              <div className="bar middle" />
-              <div className="bar bottom" />
+            <div
+              className="hamburgerMenu"
+              style={{ gap: !hamburgerDropdown && "5px" }}
+              aria-label="Menu"
+            >
+              <motion.div
+                className="bar top"
+                animate={{
+                  rotate: hamburgerDropdown ? "40deg" : 0,
+                  translateY: hamburgerDropdown ? 6 : 0,
+                  transition: {
+                    type: "spring",
+                    duration: 0.5,
+                    stiffness: 260,
+                    damping: 20,
+                  },
+                }}
+              />
+              <motion.div
+                className="bar middle"
+                animate={{
+                  opacity: hamburgerDropdown ? 0 : 1,
+                  scale: hamburgerDropdown ? 0.2 : 1,
+                  transition: { type: "spring", stiffness: 260, damping: 20 },
+                }}
+              />
+              <motion.div
+                className="bar bottom"
+                animate={{
+                  rotate: hamburgerDropdown ? "-40deg" : 0,
+                  translateY: hamburgerDropdown ? -4 : 0,
+                  transition: {
+                    type: "spring",
+                    duration: 0.38,
+                    stiffness: 260,
+                    damping: 20,
+                  },
+                }}
+              />
             </div>
             <AnimatePresence initial={false}>
               {hamburgerDropdown && (
@@ -285,6 +354,9 @@ const Navigation = () => {
                     </li>
                     <li>
                       <NavLink to="/projects/quiz">Quiz App</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="/projects/blackjack">Davy Blackjack</NavLink>
                     </li>
                   </ul>
                 </motion.nav>

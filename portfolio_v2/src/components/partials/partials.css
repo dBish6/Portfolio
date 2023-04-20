@@ -117,20 +117,29 @@
 .navBar .leftContainer .projectsDropdown .datePopupContainer {
   position: absolute;
   background-color: none;
-  padding: 0.3rem;
-  right: 10%;
-  left: 10%;
+  padding: 0.3rem 0.5rem;
+  width: max-content;
   transition: 0.28s ease;
 }
 
 .navBar .leftContainer .projectsDropdown .datePopupContainer#link1 {
-  right: 25%;
-  left: 25%;
+  right: 24%;
+  left: 24%;
 }
 
 .navBar .leftContainer .projectsDropdown .datePopupContainer#link2 {
-  right: 13%;
-  left: 13%;
+  right: 17.85%;
+  left: 17.85%;
+}
+
+.navBar .leftContainer .projectsDropdown .datePopupContainer#link3 {
+  right: 14.5%;
+  left: 14.5%;
+}
+
+.navBar .leftContainer .projectsDropdown .datePopupContainer#link4 {
+  right: 20.5%;
+  left: 20.5%;
 }
 
 .navBar .leftContainer .projectsDropdown .datePopupContainer.bg {
@@ -209,7 +218,7 @@
 /* Hamburger Dropdown */
 .hamburgerDropdown .hamburgerMenu {
   display: flex;
-  gap: 5px;
+  /* gap: 5px; */
   flex-direction: column;
   justify-content: space-between;
   width: 2rem;
@@ -226,20 +235,6 @@
   height: 5px;
   background-color: var(--primary900);
   border-radius: 16px;
-  transform-origin: left;
-  transition: all 0.5s;
-}
-
-.hamburgerDropdown.active .hamburgerMenu .top {
-  transform: rotate(40deg);
-}
-
-.hamburgerDropdown.active .hamburgerMenu .middle {
-  opacity: 0;
-}
-
-.hamburgerDropdown.active .hamburgerMenu .bottom {
-  transform: rotate(-40deg);
 }
 
 .hamburgerDropdown nav {
@@ -247,7 +242,7 @@
   right: 16px;
   text-align: center;
   padding: 0.8rem 1rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 
   border-radius: 6px;
   background-color: var(--primary700);
@@ -292,7 +287,7 @@
 }
 
 .hamburgerDropdown hr {
-  border: solid 1px rgba(192, 192, 192, 0.15);
+  border: solid 1px rgba(192, 192, 192, 0.2);
   margin: 0.5rem 0;
 }
 
@@ -301,7 +296,7 @@
   font-size: 18px;
   font-weight: 600;
   color: var(--primary200);
-  border-bottom: 2px solid rgb(244, 244, 244, 0.8);
+  border-bottom: 1px solid rgb(244, 244, 244, 0.5);
   margin-bottom: 0.5rem;
 }
 
@@ -313,6 +308,7 @@
 
 .hamburgerDropdown ul li {
   padding: 6px;
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.28s ease all;
 }

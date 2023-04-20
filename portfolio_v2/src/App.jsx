@@ -4,7 +4,7 @@
    Creation Date: December 24, 2022
 */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { HashRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 
 // *Design Imports*
@@ -13,6 +13,7 @@ import "./index.css";
 // *Component Imports*
 import Navigation from "./components/partials/Navigation";
 import Footer from "./components/partials/Footer";
+import Loading from "./components/Loading";
 
 import QuizFooter from "./featuredProjects/quizApp/components/partials/Footer";
 
@@ -20,12 +21,15 @@ import QuizFooter from "./featuredProjects/quizApp/components/partials/Footer";
 import Home from "./pages/Home";
 import Error404 from "./pages/errors/Error404";
 
-import ToDoProject from "./featuredProjects/TodoApp";
+import ToDoProject from "./featuredProjects/TodoApp/components/ToDoList";
 import CalculatorProject from "./featuredProjects/calculatorApp";
-import QuizProjectStart from "./featuredProjects/quizApp/pages/StartScreen";
-import QuizProjectQuestion from "./featuredProjects/quizApp/pages/QuestionScreen";
-import QuizProjectFinal from "./featuredProjects/quizApp/pages/FinalScreen";
-import QuizError500 from "./featuredProjects/quizApp/pages/errors/Error500";
+import {
+  QuizProjectStart,
+  QuizProjectQuestion,
+  QuizProjectFinal,
+  QuizError500,
+} from "./featuredProjects/quizApp";
+const BlackjackProject = lazy(() => import("./featuredProjects/blackjack"));
 
 function App() {
   const [DomLoading, setDomLoading] = useState(true);
@@ -70,43 +74,47 @@ function App() {
   return (
     <>
       <HashRouter>
-        <Routes>
-          <Route element={<PortfolioHome />}>
-            <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="/home" element={<Home title="Home" />} />
-            <Route path="/error404" element={<Error404 title="ERROR" />} />
-            <Route path="*" element={<Navigate to="/error404" />} />
-          </Route>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route element={<PortfolioHome />}>
+              <Route path="/" element={<Navigate to="/home" />} />
+              <Route path="/home" element={<Home title="Home" />} />
+              <Route path="/error404" element={<Error404 title="ERROR" />} />
+              <Route path="*" element={<Navigate to="/error404" />} />
+            </Route>
 
-          <Route
-            path="/projects/todo"
-            element={<ToDoProject title="Todo App" />}
-          />
-
-          <Route
-            path="/projects/calculator"
-            element={<CalculatorProject title="Calculator App" />}
-          />
-
-          <Route element={<QuizProject />}>
             <Route
-              path="/projects/quiz"
-              element={<QuizProjectStart title="Quiz App" />}
+              path="/projects/todo"
+              element={<ToDoProject title="Todo App" />}
             />
             <Route
-              path="/projects/quiz/gameStart"
-              element={<QuizProjectQuestion title="Quiz App" />}
+              path="/projects/calculator"
+              element={<CalculatorProject title="Calculator App" />}
             />
+            <Route element={<QuizProject />}>
+              <Route
+                path="/projects/quiz"
+                element={<QuizProjectStart title="Quiz App" />}
+              />
+              <Route
+                path="/projects/quiz/gameStart"
+                element={<QuizProjectQuestion title="Quiz App" />}
+              />
+              <Route
+                path="/projects/quiz/gameEnd"
+                element={<QuizProjectFinal title="Quiz App" />}
+              />
+              <Route
+                path="/projects/quiz/error500"
+                element={<QuizError500 title="ERROR" />}
+              />
+            </Route>
             <Route
-              path="/projects/quiz/gameEnd"
-              element={<QuizProjectFinal title="Quiz App" />}
+              path="/projects/blackjack"
+              element={<BlackjackProject title="Davy Blackjack" />}
             />
-            <Route
-              path="/projects/quiz/error500"
-              element={<QuizError500 title="ERROR" />}
-            />
-          </Route>
-        </Routes>
+          </Routes>
+        </Suspense>
       </HashRouter>
     </>
   );

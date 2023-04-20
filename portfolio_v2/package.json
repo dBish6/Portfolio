@@ -4,9 +4,12 @@
   "homepage": "https://www.davidbishop.info/#/",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.5.5",
     "@emailjs/browser": "^3.10.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@hookform/error-message": "^2.0.1",
-    "@reduxjs/toolkit": "^1.9.1",
+    "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.2.3",
     "cross-env": "^7.0.3",
     "framer-motion": "^8.0.2",

@@ -15,12 +15,11 @@ const Home = (props) => {
 
   return (
     <>
-      <section>
+      <section className="colouredSection">
         <div className="carouselContainer">
           <Carousel />
         </div>
       </section>
-      {/* <div className="coolDiamond" /> */}
       <section className="UpAndComingContainer gridContainer" id="skills">
         <div className="title">
           <h1>Up and Coming Full-Stack Developer!</h1>
@@ -40,7 +39,7 @@ const Home = (props) => {
         <SkillsSlider />
       </section>
       <section
-        className="applicationsContainer gridContainer"
+        className="colouredSection applicationsContainer gridContainer"
         id="repositories"
       >
         <div className="title">

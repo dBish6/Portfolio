@@ -2,27 +2,15 @@
    Home
 */
 
-main section {
+main .colouredSection {
   grid-column: span 12;
   background-color: var(--primary200);
   z-index: 1;
 }
 
-main section:nth-child(1) {
+main .colouredSection:nth-child(1) {
   display: grid;
   padding: 4rem 0;
-}
-
-.coolDiamond {
-  position: absolute;
-  width: 668px;
-  height: 705px;
-  left: 63%;
-  /* top: 397.68px; */
-  z-index: 0;
-
-  background: var(--primary400);
-  transform: rotate(-45deg);
 }
 
 main h1 {
@@ -33,6 +21,7 @@ main h1 {
 }
 
 main .UpAndComingContainer {
+  grid-column: span 12;
   background-color: transparent;
   margin: 6rem 0 5rem 0;
 }
@@ -77,6 +66,7 @@ main .applicationsContainer {
 }
 
 .servicesContainer {
+  grid-column: span 12;
   max-width: 1360px;
   background-color: transparent;
   margin-top: 6rem;

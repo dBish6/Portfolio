@@ -50,7 +50,7 @@ body {
 :root {
   --backgroundColour: #6e78d2;
 
-  /* Primary Colour */
+  /* Primary Colours */
   --primary50: #fbeeff;
   --primary100: #cbd9ff;
   --primary200: #b6bbff;
@@ -79,7 +79,7 @@ body {
   --black700Main: #363636;
   --black800: #1b1b1b;
 
-  /* Words Colour */
+  /* Word Colours */
   --wordsBlack: #363636;
   --wordsWhite: #f4f4f4;
   --wordsMain: #1f3073;

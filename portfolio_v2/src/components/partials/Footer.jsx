@@ -32,15 +32,10 @@ const Footer = () => {
       <footer className="homeFooter gridContainer" ref={footerRef}>
         <div>
           <div className="links">
-            <Link onClick={() => setShow(true)}>
-              Contact <span>Me</span>
-            </Link>
-            |
-            <Link onClick={() => handleScroll("about")}>
-              About <span>Me</span>
-            </Link>
-            |<Link onClick={() => handleScroll("skills")}>Skills</Link>|
-            <Link onClick={() => handleScroll("repositories")}>Repos</Link>|
+            <Link onClick={() => setShow(true)}>Contact Me</Link>|
+            <Link onClick={() => handleScroll("about")}>About Me</Link>|
+            <Link onClick={() => handleScroll("skills")}>Skills</Link>|
+            <Link onClick={() => handleScroll("repositories")}>Apps</Link>|
             <Link onClick={() => handleScroll("services")}>Services</Link>
           </div>
           <div className="dividerContainer">
@@ -57,7 +52,7 @@ const Footer = () => {
             </a>{" "}
             for their beautiful Illustrations.
           </p>
-          <p>© 2023 Designed and built by David Bishop </p>
+          <p>© 2023 Designed and built by David Bishop</p>
         </div>
         <div className="icons">
           <a
