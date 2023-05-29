@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // *Design Imports*
@@ -36,10 +36,6 @@ const GameStartModal = (props) => {
   useDisableScroll(props.show.gameStart, 510);
 
   const ifNoBalance = props.gameType === "Match" && props.wallet === null;
-
-  useEffect(() => {
-    console.log("needToFinish", needToFinish);
-  }, [needToFinish]);
 
   return (
     <ModalTemplate
@@ -112,7 +108,7 @@ const GameStartModal = (props) => {
                     setNeedToFinish({ state: true, clicked: true });
                     toast({
                       description:
-                        "Please complete you game before changing the mode.",
+                        "Please complete your game before changing the mode.",
                       status: "error",
                       duration: 6000,
                       isClosable: true,
@@ -120,10 +116,15 @@ const GameStartModal = (props) => {
                       variant: "solid",
                     });
                     setTimeout(() => {
-                      setNeedToFinish({ ...needToFinish, clicked: false });
+                      setNeedToFinish((prev) => ({ ...prev, clicked: false }));
                     }, 601);
                   } else {
-                    props.gameType !== "Fun" && dispatch(GAME_TYPE("fun"));
+                    if (needToFinish.state || needToFinish.clicked)
+                      setNeedToFinish({ state: false, clicked: false });
+                    if (props.gameType !== "Fun") {
+                      dispatch(GAME_TYPE("fun"));
+                      props.playerCards.length > 0 && dispatch(START_GAME());
+                    }
                     props.setShow({ ...props.show, gameStart: false });
                   }
                 }}
@@ -139,8 +140,17 @@ const GameStartModal = (props) => {
                   },
                 }}
                 variant="secondary"
-                bgColor={needToFinish.state ? "r500" : "transparent"}
-                _active={{ bgColor: needToFinish.state ? "r500" : "g500" }}
+                bgColor={
+                  needToFinish.state && props.winner === null
+                    ? "r500"
+                    : "transparent"
+                }
+                _active={{
+                  bgColor:
+                    needToFinish.state && props.winner === null
+                      ? "r500"
+                      : "g500",
+                }}
                 ml="1rem !important"
               >
                 For Fun

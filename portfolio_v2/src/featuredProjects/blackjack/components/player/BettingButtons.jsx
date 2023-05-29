@@ -14,20 +14,21 @@ import { useDispatch } from "react-redux";
 import { SET_BET } from "../../redux/blackjackSlice";
 
 const BettingButtons = (props) => {
-  const { fadeInVar2 } = fadeInAnimations(0.9, 0.2);
-  const [bet, setBet] = useState({
-    count: 0,
-    multiplierIndex: 0,
-    multiplier: 5,
-  });
-  const BET_MULTIPLIERS = [5, 10, 15, 25, 50, 100];
+  const { fadeInVar2 } = fadeInAnimations(0.9, 0.2),
+    [bet, setBet] = useState({
+      count: 0,
+      multiplierIndex: 0,
+      multiplier: 5,
+    }),
+    BET_MULTIPLIERS = [5, 10, 15, 25, 50, 100];
 
-  const dispatch = useDispatch();
-  const startGame = useStartGame();
-  const deal = useDeal();
+  const dispatch = useDispatch(),
+    startGame = useStartGame(),
+    deal = useDeal();
 
   return (
     <ButtonGroup
+      aria-label="Action Buttons"
       as={motion.div}
       variants={fadeInVar2}
       initial="hidden"

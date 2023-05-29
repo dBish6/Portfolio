@@ -15,6 +15,8 @@ const Dropdown = (props) => {
       <AnimatePresence>
         {props.showDropdown && (
           <VStack
+            role="menu"
+            aria-label="Menu"
             as={motion.div}
             initial={{
               y: "30px",

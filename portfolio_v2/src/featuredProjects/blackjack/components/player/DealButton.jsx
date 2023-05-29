@@ -8,9 +8,9 @@ import useStartGame from "../../hooks/useStartGame";
 import useDeal from "../../hooks/useDeal";
 
 const DealButton = (props) => {
-  const { fadeInVar2 } = fadeInAnimations(0.9, 0.2);
-  const startGame = useStartGame();
-  const deal = useDeal();
+  const { fadeInVar2 } = fadeInAnimations(0.9, 0.2),
+    startGame = useStartGame(),
+    deal = useDeal();
 
   return (
     <Button

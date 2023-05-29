@@ -1,9 +1,7 @@
 // *Design Imports*
-import { Flex, Heading, Divider, useColorMode } from "@chakra-ui/react";
+import { Flex, Heading, Divider } from "@chakra-ui/react";
 
 const MyHeading = (props) => {
-  const { colorMode } = useColorMode();
-
   return (
     <Flex justifyContent="center">
       <Heading
@@ -14,11 +12,9 @@ const MyHeading = (props) => {
       >
         {props.text}
         <Divider
+          border="1px solid wMain"
           mt="2px"
-          h={colorMode === "dark" ? "1px" : "2px"}
           w="70%"
-          bgColor={colorMode === "dark" ? "wMain" : "bMain"}
-          opacity="0.2"
           position="relative"
           left="15%"
         />

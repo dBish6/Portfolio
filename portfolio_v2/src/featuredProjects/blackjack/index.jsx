@@ -25,6 +25,7 @@ import { motion } from "framer-motion";
 import fadeInAnimations from "./utils/animations/fadeIn";
 
 // *Custom Hooks Imports*
+import useChangeBackground from "./hooks/useChangeBackground";
 import useCardSoundEffect from "./hooks/useCardSoundEffect";
 import useDealerTurn from "./hooks/useDealerTurn";
 
@@ -39,7 +40,7 @@ import Dealer from "./components/Dealer";
 import Player from "./components/player/Player";
 import AcePrompt from "./components/AcePrompt";
 import WinnerPopup from "./components/WinnerPopup";
-import RulesOverlay from "./components/RulesOverlay";
+import RulesOverlay from "./components/rulesOverlay/RulesOverlay";
 import Footer from "./components/partials/Footer";
 
 // *Redux Imports*
@@ -69,53 +70,54 @@ import {
 
 const BlackjackIndex = () => {
   // Other
-  const { fadeInVar2 } = fadeInAnimations(0.8);
-  const [show, setShow] = useState({
-    gameStart: false,
-    canCancel: false,
-    cashIn: false,
-    options: false,
-    rules: false,
-  });
-  const [isWidthSmallerThan1429] = useMediaQuery("(max-width: 1429px)");
-  const [isHeightSmallerThan844] = useMediaQuery("(max-height: 844px)");
-  const dispatch = useDispatch();
-  const gameType = useSelector(selectGameType);
-  const winner = useSelector(selectWinner);
+  const { fadeInVar2 } = fadeInAnimations(0.8),
+    [show, setShow] = useState({
+      gameStart: false,
+      canCancel: false,
+      cashIn: false,
+      options: false,
+      rules: false,
+    }),
+    [isWidthSmallerThan1429] = useMediaQuery("(max-width: 1429px)"),
+    [isHeightSmallerThan844] = useMediaQuery("(max-height: 844px)"),
+    dispatch = useDispatch(),
+    gameType = useSelector(selectGameType),
+    winner = useSelector(selectWinner);
 
   // Dealer
   const [dealerViewWidthOnMoreCards, setDealerViewWidthOnMoreCards] =
-    useState("30.6vw");
-  const [dealerUpdated, setDealerUpdated] = useState(null);
-  const dealerTurn = useDealerTurn();
-  const dealerCards = useSelector(selectDealerCards);
-  const dealerFaceDownScore = useSelector(selectDealerFaceDownScore);
-  const dealerScore = useSelector(selectDealerScore);
-  const isDealerTurn = useSelector(selectDealerTurn);
-  const dealerStanding = useSelector(selectDealerStanding);
-  const dealerHasNatural = useSelector(selectDealerHasNatural);
+      useState("30.6vw"),
+    dealerTurn = useDealerTurn(),
+    dealerCards = useSelector(selectDealerCards),
+    dealerFaceDownScore = useSelector(selectDealerFaceDownScore),
+    dealerScore = useSelector(selectDealerScore),
+    isDealerTurn = useSelector(selectDealerTurn),
+    dealerStanding = useSelector(selectDealerStanding),
+    dealerHasNatural = useSelector(selectDealerHasNatural);
 
   // Player
   const [playerViewWidthOnMoreCards, setPlayerViewWidthOnMoreCards] =
-    useState("30.6vw");
-  const [showAcePrompt, setShowAcePrompt] = useState(false);
-  const [madeAceDecision, setMadeAceDecision] = useState(false);
-  const [secureAceOnNatural, setSecureAceOnNatural] = useState(false);
-  const [wants11, setWants11] = useState(0);
-  const playerCards = useSelector(selectPlayerCards);
-  const playerBet = useSelector(selectPlayerBet);
-  const playerScore = useSelector(selectPlayerScore);
-  const hasPlayerHit = useSelector(selectPlayerInitialHit);
-  const playerStanding = useSelector(selectPlayerStanding);
-  const playerHasNatural = useSelector(selectPlayerHasNatural);
-  const wallet = useSelector(selectWallet);
+      useState("30.6vw"),
+    [showAcePrompt, setShowAcePrompt] = useState(false),
+    [madeAceDecision, setMadeAceDecision] = useState(false),
+    [secureAceOnNatural, setSecureAceOnNatural] = useState(false),
+    [wants11, setWants11] = useState(0),
+    playerCards = useSelector(selectPlayerCards),
+    playerBet = useSelector(selectPlayerBet),
+    playerScore = useSelector(selectPlayerScore),
+    hasPlayerHit = useSelector(selectPlayerInitialHit),
+    playerStanding = useSelector(selectPlayerStanding),
+    playerHasNatural = useSelector(selectPlayerHasNatural),
+    wallet = useSelector(selectWallet);
 
+  useChangeBackground(tableImg);
   const toggleMute = useCardSoundEffect(playerCards, dealerCards);
 
   useEffect(() => {
     setShow({ ...show, gameStart: true, canCancel: false });
   }, []);
 
+  // *Main Game Logic*
   // Updates Dealer's Score
   useEffect(() => {
     if (dealerCards.length > 0) {
@@ -124,7 +126,7 @@ const BlackjackIndex = () => {
         parseFloat(dealerViewWidthOnMoreCards.slice(0, 4)) - 0.85 + "vw"
       );
 
-      setDealerUpdated(dispatch(UPDATE_SCORE({ player: false, wants11: 11 })));
+      dispatch(UPDATE_SCORE({ player: false, wants11: 11 }));
     }
   }, [dealerCards]);
 
@@ -173,7 +175,7 @@ const BlackjackIndex = () => {
   useEffect(() => {
     if (playerStanding && !dealerStanding && !winner) {
       const turnDuration = setTimeout(() => {
-        setDealerUpdated(dealerTurn());
+        dealerTurn();
       }, 2500);
       return () => clearTimeout(turnDuration);
     }
@@ -182,29 +184,22 @@ const BlackjackIndex = () => {
   // Determines the winner when it is dealers turn and when there is a update to his score.
   useEffect(() => {
     if (dealerCards.length > 1 && isDealerTurn) {
-      Promise.all([dealerUpdated || dealerStanding]).then(() => {
-        if (playerScore === 21 && !playerHasNatural && !dealerHasNatural) {
-          // If the player has 21 and no one has naturals, wait until the dealer is done hitting
-          // until a bust or a blackjack before determining the winner.
-          !winner && dealerScore >= 21 && dispatch(DETERMINE_WINNER());
-        } else if (playerScore === 21 && !dealerHasNatural) {
-          // If the player has 21 and the player does have a natural, wait for the dealers turn (2500ms) to be over then
-          // DETERMINE_WINNER because Davy Blackjack is a little bit different; the one who doesn't have a natural has one chance.
-          const waitForTurn = setTimeout(() => {
-            !winner && dispatch(DETERMINE_WINNER());
-          }, 2600);
-          return () => {
-            setDealerUpdated(null);
-            clearTimeout(waitForTurn);
-          };
-        } else {
+      if (playerScore === 21 && !playerHasNatural && !dealerHasNatural) {
+        // If the player has 21 and no one has naturals, wait until the dealer is done hitting
+        // until a bust or a blackjack before determining the winner.
+        !winner && dealerScore >= 21 && dispatch(DETERMINE_WINNER());
+      } else if (playerScore === 21 && !dealerHasNatural) {
+        // If the player has 21 and the player does have a natural, wait for the dealers turn (2500ms) to be over then
+        // DETERMINE_WINNER because Davy Blackjack is a little bit different; the one who doesn't have a natural has one chance.
+        const waitForTurn = setTimeout(() => {
           !winner && dispatch(DETERMINE_WINNER());
-        }
-      });
-
-      return () => setDealerUpdated(null);
+        }, 2600);
+        return () => clearTimeout(waitForTurn);
+      } else {
+        !winner && dispatch(DETERMINE_WINNER());
+      }
     }
-  }, [dealerScore, isDealerTurn, dealerStanding]);
+  }, [isDealerTurn, dealerScore, dealerStanding]);
 
   // Resets on winner.
   useEffect(() => {
@@ -258,11 +253,6 @@ const BlackjackIndex = () => {
           md: "1.75rem 3rem 1rem 3rem",
           xl: "1.75rem 5rem 1rem 5rem",
         }}
-        backgroundImage={tableImg}
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        backgroundAttachment="fixed"
-        backgroundSize="cover"
       >
         <Header
           gameType={gameType}

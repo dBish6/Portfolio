@@ -1,4 +1,4 @@
-import { Box, Container, useColorMode } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import modalAnimations from "../../utils/animations/modalAnimations";
 
@@ -14,7 +14,6 @@ const ModalTemplate = (props) => {
     ...rest
   } = props;
 
-  const { colorMode } = useColorMode();
   const { modelBackdrop, modelFadeDown, modelFadeUp } =
     modalAnimations(animation);
 
@@ -79,9 +78,9 @@ const ModalTemplate = (props) => {
             top="50%"
             left="50%"
             p="1.5rem"
-            backgroundColor={colorMode === "dark" ? "bd700" : "bl400"}
+            backgroundColor="bd700"
             borderWidth="1px"
-            borderColor={colorMode === "dark" ? "borderD" : "borderL"}
+            borderColor="borderD"
             borderRadius="6px"
             {...rest}
           >

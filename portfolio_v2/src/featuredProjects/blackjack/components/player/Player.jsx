@@ -36,20 +36,20 @@ import {
 import { selectDealerTurn } from "../../redux/blackjackSelectors";
 
 const Player = (props) => {
-  const isDealerTurn = useSelector(selectDealerTurn);
-  const dispatch = useDispatch();
-  const dealerTurn = useDealerTurn();
-  const [isHeightSmallerThan910] = useMediaQuery("(max-height: 910px)");
-  const { fadeInVar2 } = fadeInAnimations(0.8);
-  const { slideCard, slideCardResponsive } = cardAnimation(
-    true,
-    props.playerViewWidthOnMoreCards,
-    isHeightSmallerThan910
-  );
-  const [showcaseRunning, toggleShowcaseRunning] = useState(false);
+  const isDealerTurn = useSelector(selectDealerTurn),
+    dispatch = useDispatch(),
+    dealerTurn = useDealerTurn(),
+    [isHeightSmallerThan910] = useMediaQuery("(max-height: 910px)"),
+    { fadeInVar2 } = fadeInAnimations(0.8),
+    { slideCard, slideCardResponsive } = cardAnimation(
+      true,
+      props.playerViewWidthOnMoreCards,
+      isHeightSmallerThan910
+    ),
+    [showcaseRunning, toggleShowcaseRunning] = useState(false);
 
-  const [prevAcesInHandLength, setPrevAcesInHandLength] = useState(-1);
-  const [acesInCurrentHand, setAcesInCurrentHand] = useState([]);
+  const [prevAcesInHandLength, setPrevAcesInHandLength] = useState(-1),
+    [acesInCurrentHand, setAcesInCurrentHand] = useState([]);
 
   useEffect(() => {
     props.winner
@@ -64,7 +64,6 @@ const Player = (props) => {
   // Checks if any aces are in the players hand.
   useEffect(() => {
     if (props.playerCards.length && prevAcesInHandLength !== -1) {
-      const currentAces = props.playerCards.filter((card) => card.face === "A");
       if (
         // So Ace Prompt doesn't show when the player has blackjack on first turn.
         (props.playerCards.length === 2 &&
@@ -75,7 +74,10 @@ const Player = (props) => {
           ["J", "Q", "K"].includes(props.playerCards[1].face))
       ) {
         return;
-      } else if (
+      }
+
+      const currentAces = props.playerCards.filter((card) => card.face === "A");
+      if (
         props.playerCards.length === 2 &&
         props.playerCards[0].face === "A" &&
         props.playerCards[1].face === "A"
@@ -123,13 +125,13 @@ const Player = (props) => {
         {props.playerCards.length && (
           <>
             <HStack
-              aria-label="Player Score"
               m="0 !important"
               mb={props.winner !== null && "0.75rem !important"}
               pointerEvents="none"
             >
               <Box pos="relative">
                 <Text
+                  aria-label="Player Score"
                   as={motion.p}
                   variants={fadeInVar2}
                   initial="hidden"
@@ -143,6 +145,7 @@ const Player = (props) => {
                 </Text>
                 {props.playerScore === 21 ? (
                   <Text
+                    aria-label="Has Blackjack"
                     as={motion.p}
                     variants={fadeInVar2}
                     initial={["hidden", { x: "-50%", y: "-50%", left: "18%" }]}
@@ -159,6 +162,7 @@ const Player = (props) => {
                   </Text>
                 ) : props.playerScore > 21 ? (
                   <Text
+                    aria-label="Has Bust"
                     as={motion.p}
                     variants={fadeInVar2}
                     initial={["hidden", { x: "-50%", y: "-50%", left: "50%" }]}
@@ -176,9 +180,13 @@ const Player = (props) => {
                 ) : undefined}
               </Box>
 
-              <Box aria-label="Player Cards" ml="1rem !important">
-                {props.playerCards.map((card, i) => {
-                  return (
+              <Box role="group" aria-label="Player Cards" ml="1rem !important">
+                {props.playerCards.map((card, i) => (
+                  <Box
+                    key={i}
+                    aria-label={`Player Card ${i} Container`}
+                    display="inline-block"
+                  >
                     <Image
                       src={card.image}
                       alt={`Player Card ${i}`}
@@ -192,14 +200,12 @@ const Player = (props) => {
                       initial="fromDeck"
                       animate="toHand"
                       exit="giveBack"
-                      display="inline-block"
-                      key={i}
                       maxW="130px"
                       h="188px"
                       ml={i > 0 && "-98px"}
                     />
-                  );
-                })}
+                  </Box>
+                ))}
               </Box>
             </HStack>
           </>
@@ -260,6 +266,7 @@ const Player = (props) => {
           </ButtonGroup>
           {props.gameType === "Match" && (
             <Text
+              aria-label="Bet"
               variant="blackjack"
               fontSize="20px"
               fontWeight="500"

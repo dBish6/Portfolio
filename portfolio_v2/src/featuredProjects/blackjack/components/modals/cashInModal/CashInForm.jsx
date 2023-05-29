@@ -27,6 +27,7 @@ const CashInForm = (props) => {
       deposit: "",
     },
   });
+
   return (
     <chakra.form
       onSubmit={handleSubmit(() => {
