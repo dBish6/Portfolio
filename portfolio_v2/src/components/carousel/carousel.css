@@ -70,7 +70,7 @@
   }
 }
 
-@media screen and (max-width: 524px) {
+@media screen and (max-width: 559px) {
   .carouselContainer #projects {
     overflow-y: scroll;
   }

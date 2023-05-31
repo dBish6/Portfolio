@@ -99,14 +99,15 @@ const Carousel = ({ LazyLoadImage }) => {
               >
                 <h1>Projects</h1>
                 <p aria-label="Projects Text">
-                  Ah yes, the projects tab up there is some of my smaller
-                  projects, they have their own GitHub repository, but I wanted
-                  to feature them on my Portfolio. It also shows my progress
-                  because it goes from early to new, the first link on top is
-                  the earliest. So, feel free to take a look, they're probably
-                  not too exciting, but I worked very hard on them and I think
-                  they are impressive for the level I'm currently at. I hope you
-                  can like them too and be inspired!
+                  Ah yes, the projects tab up there is some of my other projects
+                  or a project from one of my bigger applications, they have
+                  their own GitHub repository, but I wanted to feature them on
+                  my Portfolio. It also shows my progress because it goes from
+                  early to new, the first link on top is the earliest. So, feel
+                  free to take a look, the earliest ones are probably not too
+                  exciting, but I worked very hard on them and I think it is
+                  impressive by showing how much I grown. I hope like them and
+                  get inspired by my work!
                 </p>
               </div>
             ) : undefined}
