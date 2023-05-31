@@ -1,13 +1,14 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
-
+import useToast from "../hooks/useToast";
 import emailjs from "@emailjs/browser";
 
 const SendEmail = () => {
   const [loading, toggleLoading] = useState(false);
+  const addToast = useToast();
 
   const sendEmail = async (ref) => {
     toggleLoading(true);
+
     try {
       const res = await emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -16,12 +17,18 @@ const SendEmail = () => {
         "-2fD04MRsvEcLZXA_"
       );
       // console.log(res);
-
-      // FIXME: Not resetting.
-      ref.current.reset();
-      toggleLoading(false);
+      if (res && res.status === 200) {
+        ref.current.reset();
+        addToast("Your message was sent!");
+      }
     } catch (error) {
       console.error(error);
+      addToast(
+        "Unexpected server error occurred while sending your message.",
+        "error"
+      );
+    } finally {
+      toggleLoading(false);
     }
   };
 

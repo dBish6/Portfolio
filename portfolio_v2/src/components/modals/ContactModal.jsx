@@ -14,20 +14,16 @@ import "./modals.css";
 const backdrop = {
   visible: {
     opacity: 1,
-    zIndex: 10,
   },
   hidden: {
     opacity: 0,
-    zIndex: 10,
   },
 };
 
-const model = {
+const modal = {
   visible: {
-    y: "-50%",
-    x: "-50%",
+    y: 0,
     opacity: 1,
-    zIndex: 10,
     transition: {
       y: { type: "spring", stiffness: 50 },
       opacity: { duration: 0.6 },
@@ -35,9 +31,7 @@ const model = {
   },
   hidden: {
     y: "-400%",
-    x: "-50%",
     opacity: 0,
-    zIndex: 10,
     transition: {
       duration: 0.8,
       type: "tween",
@@ -55,6 +49,7 @@ const ContactModal = (props) => {
   } = useForm({
     defaultValues: {
       name: "",
+      reason: "",
       email: "",
       message: "",
     },
@@ -71,26 +66,28 @@ const ContactModal = (props) => {
       <AnimatePresence>
         {props.show && (
           <>
-            <motion.div
-              variants={backdrop}
-              animate="visible"
-              initial="hidden"
-              exit="hidden"
-              transition={{ duration: 1, type: "ease" }}
-              key="backdrop"
-              className="darkBG"
-              onClick={() => props.setShow(false)}
-            />
-            <motion.div
-              variants={model}
-              animate="visible"
-              initial="hidden"
-              exit="hidden"
-              key="model"
-              className="position"
-            >
-              <div className="contactModal">
-                <header className="modalHeader">
+            <motion.div aria-label="Modal Area" className="position">
+              <motion.div
+                aria-label="Backdrop"
+                variants={backdrop}
+                animate="visible"
+                initial="hidden"
+                exit="hidden"
+                transition={{ duration: 1, type: "ease" }}
+                key="backdrop"
+                className="darkBG"
+                onClick={() => props.setShow(false)}
+              />
+              <motion.div
+                aria-label="Contact Modal"
+                variants={modal}
+                animate="visible"
+                initial="hidden"
+                exit="hidden"
+                key="model"
+                className="contactModal"
+              >
+                <header aria-label="Title" className="modalHeader">
                   <h3>Contact Me</h3>
                 </header>
                 <button
@@ -101,6 +98,7 @@ const ContactModal = (props) => {
                 </button>
 
                 <motion.form
+                  aria-label="Information"
                   animate={!loading ? { opacity: 1 } : { opacity: 0 }}
                   initial={!loading ? { opacity: 0 } : { opacity: 1 }}
                   exit={!loading ? { opacity: 1 } : { opacity: 0 }}
@@ -118,12 +116,13 @@ const ContactModal = (props) => {
                           message: "Name can be no more than 30 characters.",
                         },
                       })}
+                      aria-required="true"
                       name="name"
                       id="nameInput"
                       autoComplete="off"
                       placeholder=" "
                     />
-                    <label htmlFor="name" id="nameLabel">
+                    <label htmlFor="nameInput" id="nameLabel">
                       Name
                     </label>
                     <ErrorMessage
@@ -136,32 +135,62 @@ const ContactModal = (props) => {
                       )}
                     />
 
-                    <input
-                      {...register("email", {
-                        required: "Email is required.",
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: "Please enter a valid email.",
+                    <select
+                      {...register("reason", {
+                        required: "A reason is required.",
+                        maxLength: {
+                          value: 30,
+                          message: "Name can be no more than 30 characters.",
                         },
                       })}
-                      name="email"
-                      id="emailInput"
-                      autoComplete="off"
-                      placeholder=" "
-                    />
-                    <label htmlFor="email" id="emailLabel">
-                      Email
-                    </label>
+                      name="reason"
+                    >
+                      <option disabled selected value="">
+                        Reason
+                      </option>
+                      <option value="Job">Job Opportunity</option>
+                      <option value="Freelance">
+                        Freelance Project Proposal
+                      </option>
+                      <option value="Open Source">Open Source</option>
+                      <option value="Other">Other</option>
+                    </select>
                     <ErrorMessage
                       errors={errors}
-                      name="email"
+                      name="reason"
                       render={({ message }) => (
-                        <small className="inputError" id="emailError">
+                        <small className="inputError" id="reasonError">
                           {message}
                         </small>
                       )}
                     />
                   </div>
+
+                  <input
+                    {...register("email", {
+                      required: "Email is required.",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Please enter a valid email.",
+                      },
+                    })}
+                    name="email"
+                    id="emailInput"
+                    autoComplete="off"
+                    placeholder=" "
+                  />
+                  <label htmlFor="emailInput" id="emailLabel">
+                    Email
+                  </label>
+                  <ErrorMessage
+                    errors={errors}
+                    name="email"
+                    render={({ message }) => (
+                      <small className="inputError" id="emailError">
+                        {message}
+                      </small>
+                    )}
+                  />
 
                   <textarea
                     {...register("message", {
@@ -178,7 +207,7 @@ const ContactModal = (props) => {
                         : { visibility: "visible" }
                     }
                   />
-                  <label htmlFor="message" id="messageLabel">
+                  <label htmlFor="messageTextarea" id="messageLabel">
                     Message
                   </label>
                   <ErrorMessage
@@ -202,7 +231,7 @@ const ContactModal = (props) => {
                     <span />
                   </div>
                 ) : undefined}
-              </div>
+              </motion.div>
             </motion.div>
           </>
         )}

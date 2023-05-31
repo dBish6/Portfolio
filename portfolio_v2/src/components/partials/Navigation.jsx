@@ -75,7 +75,7 @@ const Navigation = () => {
 
   return (
     <>
-      <header className="navBar gridContainer">
+      <header aria-label="Navigation Bar" className="navBar gridContainer">
         {/* Scroll Progress */}
         <motion.div style={{ scaleX }} className="progressBar" />
 
@@ -98,7 +98,7 @@ const Navigation = () => {
             >
               Projects <MdExpandMore />
             </button>
-            <nav>
+            <nav aria-label="Project Navigation">
               <AnimatePresence initial={false}>
                 {projectsDropdown && (
                   <motion.ul
@@ -121,6 +121,7 @@ const Navigation = () => {
 
                     {/* Date Popup Text */}
                     <div
+                      aria-label="Date"
                       className={
                         !showDatePopup.link1
                           ? "datePopupContainer"
@@ -154,6 +155,7 @@ const Navigation = () => {
 
                     {/* Date Popup Text */}
                     <div
+                      aria-label="Date"
                       className={
                         !showDatePopup.link2
                           ? "datePopupContainer"
@@ -185,6 +187,7 @@ const Navigation = () => {
 
                     {/* Date Popup Text */}
                     <div
+                      aria-label="Date"
                       className={
                         !showDatePopup.link3
                           ? "datePopupContainer"
@@ -215,7 +218,11 @@ const Navigation = () => {
                     </motion.li>
 
                     {/* Date Popup Text */}
-                    <div className="datePopupContainer" id="link4">
+                    <div
+                      aria-label="Date"
+                      className="datePopupContainer"
+                      id="link4"
+                    >
                       <motion.p
                         variants={popup}
                         animate={showDatePopup.link4 ? "visible" : "hidden"}
@@ -232,7 +239,7 @@ const Navigation = () => {
           </div>
         </div>
 
-        <nav className="rightContainer">
+        <nav aria-label="External Navigation" className="rightContainer">
           <NavLink className="contact" onClick={() => setShow(true)}>
             Contact Me
           </NavLink>
@@ -261,13 +268,14 @@ const Navigation = () => {
           </div>
 
           <div
+            aria-label="Menu Container"
             className="hamburgerDropdown"
             onClick={() => toggleHamburgerDropdown(!hamburgerDropdown)}
           >
             <div
+              aria-label="Menu Icon"
               className="hamburgerMenu"
               style={{ gap: !hamburgerDropdown && "5px" }}
-              aria-label="Menu"
             >
               <motion.div
                 className="bar top"
@@ -307,6 +315,7 @@ const Navigation = () => {
             <AnimatePresence initial={false}>
               {hamburgerDropdown && (
                 <motion.nav
+                  aria-label="Site Navigation"
                   variants={fadeIn}
                   animate="visible"
                   initial="hidden"

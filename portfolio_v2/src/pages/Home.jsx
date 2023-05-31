@@ -2,6 +2,7 @@
 import useDocumentTitle from "../hooks/useDocumentTitle";
 
 // *Component Imports*
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Carousel from "../components/carousel/Carousel";
 import SkillsSlider from "../components/skillsSlider/SkillsSlider";
 import ProjectCard from "../components/appCard/AppCard";
@@ -15,12 +16,16 @@ const Home = (props) => {
 
   return (
     <>
-      <section className="colouredSection">
+      <section aria-label="About Section" className="colouredSection">
         <div className="carouselContainer">
           <Carousel />
         </div>
       </section>
-      <section className="UpAndComingContainer gridContainer" id="skills">
+      <section
+        aria-label="Skills Section"
+        className="UpAndComingContainer gridContainer"
+        id="skills"
+      >
         <div className="title">
           <h1>Up and Coming Full-Stack Developer!</h1>
           <p>
@@ -36,9 +41,10 @@ const Home = (props) => {
             of my short coding journey thus far; view them below.
           </p>
         </div>
-        <SkillsSlider />
+        <SkillsSlider LazyLoadImage={LazyLoadImage} />
       </section>
       <section
+        aria-label="Applications Section"
         className="colouredSection applicationsContainer gridContainer"
         id="repositories"
       >
@@ -51,13 +57,17 @@ const Home = (props) => {
             available.
           </p>
         </div>
-        <ProjectCard />
+        <ProjectCard LazyLoadImage={LazyLoadImage} />
       </section>
-      <section className="servicesContainer" id="services">
+      <section
+        aria-label="Services Section"
+        className="servicesContainer"
+        id="services"
+      >
         <div className="servicesTitle">
           <h1>Services</h1>
         </div>
-        <Services />
+        <Services LazyLoadImage={LazyLoadImage} />
       </section>
     </>
   );

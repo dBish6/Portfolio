@@ -4,20 +4,25 @@ import { content } from "../../utils/applicationContent";
 import { ImGithub } from "react-icons/im";
 import "./appCard.css";
 
-const AppCard = () => {
+const AppCard = ({ LazyLoadImage }) => {
   return (
     <div className="cardContainer">
       {content.map((value) => {
         return (
-          <div className="card" key={value.id}>
-            <img loading="lazy" src={value.screenshot} alt="" />
+          <div aria-label="Application Card" className="card" key={value.id}>
+            <LazyLoadImage
+              src={value.screenshot}
+              alt={value.alt}
+              effect="blur"
+            />
             <h3>{value.title}</h3>
-            <div className="cardInfo">
-              <p>{value.tech}</p>
-              <p>{value.date}</p>
+            <div aria-label="Application Information" className="cardInfo">
+              <p aria-label="Tech Stack">{value.tech}</p>
+              <p aria-label="Date">{value.date}</p>
               {value.deployed_URL ? (
                 <div>
                   <a
+                    aria-label="Github Repository"
                     href={value.gitHub_URL}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -26,6 +31,7 @@ const AppCard = () => {
                   </a>
                   <span>|</span>
                   <a
+                    aria-label="Application URL"
                     href={value.deployed_URL}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -36,6 +42,7 @@ const AppCard = () => {
               ) : (
                 <div>
                   <a
+                    aria-label="Github Repository"
                     href={value.gitHub_URL}
                     target="_blank"
                     rel="noopener noreferrer"

@@ -5,10 +5,12 @@
 */
 
 import { useState, useEffect, lazy, Suspense } from "react";
+import { lazily } from "react-lazily";
 import { HashRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 
 // *Design Imports*
 import "./index.css";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 // *Component Imports*
 import Navigation from "./components/partials/Navigation";
@@ -20,16 +22,17 @@ import QuizFooter from "./featuredProjects/quizApp/components/partials/Footer";
 // *Pages/Views*
 import Home from "./pages/Home";
 import Error404 from "./pages/errors/Error404";
-
-import ToDoProject from "./featuredProjects/TodoApp/components/ToDoList";
-import CalculatorProject from "./featuredProjects/calculatorApp";
-import {
+const ToDoProject = lazy(() => import("./featuredProjects/TodoApp"));
+const CalculatorProject = lazy(() =>
+  import("./featuredProjects/calculatorApp")
+);
+const BlackjackProject = lazy(() => import("./featuredProjects/blackjack"));
+const {
   QuizProjectStart,
   QuizProjectQuestion,
   QuizProjectFinal,
   QuizError500,
-} from "./featuredProjects/quizApp";
-const BlackjackProject = lazy(() => import("./featuredProjects/blackjack"));
+} = lazily(() => import("./featuredProjects/quizApp"));
 
 function App() {
   const [DomLoading, setDomLoading] = useState(true);
@@ -52,7 +55,7 @@ function App() {
     <>
       <Navigation />
       {/* Nested routes render out here. */}
-      <main className="gridContainer">
+      <main aria-label="Main Content" className="gridContainer">
         <Outlet />
       </main>
       <Footer />

@@ -37,13 +37,16 @@
   overflow: hidden;
 }
 
-.card img {
+.card .lazy-load-image-background {
   position: absolute;
   width: 250px;
   height: 270px;
-  border: none;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: 1;
   border: 2px solid var(--primary50);
   border-radius: 6px;
   transition: all 0.3s ease-in;

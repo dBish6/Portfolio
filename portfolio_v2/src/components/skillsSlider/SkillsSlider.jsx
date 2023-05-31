@@ -1,21 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 // *Design Imports*
-import javaScriptLogo from "../../assets/images/Javascript-shield.png";
-import HTMLAndCSSLogo from "../../assets/images/pngfind.com-HTML-CSS.png";
-import nodeLogo from "../../assets/images/Node.js_logo.svg.png";
-import expressLogo from "../../assets/images/express-logo.png";
-import ReactLogo from "../../assets/images/pngwing.com-react-logo.png";
-import reduxLogo from "../../assets/images/pngwing.com-Redux.png";
-import postgresLogo from "../../assets/images/pngwing.com-PostgreSql.png";
-import mySqlLogo from "../../assets/images/pngwing.com-MySQL.png";
-import awsLogo from "../../assets/images/aws.png";
-import javaLogo from "../../assets/images/pngwing.com-java.png";
-import mongoDbLogo from "../../assets/images/pngwing.com-mongodb.png";
-import gitLogo from "../../assets/images/pngegg-git.png";
-import gitHubLogo from "../../assets/images/Github_logo.png";
-import dockerLogo from "../../assets/images/pngwing.com-Docker.png";
-import figmaLogo from "../../assets/images/pngwing.com-figma.png";
+import skillImages from "../../utils/skillImages";
 import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,
@@ -24,7 +10,7 @@ import "./skillsSlider.css";
 
 import { motion, useMotionValue } from "framer-motion";
 
-const SkillsSlider = () => {
+const SkillsSlider = ({ LazyLoadImage }) => {
   const [width, setWidth] = useState(0);
   const [btnClicked, setBtnClicked] = useState(false);
   const [responsiveSlider, setResponsiveSlider] = useState(false);
@@ -47,6 +33,8 @@ const SkillsSlider = () => {
     <>
       <div className="btnsContainer">
         <button
+          aria-label="Go Left"
+          aria-disabled={btnClicked ? "true" : "false"}
           disabled={btnClicked ? true : false}
           className="actionLeftContainer"
           onClick={() => {
@@ -69,6 +57,8 @@ const SkillsSlider = () => {
           <IoIosArrowDropleftCircle />
         </button>
         <button
+          aria-label="Go Right"
+          aria-disabled={btnClicked ? "true" : "false"}
           disabled={btnClicked ? true : false}
           className="actionRightContainer"
           onClick={() => {
@@ -91,8 +81,9 @@ const SkillsSlider = () => {
           <IoIosArrowDroprightCircle />
         </button>
       </div>
-      <div className="sliderContainer">
+      <div aria-label="Skills Slider Container" className="sliderContainer">
         <motion.div
+          aria-label="Skills Slider"
           drag="x"
           dragElastic={0.2}
           dragConstraints={{ right: 0, left: -width }}
@@ -118,71 +109,11 @@ const SkillsSlider = () => {
           className="slider"
           ref={carouselRef}
         >
-          <div>
-            <img
-              loading="lazy"
-              src={javaScriptLogo}
-              alt="Javascript-shield.png"
-            />
-          </div>
-          <div>
-            <img
-              loading="lazy"
-              src={HTMLAndCSSLogo}
-              alt="pngfind.com-HTML-CSS.png"
-            />
-          </div>
-          <div>
-            <img loading="lazy" src={nodeLogo} alt="Node.js_logo.svg.png" />
-          </div>
-          <div>
-            <img loading="lazy" src={expressLogo} alt="express-logo.png" />
-          </div>
-          <div>
-            <img
-              loading="lazy"
-              src={ReactLogo}
-              alt="pngwing.com-react-logo.png"
-            />
-          </div>
-          <div>
-            <img loading="lazy" src={reduxLogo} alt="pngwing.com-Redux.png" />
-          </div>
-          <div>
-            <img
-              loading="lazy"
-              src={postgresLogo}
-              alt="pngwing.com-PostgreSql.png"
-            />
-          </div>
-          <div>
-            <img loading="lazy" src={mySqlLogo} alt="pngwing.com-MySQL.png" />
-          </div>
-          <div>
-            <img loading="lazy" src={awsLogo} alt="aws.png" />
-          </div>
-          <div>
-            <img loading="lazy" src={javaLogo} alt="pngwing.com-java.png" />
-          </div>
-          <div>
-            <img
-              loading="lazy"
-              src={mongoDbLogo}
-              alt="pngwing.com-mongodb.png"
-            />
-          </div>
-          <div>
-            <img loading="lazy" src={gitLogo} alt="pngegg-git.png" />
-          </div>
-          <div>
-            <img loading="lazy" src={gitHubLogo} alt="Github_logo.png" />
-          </div>
-          <div>
-            <img loading="lazy" src={dockerLogo} alt="pngwing.com-Docker.png" />
-          </div>
-          <div>
-            <img loading="lazy" src={figmaLogo} alt="pngwing.com-figma.png" />
-          </div>
+          {skillImages.map((image) => (
+            <div key={image.alt}>
+              <LazyLoadImage src={image.src} alt={image.alt} effect="blur" />
+            </div>
+          ))}
         </motion.div>
       </div>
     </>

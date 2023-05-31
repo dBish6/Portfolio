@@ -4,15 +4,15 @@ import businessIllustration from "../../assets/images/business-illustration.png"
 import designIllustration from "../../assets/images/design-illustration.png";
 import "./services.css";
 
-const Services = () => {
+const Services = ({ LazyLoadImage }) => {
   return (
     <div className="servicesGridContainer">
       <div className="service">
         <div className="imgContain">
-          <img
-            loading="lazy"
+          <LazyLoadImage
             src={ecommerceIllustration}
             alt="e-commerce-illustration.png"
+            effect="blur"
           />
         </div>
         <div className="serviceTxtContainer">
@@ -34,19 +34,19 @@ const Services = () => {
           </p>
         </div>
         <div className="imgContain">
-          <img
-            loading="lazy"
+          <LazyLoadImage
             src={businessIllustration}
             alt="business-illustration.png"
+            effect="blur"
           />
         </div>
       </div>
       <div className="service">
         <div className="imgContain">
-          <img
-            loading="lazy"
+          <LazyLoadImage
             src={designIllustration}
             alt="design-illustration.png"
+            effect="blur"
           />
         </div>
         <div className="serviceTxtContainer">

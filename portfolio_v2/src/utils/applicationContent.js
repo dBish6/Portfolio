@@ -11,6 +11,7 @@ export const content = [
     date: "Feb, 2023 - Current",
     tech: "ReactJS, Chakra UI, NodeJS, Firebase",
     screenshot: questCasinoScreenshot,
+    alt: "Quest Casino Screenshot",
     gitHub_URL: "https://github.com/dBish6/Quest_Casino_Full-Stack_App",
   },
   {
@@ -19,6 +20,7 @@ export const content = [
     date: "Feb 5, 2023",
     tech: "ReactJS, PostCSS",
     screenshot: openWeatherScreenshot,
+    alt: "Open Weather Screenshot",
     gitHub_URL: "https://github.com/dBish6/Open_Weather_App",
     deployed_URL: "https://dbish6.github.io/Open_Weather_App",
   },
@@ -28,6 +30,7 @@ export const content = [
     date: "Dec 2022",
     tech: "ReactJS, CSS, Java, Docker and AWS.",
     screenshot: ravenScreenshot,
+    alt: "Raven Blacksmith Co Screenshot",
     gitHub_URL: "https://github.com/dBish6/Full-Stack_SpringAPI_Sprint2_Final",
     deployed_URL:
       "http://ravenblacksmith.xyz.s3-website-us-east-1.amazonaws.com/home",
@@ -38,6 +41,7 @@ export const content = [
     date: "Oct 2022",
     tech: "ReactJS, CSS, and NodeJS.",
     screenshot: relicFilmsScreenshot,
+    alt: "Relic Films Screenshot",
     gitHub_URL: "https://github.com/dBish6/Relic_Films_Full-Stack_App",
   },
   {
@@ -46,6 +50,7 @@ export const content = [
     date: "Sep 2021 - Dec 2022",
     tech: "A collection of all my assignments and sprints while at school.",
     screenshot: classWorkScreenshot,
+    alt: "class-work Screenshot",
     gitHub_URL:
       "https://github.com/dBish6/class-work/tree/master/Semester3/Full-Stack_Sprint2_Final",
   },

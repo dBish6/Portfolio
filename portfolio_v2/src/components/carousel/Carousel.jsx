@@ -7,10 +7,11 @@ import pictureMe from "../../assets/images/pictureMe.JPG";
 import todoScreenshot from "../../assets/images/Todo-Project-Screenshot.png";
 import calculatorScreenshot from "../../assets/images/Calculator-Project-Screenshot.png";
 import quizScreenshot from "../../assets/images/Quiz-Project-Screenshot.png";
+import blackjackScreenshot from "../../assets/images/Davy-Blackjack-Screenshot.png";
 import { motion, AnimatePresence } from "framer-motion";
 import "./carousel.css";
 
-const Carousel = () => {
+const Carousel = ({ LazyLoadImage }) => {
   const [index, setIndex] = useState(1);
   const slideshowRef = useRef(null);
 
@@ -27,36 +28,39 @@ const Carousel = () => {
           ref={slideshowRef}
         >
           <div
+            aria-label="Go Left"
             className="arrowLeftContainer"
             onClick={() => setIndex(index <= 1 ? 3 : index - 1)}
           >
-            <SlArrowLeft className="arrowLeft" />
+            <SlArrowLeft aria-label="Left Arrow Icon" className="arrowLeft" />
           </div>
           <div className="gridSplit">
             {index === 1 ? (
-              <div className="carouselContent" id="about">
+              <div
+                aria-label="About Content"
+                className="carouselContent"
+                id="about"
+              >
                 <h1>About Me</h1>
-                <p>
+                <p aria-label="About Text">
                   Hello! My name is <b>David Bishop</b>, nice to meet you.
-                  Currently, I am <b>20</b> years of age and I'm a fresh
-                  graduate from my Software Development course at Keyin College
-                  where we learned about several different coding languages;
-                  Python, Javascript, Java, NodeJS, Sql, etc. The course really
-                  gives you an insight into the tech field and a feel of what's
-                  to come. We learned about full-stack and that is what I will
-                  strive to be, a full-stack developer. I found love and passion
-                  in making full-stack applications and I love <b>designing</b>{" "}
-                  them. I think I have a natural knack for design, ever since I
-                  was a kid I thought I was creative. I also think I have the
-                  ability to be a leader, I set up all the projects for the team
-                  of our sprint projects at school. I have knowledge of agile
-                  principles, I was basically the scrum master at the time of
-                  those sprints. Basically, I want to be able to code through
-                  the development lifecycle, although I am interested in the
-                  designing phase. Currently, learning more about ReactJS, I'm
-                  really interested in developing with React, which is all I use
-                  now, and I'm also learning Chakra UI. Check out my GitHub if
-                  you have the time, it has many projects;{" "}
+                  Currently, I am <b>20</b> years of age and I am a recent
+                  graduate from the Software Development course at Keyin College
+                  in 2022. During my time at Keyin College, I learned several
+                  different coding languages, including Javascript, Java,
+                  NodeJS, SQL, and more. From a young age, I've always
+                  considered myself a <b>creative</b> person, and that has led
+                  me to find passion in <b>full-stack</b> development. I found
+                  love and passion in <b>designing</b> and creating full-stack
+                  applications, and I believe that I have a natural knack for
+                  designing these applications. This love for creating and
+                  designing software has only grown since I started my learning
+                  journey, and I'm <b>eager</b> to continue exploring and
+                  expanding my skills in this area. I am always brewing up some
+                  idea into fruition and the quality only gets better and
+                  better, I learn by doing. I have uploaded my applications on
+                  GitHub, and I would be thrilled if you could take at them.
+                  Scroll down to the applications section or click the link;{" "}
                   <a
                     href="https://github.com/dBish6"
                     target="_blank"
@@ -68,9 +72,13 @@ const Carousel = () => {
                 </p>
               </div>
             ) : index === 2 ? (
-              <div className="carouselContent" id="personal">
+              <div
+                aria-label="Personal Content"
+                className="carouselContent"
+                id="personal"
+              >
                 <h1>Personal</h1>
-                <p>
+                <p aria-label="Personal Text">
                   Personally, I am a pretty chill guy, a humble genuine dude
                   really. I like playing video games in my spare time, just like
                   a nerd should. I love basketball, I played it in high school,
@@ -84,9 +92,13 @@ const Carousel = () => {
                 </p>
               </div>
             ) : index === 3 ? (
-              <div className="carouselContent" id="projects">
+              <div
+                aria-label="Projects Content"
+                className="carouselContent"
+                id="projects"
+              >
                 <h1>Projects</h1>
-                <p>
+                <p aria-label="Projects Text">
                   Ah yes, the projects tab up there is some of my smaller
                   projects, they have their own GitHub repository, but I wanted
                   to feature them on my Portfolio. It also shows my progress
@@ -100,13 +112,19 @@ const Carousel = () => {
             ) : undefined}
             <div
               className={
-                index === 1 ? "carouselRightSide index1" : "carouselRightSide"
+                index === 1
+                  ? "carouselRightSide index1"
+                  : index === 2
+                  ? "carouselRightSide index2"
+                  : index === 3
+                  ? "carouselRightSide index3"
+                  : "carouselRightSide"
               }
             >
               {index === 1 ? (
                 <>
-                  <p>Bay Roberts, Newfoundland CA</p>
-                  <p>
+                  <p aria-label="Location">Bay Roberts, Newfoundland CA</p>
+                  <p aria-label="School">
                     Full-Stack Software Development <br /> Keyin College
                     <br /> Sep 2021 — Dec 2022
                   </p>
@@ -127,22 +145,56 @@ const Carousel = () => {
                   ></img>
                 </div>
               ) : index === 3 ? (
-                <div className="movingRow">
-                  <img src={todoScreenshot} alt="Todo-Project-Screenshot.png" />
-                  <img
-                    src={calculatorScreenshot}
-                    alt="Calculator-Project-Screenshot.png"
-                  />
-                  <img src={quizScreenshot} alt="Quiz-Project-Screenshot.png" />
-                </div>
+                <>
+                  <div className="movingRow">
+                    <img
+                      src={todoScreenshot}
+                      alt="Todo-Project-Screenshot.png"
+                    />
+                    <img
+                      src={calculatorScreenshot}
+                      alt="Calculator-Project-Screenshot.png"
+                    />
+                    <img
+                      src={quizScreenshot}
+                      alt="Quiz-Project-Screenshot.png"
+                    />
+                    <img
+                      src={blackjackScreenshot}
+                      alt="Quiz-Project-Screenshot.png"
+                    />
+                  </div>
+                  <div className="movingRow">
+                    <img
+                      src={todoScreenshot}
+                      alt="Todo-Project-Screenshot.png"
+                    />
+                    <img
+                      src={calculatorScreenshot}
+                      alt="Calculator-Project-Screenshot.png"
+                    />
+                    <img
+                      src={quizScreenshot}
+                      alt="Quiz-Project-Screenshot.png"
+                    />
+                    <img
+                      src={blackjackScreenshot}
+                      alt="Quiz-Project-Screenshot.png"
+                    />
+                  </div>
+                </>
               ) : undefined}
             </div>
           </div>
           <div
+            aria-label="Go Right"
             className="arrowRightContainer"
             onClick={() => setIndex(index >= 3 ? 1 : index + 1)}
           >
-            <SlArrowRight className="arrowRight" />
+            <SlArrowRight
+              aria-label="Right Arrow Icon"
+              className="arrowRight"
+            />
           </div>
         </motion.div>
       </AnimatePresence>

@@ -29,7 +29,11 @@ const Footer = () => {
   return (
     <>
       <ContactModal show={show} setShow={setShow} />
-      <footer className="homeFooter gridContainer" ref={footerRef}>
+      <footer
+        aria-label="Footer Navigation"
+        className="homeFooter gridContainer"
+        ref={footerRef}
+      >
         <div>
           <div className="links">
             <Link onClick={() => setShow(true)}>Contact Me</Link>|
