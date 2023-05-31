@@ -11,7 +11,7 @@ const blackjackTheme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "bd800",
+        bg: "none",
         color: "dwordMain",
         overflowX: "hidden !important",
       },
