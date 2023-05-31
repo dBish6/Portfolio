@@ -106,8 +106,8 @@ const Carousel = ({ LazyLoadImage }) => {
                   early to new, the first link on top is the earliest. So, feel
                   free to take a look, the earliest ones are probably not too
                   exciting, but I worked very hard on them and I think it is
-                  impressive by showing how much I grown. I hope like them and
-                  get inspired by my work!
+                  impressive by showing how much I grown. I hope you like them
+                  and get inspired by my work!
                 </p>
               </div>
             ) : undefined}
