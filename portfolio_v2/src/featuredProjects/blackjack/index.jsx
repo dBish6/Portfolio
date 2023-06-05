@@ -39,7 +39,8 @@ import Header from "./components/partials/header/Header";
 import Dealer from "./components/Dealer";
 import Player from "./components/player/Player";
 import AcePrompt from "./components/AcePrompt";
-import WinnerPopup from "./components/WinnerPopup";
+import FloatingBet from "./components/popups/Bet";
+import WinnerPopup from "./components/popups/Winner";
 import RulesOverlay from "./components/rulesOverlay/RulesOverlay";
 import Footer from "./components/partials/Footer";
 
@@ -64,6 +65,7 @@ import {
   selectPlayerInitialHit,
   selectPlayerStanding,
   selectPlayerHasNatural,
+  selectStreak,
   selectWallet,
   selectWinner,
 } from "./redux/blackjackSelectors";
@@ -98,6 +100,7 @@ const BlackjackIndex = () => {
   // Player
   const [playerViewWidthOnMoreCards, setPlayerViewWidthOnMoreCards] =
       useState("30.6vw"),
+    [animate, setAnimate] = useState({ playerBet: false, winStreak: false }),
     [showAcePrompt, setShowAcePrompt] = useState(false),
     [madeAceDecision, setMadeAceDecision] = useState(false),
     [secureAceOnNatural, setSecureAceOnNatural] = useState(false),
@@ -108,6 +111,7 @@ const BlackjackIndex = () => {
     hasPlayerHit = useSelector(selectPlayerInitialHit),
     playerStanding = useSelector(selectPlayerStanding),
     playerHasNatural = useSelector(selectPlayerHasNatural),
+    winStreak = useSelector(selectStreak),
     wallet = useSelector(selectWallet);
 
   useChangeBackground(tableImg);
@@ -320,6 +324,7 @@ const BlackjackIndex = () => {
                   playerViewWidthOnMoreCards={playerViewWidthOnMoreCards}
                   playerBet={playerBet}
                   playerScore={playerScore}
+                  setAnimate={setAnimate}
                   hasPlayerHit={hasPlayerHit}
                   wallet={wallet}
                   showAcePrompt={showAcePrompt}
@@ -334,8 +339,18 @@ const BlackjackIndex = () => {
               </VStack>
 
               <RulesOverlay show={show} setShow={setShow} />
+              <FloatingBet
+                playerBet={playerBet}
+                animate={animate}
+                setAnimate={setAnimate}
+              />
             </chakra.main>
-            <Footer gameType={gameType} />
+            <Footer
+              gameType={gameType}
+              winStreak={winStreak}
+              animate={animate}
+              setAnimate={setAnimate}
+            />
           </>
         )}
       </Box>

@@ -296,6 +296,7 @@ const Player = (props) => {
               isDealerTurn={isDealerTurn}
               showcaseRunning={showcaseRunning}
               wallet={props.wallet}
+              setAnimate={props.setAnimate}
               gameType={props.gameType}
               playerCards={props.playerCards}
             />

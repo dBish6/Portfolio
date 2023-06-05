@@ -1,7 +1,7 @@
 // *Design Imports*
 import { Box, Heading } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
-import fadeInAnimations from "../utils/animations/fadeIn";
+import fadeInAnimations from "../../utils/animations/fadeIn";
 
 const WinnerPopup = (props) => {
   const { fadeInVar1 } = fadeInAnimations();
@@ -18,6 +18,7 @@ const WinnerPopup = (props) => {
             variant="blackjack"
             fontFamily="fugaz"
             fontSize="60px"
+            textAlign="center"
             lineHeight="1.2"
           >
             {props.winner !== null &&
