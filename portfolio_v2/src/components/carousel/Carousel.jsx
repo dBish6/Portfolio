@@ -28,11 +28,22 @@ const Carousel = ({ LazyLoadImage }) => {
           ref={slideshowRef}
         >
           <div
-            aria-label="Go Left"
+            role="presentation"
             className="arrowLeftContainer"
             onClick={() => setIndex(index <= 1 ? 3 : index - 1)}
           >
-            <SlArrowLeft aria-label="Left Arrow Icon" className="arrowLeft" />
+            <span
+              tabIndex="0"
+              aria-label="Go Left"
+              role="button"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  document.querySelector(".arrowLeftContainer").click();
+                }
+              }}
+            >
+              <SlArrowLeft aria-label="Left Arrow Icon" className="arrowLeft" />
+            </span>
           </div>
           <div className="gridSplit">
             {index === 1 ? (
@@ -188,14 +199,25 @@ const Carousel = ({ LazyLoadImage }) => {
             </div>
           </div>
           <div
-            aria-label="Go Right"
+            role="presentation"
             className="arrowRightContainer"
             onClick={() => setIndex(index >= 3 ? 1 : index + 1)}
           >
-            <SlArrowRight
-              aria-label="Right Arrow Icon"
-              className="arrowRight"
-            />
+            <span
+              tabIndex="0"
+              aria-label="Go Right"
+              role="button"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  document.querySelector(".arrowLeftContainer").click();
+                }
+              }}
+            >
+              <SlArrowRight
+                aria-label="Right Arrow Icon"
+                className="arrowRight"
+              />
+            </span>
           </div>
         </motion.div>
       </AnimatePresence>
