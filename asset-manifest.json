@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.6147b2b0.css",
-    "main.js": "/static/js/main.a4e9007a.js",
+    "main.css": "/static/css/main.f77d8ceb.css",
+    "main.js": "/static/js/main.32629973.js",
     "static/css/722.f27decee.chunk.css": "/static/css/722.f27decee.chunk.css",
     "static/js/722.eeaa988e.chunk.js": "/static/js/722.eeaa988e.chunk.js",
     "static/css/68.b3644372.chunk.css": "/static/css/68.b3644372.chunk.css",
     "static/js/68.bd18365b.chunk.js": "/static/js/68.bd18365b.chunk.js",
-    "static/js/88.d360d64f.chunk.js": "/static/js/88.d360d64f.chunk.js",
+    "static/js/419.834509a2.chunk.js": "/static/js/419.834509a2.chunk.js",
     "static/css/492.066032c6.chunk.css": "/static/css/492.066032c6.chunk.css",
     "static/js/492.f79e16e1.chunk.js": "/static/js/492.f79e16e1.chunk.js",
     "static/js/41.ab031ba5.chunk.js": "/static/js/41.ab031ba5.chunk.js",
@@ -110,13 +110,13 @@
     "static/media/SlidingCard2.mp3": "/static/media/SlidingCard2.8aca9c55000942e39aa4.mp3",
     "static/media/pngegg-git.png": "/static/media/pngegg-git.7d664489ed331806ddc8.png",
     "index.html": "/index.html",
-    "main.6147b2b0.css.map": "/static/css/main.6147b2b0.css.map",
-    "main.a4e9007a.js.map": "/static/js/main.a4e9007a.js.map",
+    "main.f77d8ceb.css.map": "/static/css/main.f77d8ceb.css.map",
+    "main.32629973.js.map": "/static/js/main.32629973.js.map",
     "722.f27decee.chunk.css.map": "/static/css/722.f27decee.chunk.css.map",
     "722.eeaa988e.chunk.js.map": "/static/js/722.eeaa988e.chunk.js.map",
     "68.b3644372.chunk.css.map": "/static/css/68.b3644372.chunk.css.map",
     "68.bd18365b.chunk.js.map": "/static/js/68.bd18365b.chunk.js.map",
-    "88.d360d64f.chunk.js.map": "/static/js/88.d360d64f.chunk.js.map",
+    "419.834509a2.chunk.js.map": "/static/js/419.834509a2.chunk.js.map",
     "492.066032c6.chunk.css.map": "/static/css/492.066032c6.chunk.css.map",
     "492.f79e16e1.chunk.js.map": "/static/js/492.f79e16e1.chunk.js.map",
     "41.ab031ba5.chunk.js.map": "/static/js/41.ab031ba5.chunk.js.map",
@@ -124,7 +124,7 @@
     "749.899e8648.chunk.js.map": "/static/js/749.899e8648.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6147b2b0.css",
-    "static/js/main.a4e9007a.js"
+    "static/css/main.f77d8ceb.css",
+    "static/js/main.32629973.js"
   ]
 }
