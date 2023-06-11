@@ -23,6 +23,7 @@ const CashInModelIndex = (props) => {
       show={props.show.cashIn}
       setShow={props.setShow}
       objName="cashIn"
+      isUsingKeyboard={props.isUsingKeyboard}
       animation={{ type: "down", y: "-400%" }}
       maxW="298px"
     >

@@ -2,7 +2,7 @@
 import { VStack, ButtonGroup, Button, Text } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Shows if the player get a ace!
+// Shows if the player gets a ace!
 const AcePrompt = (props) => {
   return (
     <AnimatePresence>
@@ -11,7 +11,10 @@ const AcePrompt = (props) => {
           <Text variant="blackjack">
             Do you want to use your ace as a 11 or a 1?
           </Text>
-          <ButtonGroup isDisabled={props.isDealerTurn}>
+          <ButtonGroup
+            isDisabled={props.isDealerTurn}
+            aria-disabled={props.isDealerTurn}
+          >
             <Button
               onClick={() => {
                 props.setWants11(11);

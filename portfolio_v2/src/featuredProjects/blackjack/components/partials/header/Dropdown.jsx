@@ -67,16 +67,12 @@ const Dropdown = (props) => {
               <>
                 <Link
                   data-group
+                  tabIndex="0"
+                  id="navigable"
                   onClick={() => navigate(-1)}
-                  w="100%"
-                  textAlign="center"
+                  variant="blackjackDropdown"
+                  mobile={props.isSmallerThan481.toString()}
                   borderTopRadius="6px"
-                  p="6px 1rem"
-                  _hover={{
-                    bgColor: props.isSmallerThan481
-                      ? "rgba(244, 244, 244, 0.7)"
-                      : "rgba(244, 244, 244, 0.6)",
-                  }}
                 >
                   <Text
                     fontSize="18px"
@@ -94,16 +90,11 @@ const Dropdown = (props) => {
 
                 <Link
                   data-group
+                  tabIndex="0"
+                  id="navigable"
                   onClick={() => props.setShow({ ...props.show, cashIn: true })}
-                  w="100%"
-                  textAlign="center"
-                  p="6px 1rem"
-                  m="0 !important"
-                  _hover={{
-                    bgColor: props.isSmallerThan481
-                      ? "rgba(244, 244, 244, 0.7)"
-                      : "rgba(244, 244, 244, 0.6)",
-                  }}
+                  variant="blackjackDropdown"
+                  mobile={props.isSmallerThan481.toString()}
                 >
                   <Text
                     fontSize="18px"
@@ -121,6 +112,8 @@ const Dropdown = (props) => {
 
                 <Link
                   data-group
+                  tabIndex="0"
+                  id="navigable"
                   onClick={() =>
                     props.setShow({
                       ...props.show,
@@ -128,15 +121,8 @@ const Dropdown = (props) => {
                       canCancel: true,
                     })
                   }
-                  w="100%"
-                  textAlign="center"
-                  p="6px 1rem"
-                  m="0 !important"
-                  _hover={{
-                    bgColor: props.isSmallerThan481
-                      ? "rgba(244, 244, 244, 0.7)"
-                      : "rgba(244, 244, 244, 0.6)",
-                  }}
+                  variant="blackjackDropdown"
+                  mobile={props.isSmallerThan481.toString()}
                 >
                   <Text
                     fontSize="18px"
@@ -154,21 +140,16 @@ const Dropdown = (props) => {
 
                 <Link
                   data-group
+                  tabIndex="0"
+                  id="navigable"
                   onClick={() =>
                     props.setShow({
                       ...props.show,
                       options: true,
                     })
                   }
-                  w="100%"
-                  textAlign="center"
-                  p="6px 1rem"
-                  m="0 !important"
-                  _hover={{
-                    bgColor: props.isSmallerThan481
-                      ? "rgba(244, 244, 244, 0.7)"
-                      : "rgba(244, 244, 244, 0.6)",
-                  }}
+                  variant="blackjackDropdown"
+                  mobile={props.isSmallerThan481.toString()}
                 >
                   <Text
                     fontSize="18px"
@@ -186,17 +167,11 @@ const Dropdown = (props) => {
 
                 <Link
                   data-group
+                  tabIndex="0"
+                  id="navigable"
                   onClick={() => props.setShow({ ...props.show, rules: true })}
-                  w="100%"
-                  textAlign="center"
-                  borderBottomRadius="6px"
-                  p="6px 1rem"
-                  m="0 !important"
-                  _hover={{
-                    bgColor: props.isSmallerThan481
-                      ? "rgba(244, 244, 244, 0.7)"
-                      : "rgba(244, 244, 244, 0.6)",
-                  }}
+                  variant="blackjackDropdown"
+                  mobile={props.isSmallerThan481.toString()}
                 >
                   <Text
                     fontSize="18px"
@@ -216,16 +191,9 @@ const Dropdown = (props) => {
                   data-group
                   href="https://github.com/dBish6/Quest_Casino_Full-Stack_App"
                   isExternal
-                  w="100%"
-                  textAlign="center"
+                  variant="blackjackDropdown"
+                  mobile={props.isSmallerThan481.toString()}
                   borderBottomRadius="6px"
-                  p="6px 1rem"
-                  m="0 !important"
-                  _hover={{
-                    bgColor: props.isSmallerThan481
-                      ? "rgba(244, 244, 244, 0.7)"
-                      : "rgba(244, 244, 244, 0.6)",
-                  }}
                 >
                   <Text
                     fontSize="18px"

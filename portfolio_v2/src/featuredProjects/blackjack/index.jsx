@@ -80,6 +80,7 @@ const BlackjackIndex = () => {
       options: false,
       rules: false,
     }),
+    [isUsingKeyboard, setIsUsingKeyboard] = useState(false),
     [isWidthSmallerThan1429] = useMediaQuery("(max-width: 1429px)"),
     [isHeightSmallerThan844] = useMediaQuery("(max-height: 844px)"),
     dispatch = useDispatch(),
@@ -119,6 +120,19 @@ const BlackjackIndex = () => {
 
   useEffect(() => {
     setShow({ ...show, gameStart: true, canCancel: false });
+  }, []);
+
+  // To capture if the user is using the keyboard to navigate to set listeners when needed.
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Tab" || event.key === "Escape") {
+        setIsUsingKeyboard(true);
+        document.removeEventListener("keydown", handleKeyDown);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   // *Main Game Logic*
@@ -263,6 +277,8 @@ const BlackjackIndex = () => {
           show={show}
           setShow={setShow}
           toggleMute={toggleMute}
+          isUsingKeyboard={isUsingKeyboard}
+          setIsUsingKeyboard={setIsUsingKeyboard}
         />
 
         {gameType && (
@@ -338,12 +354,18 @@ const BlackjackIndex = () => {
                 />
               </VStack>
 
-              <RulesOverlay show={show} setShow={setShow} />
-              <FloatingBet
-                playerBet={playerBet}
-                animate={animate}
-                setAnimate={setAnimate}
+              <RulesOverlay
+                show={show}
+                setShow={setShow}
+                isUsingKeyboard={isUsingKeyboard}
               />
+              {gameType === "Match" && (
+                <FloatingBet
+                  playerBet={playerBet}
+                  animate={animate}
+                  setAnimate={setAnimate}
+                />
+              )}
             </chakra.main>
             <Footer
               gameType={gameType}
@@ -362,8 +384,13 @@ const BlackjackIndex = () => {
         wallet={wallet}
         playerCards={playerCards}
         winner={winner}
+        isUsingKeyboard={isUsingKeyboard}
       />
-      <CashInModal show={show} setShow={setShow} />
+      <CashInModal
+        show={show}
+        setShow={setShow}
+        isUsingKeyboard={isUsingKeyboard}
+      />
     </ChakraProvider>
   );
 };

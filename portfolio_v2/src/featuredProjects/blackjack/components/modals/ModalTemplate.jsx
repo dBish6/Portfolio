@@ -1,6 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useRef, useEffect } from "react";
 import { Box, Container } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import modalAnimations from "../../utils/animations/modalAnimations";
+
+import useKeyboardHelper from "../../hooks/useKeyboardHelper";
 
 const ModalTemplate = (props) => {
   const {
@@ -8,14 +12,46 @@ const ModalTemplate = (props) => {
     setShow,
     animation,
     objName,
+    isUsingKeyboard,
     noExit,
     loading,
     children,
     ...rest
   } = props;
 
+  const modalRef = useRef(null);
   const { modelBackdrop, modelFadeDown, modelFadeUp } =
     modalAnimations(animation);
+
+  const {
+    handleKeyEscape,
+    initializeKeyboardLock,
+    handleKeyboardLockOnElement,
+  } = useKeyboardHelper();
+
+  useEffect(() => {
+    if (show && isUsingKeyboard) {
+      const modalElement = modalRef.current;
+
+      const { firstFocusableElement, lastFocusableElement } =
+        initializeKeyboardLock(modalRef);
+      setTimeout(() => {
+        firstFocusableElement.focus();
+      }, 500);
+
+      const keyboardListenerWrapper = (event) => {
+        handleKeyEscape(event, { setShow, objKey: objName });
+        handleKeyboardLockOnElement(event, {
+          firstFocusableElement,
+          lastFocusableElement,
+        });
+      };
+
+      modalElement.addEventListener("keydown", keyboardListenerWrapper);
+      return () =>
+        modalElement.removeEventListener("keydown", keyboardListenerWrapper);
+    }
+  }, [show]);
 
   return (
     <AnimatePresence>
@@ -23,6 +59,7 @@ const ModalTemplate = (props) => {
         <>
           {/* *Backdrop* */}
           <Box
+            aria-label="Backdrop"
             as={motion.div}
             variants={modelBackdrop}
             animate={modelBackdrop.visible}
@@ -55,8 +92,11 @@ const ModalTemplate = (props) => {
 
           {/* *Modal* */}
           <Container
+            tabIndex="-1"
+            aria-label="Modal"
             as={motion.div}
             variants={animation.type === "down" ? modelFadeDown : modelFadeUp}
+            ref={modalRef}
             animate={
               animation.type === "down"
                 ? modelFadeDown.visible

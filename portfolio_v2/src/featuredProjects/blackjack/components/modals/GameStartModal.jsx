@@ -43,6 +43,7 @@ const GameStartModal = (props) => {
       setShow={props.setShow}
       objName="gameStart"
       noExit={true}
+      isUsingKeyboard={props.isUsingKeyboard}
       animation={{ type: "up", y: "200%" }}
       p={ifNoBalance ? "1rem 1.5rem 1.5rem 1.5rem" : "1.5rem 2rem 1rem 2rem"}
       maxW={ifNoBalance ? "298px" : "281.133"}
@@ -152,6 +153,7 @@ const GameStartModal = (props) => {
                       : "g500",
                 }}
                 ml="1rem !important"
+                is_invalid={needToFinish.state ? "true" : undefined}
               >
                 For Fun
               </Button>
