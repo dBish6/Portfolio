@@ -16,3 +16,7 @@ Is currently in the ideate design phase!
 <br />
 
 _**Deployed Stable Version of the Website:** [www.davidbishop.info](https://www.davidbishop.info)_
+
+<p align="center">
+  Copyright (c) 2023 David Bishop
+</p>
