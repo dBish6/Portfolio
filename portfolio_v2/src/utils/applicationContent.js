@@ -3,8 +3,19 @@ import relicFilmsScreenshot from "../assets/images/Relic-Films-Screenshot.png";
 import ravenScreenshot from "../assets/images/Raven-Screenshot.png";
 import openWeatherScreenshot from "../assets/images/Open-Weather-Screenshot.png";
 import questCasinoScreenshot from "../assets/images/Quest-Casino-Screenshot.png";
+import scrollAnimationsDemo from "../assets/images/Scroll-Animations-Demo.png";
 
 export const content = [
+  {
+    id: 6,
+    title: "Scroll Animations Demo",
+    date: "June, 2023",
+    tech: "Vite, React, TypeScript",
+    screenshot: scrollAnimationsDemo,
+    alt: "Scroll Animations Demo Screenshot",
+    gitHub_URL: "https://github.com/dBish6/Scroll_Animations_Examples",
+    deployed_URL: "https://dbish6.github.io/Scroll_Animations_Examples/",
+  },
   {
     id: 5,
     title: "Quest Casino Full-Stack App",
