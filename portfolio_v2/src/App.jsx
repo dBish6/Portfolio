@@ -46,12 +46,14 @@ function App() {
           loaderBG.remove();
           loaderContainer.remove();
           setDomLoading(false);
-          // setTimeout(() => {
-          //   //             alert(
-          //   //               `DISCLAIMER: Please note that this portfolio may not showcase my current coding and design skills to their fullest potential, as it is outdated. However, it is still being updated to include newer projects, applications, etc.
-          //   // I am currently at the early phases of the design process for version 3 of my portfolio. So, I RECOMMEND viewing my newer projects and applications that are featured in this portfolio, thanks for taking a look!`
-          //   //             );
-          // }, 500);
+          setTimeout(() => {
+            alert(
+              `DISCLAIMER:
+Please note that this portfolio may not showcase my current coding and design skills to their fullest potential, as it is outdated. However, it is still being updated to include newer projects, applications, etc.
+
+I am currently at the early phases of the design process for version 3 of my portfolio. So, I RECOMMEND viewing my newer projects and applications that are featured in this portfolio, thanks for taking a look!`
+            );
+          }, 500);
         }
       }, 1000);
     }
