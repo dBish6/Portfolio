@@ -27,7 +27,7 @@ const Home = (props) => {
         id="skills"
       >
         <div className="title">
-          <h1>Up and Coming Full-Stack Developer!</h1>
+          <h2>Up and Coming Full-Stack Developer!</h2>
           <p>
             I am striving to become a full-stack developer, and I have already
             accomplished significant milestones in this journey. I can
@@ -52,7 +52,7 @@ const Home = (props) => {
         id="repositories"
       >
         <div className="title">
-          <h1>Applications</h1>
+          <h2>Applications</h2>
           <p>
             Here are my latest applications and full-stack applications, each
             reflecting my growing skills and experience. Check out their GitHub
@@ -68,7 +68,7 @@ const Home = (props) => {
         id="services"
       >
         <div className="servicesTitle">
-          <h1>Services</h1>
+          <h2>Services</h2>
         </div>
         <Services LazyLoadImage={LazyLoadImage} />
       </section>

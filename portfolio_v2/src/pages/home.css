@@ -13,7 +13,8 @@ main .colouredSection:nth-child(1) {
   padding: 4rem 0;
 }
 
-main h1 {
+main h2,
+main h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 3rem;
   font-weight: 700;
@@ -52,8 +53,8 @@ main .applicationsContainer {
   margin: 3rem 0.5rem 3rem 0.5rem;
 }
 
-.applicationsContainer .title h1,
-.UpAndComingContainer .title h1 {
+.applicationsContainer .title h2,
+.UpAndComingContainer .title h2 {
   border-left: 8px solid var(--yellowColour);
   padding-left: 0.5rem;
 }
@@ -87,11 +88,11 @@ main .applicationsContainer {
     font-size: 18px;
   }
 
-  main h1 {
+  main h2 {
     font-size: 2rem;
   }
-  .applicationsContainer .title h1,
-  .UpAndComingContainer .title h1 {
+  .applicationsContainer .title h2,
+  .UpAndComingContainer .title h2 {
     border-left: 6px solid var(--yellowColour);
   }
 }

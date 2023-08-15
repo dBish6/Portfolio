@@ -1,0 +1,20 @@
+/* Designer: David Bishop
+   Case Study
+*/
+
+.caseStudy {
+  grid-column: 2 / span 10;
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 Ratio */
+  margin: 1rem 0 0 1.3rem;
+}
+
+.caseStudy iframe {
+  position: absolute;
+  border: 0;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}

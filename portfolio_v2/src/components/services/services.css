@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.servicesContainer h1 {
+.servicesContainer h2 {
   border-bottom: 6px solid var(--yellowColour);
   letter-spacing: 0.1rem;
 }
@@ -60,7 +60,7 @@
   margin: 0 1rem;
 }
 
-.servicesContainer .service .serviceTxtContainer h2 {
+.servicesContainer .service .serviceTxtContainer h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;

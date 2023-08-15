@@ -35,7 +35,7 @@
   gap: 2rem;
 }
 
-.navBar .leftContainer .mainTitle h2 {
+.navBar .leftContainer .mainTitle h1 {
   font-family: "Gotham";
   font-size: 24px;
   font-weight: 700;
@@ -161,7 +161,7 @@
   justify-self: flex-end;
 }
 
-.navBar .rightContainer .contact {
+.navBar .rightContainer .googleUx {
   margin-right: 2rem;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -171,7 +171,7 @@
   transition: 0.28s ease all;
 }
 
-.navBar .rightContainer .contact:hover {
+.navBar .rightContainer .googleUx:hover {
   border-bottom: 1px solid var(--primary800);
   color: var(--primary800);
 }
@@ -192,6 +192,10 @@
   /* color: var(--primary600); */
 }
 
+.navBar .rightContainer .icons button {
+  background-color: transparent;
+}
+
 @media screen and (max-width: 900px) {
   .navBar .leftContainer {
     grid-column: 2 / span 3;
@@ -207,7 +211,7 @@
   .projectsDropdown {
     display: none;
   }
-  .contact {
+  .googleUx {
     display: none;
   }
   .navBar .rightContainer .icons {
@@ -272,7 +276,11 @@
   color: var(--primary100);
 }
 
-.hamburgerDropdown .dropdownContact {
+.hamburgerDropdown .dropdownIcons button {
+  background-color: transparent;
+}
+
+.hamburgerDropdown .dropdownGoogleUx {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -281,7 +289,7 @@
   transition: 0.28s ease all;
 }
 
-.hamburgerDropdown .dropdownContact:hover {
+.hamburgerDropdown .dropdownGoogleUx:hover {
   border-bottom: 1px solid var(--primary100);
   color: var(--primary100);
 }

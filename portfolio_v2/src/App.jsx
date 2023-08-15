@@ -21,6 +21,7 @@ import QuizFooter from "./featuredProjects/quizApp/components/partials/Footer";
 
 // *Pages/Views*
 import Home from "./pages/Home";
+import Ux from "./pages/ux/Ux";
 import Error404 from "./pages/errors/Error404";
 const ToDoProject = lazy(() => import("./featuredProjects/TodoApp"));
 const CalculatorProject = lazy(() =>
@@ -90,6 +91,7 @@ I am currently at the early phases of the design process for version 3 of my por
             <Route element={<PortfolioHome />}>
               <Route path="/" element={<Navigate to="/home" />} />
               <Route path="/home" element={<Home title="Home" />} />
+              <Route path="/home/ux" element={<Ux title="Ux Design" />} />
               <Route path="/error404" element={<Error404 title="ERROR" />} />
               <Route path="*" element={<Navigate to="/error404" />} />
             </Route>

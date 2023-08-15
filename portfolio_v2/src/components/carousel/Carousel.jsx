@@ -138,8 +138,20 @@ const Carousel = ({ LazyLoadImage }) => {
                   <p aria-label="Location">Bay Roberts, Newfoundland CA</p>
                   <p aria-label="School">
                     Full-Stack Software Development <br /> Keyin College
-                    <br /> Sep 2021 — Dec 2022
+                    <br />
+                    <span>Sep 2021 — Dec 2022</span>
                   </p>
+                  <div aria-label="Certificates" className="certs">
+                    <p>
+                      Meta Front-End Developer Professional Certificate
+                      <br />
+                      <span>Feb 2022 — May 2023</span>
+                    </p>
+                    <p>
+                      Google UX Design Professional Certificate
+                      <br /> <span>May 2022 — Current</span>
+                    </p>
+                  </div>
                   <div>
                     <img
                       className="personImg"

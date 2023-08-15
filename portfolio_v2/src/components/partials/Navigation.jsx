@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import ContactModal from "../modals/ContactModal";
 
 // *Design Imports*
-import { ImGithub, ImLinkedin, ImSteam2 } from "react-icons/im";
+import { ImGithub, ImLinkedin, ImSteam2, ImMail } from "react-icons/im";
 import { MdExpandMore } from "react-icons/md";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import "./partials.css";
@@ -81,7 +81,7 @@ const Navigation = () => {
 
         <div className="leftContainer">
           <NavLink to="/home" className="mainTitle">
-            <h2>Portfolio</h2>
+            <h1>Portfolio</h1>
           </NavLink>
           <div
             className={
@@ -240,8 +240,8 @@ const Navigation = () => {
         </div>
 
         <nav aria-label="External Navigation" className="rightContainer">
-          <NavLink className="contact" onClick={() => setShow(true)}>
-            Contact Me
+          <NavLink to="/home/ux" className="googleUx">
+            Google UX
           </NavLink>
           <div className="icons">
             <a
@@ -265,6 +265,13 @@ const Navigation = () => {
             >
               <ImSteam2 aria-label="My Steam" />
             </a>
+            <button
+              aria-pressed={show}
+              aria-controls="modal"
+              onClick={() => setShow(true)}
+            >
+              <ImMail aria-label="Contact Me" />
+            </button>
           </div>
 
           <div
@@ -343,12 +350,16 @@ const Navigation = () => {
                     >
                       <ImSteam2 aria-label="My Steam" />
                     </a>
+                    <button
+                      aria-pressed={show}
+                      aria-controls="modal"
+                      onClick={() => setShow(true)}
+                    >
+                      <ImMail aria-label="Contact Me" />
+                    </button>
                   </div>
-                  <NavLink
-                    className="dropdownContact"
-                    onClick={() => setShow(true)}
-                  >
-                    Contact Me
+                  <NavLink to="/home/ux" className="dropdownGoogleUx">
+                    Google Ux
                   </NavLink>
                   <hr />
                   <h3 className="hamburgerHeader">Featured Projects</h3>

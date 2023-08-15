@@ -123,8 +123,8 @@
 }
 
 .carouselContainer .carouselRightSide.index1 {
+  position: relative;
   gap: 1rem;
-  padding: 2rem 1rem 1rem 1rem;
 }
 
 .carouselContainer .carouselRightSide.index3 {
@@ -142,20 +142,29 @@
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   color: var(--primary700);
-
-  flex-grow: 1;
-  justify-self: center;
   text-align: center;
 }
 
-.carouselContainer .carouselRightSide div:not(.movingRow) {
-  flex-grow: 1;
-  display: flex;
-  max-height: 100%;
+.carouselContainer .carouselRightSide .certs p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.carouselContainer .carouselRightSide .certs p:first-child {
+  margin-bottom: 0.5rem;
+}
+
+.carouselContainer .carouselRightSide span {
+  font-style: italic;
+}
+
+.carouselContainer .carouselRightSide div:not(.movingRow, .certs) {
+  height: 135px;
 }
 
 .carouselContainer .carouselRightSide div .personImg {
   width: 100%;
+  height: 100%;
   object-fit: contain;
   align-self: flex-end;
 }

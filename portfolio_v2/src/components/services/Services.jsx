@@ -16,7 +16,7 @@ const Services = ({ LazyLoadImage }) => {
           />
         </div>
         <div className="serviceTxtContainer">
-          <h2>E-commerce Websites</h2>
+          <h3>E-commerce Websites</h3>
           <p>
             Does your store need to move to the web? Let's get your store in the
             making so you can start selling worldwide by building your all new
@@ -26,7 +26,7 @@ const Services = ({ LazyLoadImage }) => {
       </div>
       <div className="service">
         <div className="serviceTxtContainer">
-          <h2>Business Websites</h2>
+          <h3>Business Websites</h3>
           <p>
             Need a business website? Let's get your business on the web, with a
             modern and good looking website. Helping you stand out from the
@@ -50,7 +50,7 @@ const Services = ({ LazyLoadImage }) => {
           />
         </div>
         <div className="serviceTxtContainer">
-          <h2>Website Designs</h2>
+          <h3>Website Designs</h3>
           <p>
             I can design and prototype websites and apps to suite your needs for
             future development!

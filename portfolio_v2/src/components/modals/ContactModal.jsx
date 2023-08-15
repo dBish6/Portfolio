@@ -86,6 +86,7 @@ const ContactModal = (props) => {
                 exit="hidden"
                 key="model"
                 className="contactModal"
+                id="modal"
               >
                 <header aria-label="Title" className="modalHeader">
                   <h3>Contact Me</h3>
