@@ -113,6 +113,7 @@
 }
 
 .carouselContainer .carouselRightSide {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem 1rem 1rem;
@@ -123,12 +124,10 @@
 }
 
 .carouselContainer .carouselRightSide.index1 {
-  position: relative;
   gap: 1rem;
 }
 
 .carouselContainer .carouselRightSide.index3 {
-  position: relative;
   overflow: hidden;
 }
 
@@ -158,7 +157,7 @@
   font-style: italic;
 }
 
-.carouselContainer .carouselRightSide div:not(.movingRow, .certs) {
+.carouselContainer .carouselRightSide > div:not(.movingRow, .certs) {
   height: 135px;
 }
 
@@ -169,9 +168,14 @@
   align-self: flex-end;
 }
 
+.carouselContainer .carouselRightSide.index2 div {
+  height: 100%;
+}
+
 .carouselContainer .carouselRightSide div .pictureMe {
   width: 100%;
-  object-fit: contain;
+  height: 100%;
+  object-fit: fill;
 }
 
 .carouselContainer .carouselRightSide .movingRow {
