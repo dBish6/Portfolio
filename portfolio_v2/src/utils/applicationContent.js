@@ -10,11 +10,12 @@ export const content = [
   {
     id: 7,
     title: "Ideal User Authentication Demos",
-    date: "June, 2023",
+    date: "August, 2023",
     tech: "React, TypeScript, CSS, Node, Java, and Redis",
     screenshot: userAuthenticationDemos,
     alt: "Ideal User Authentication Demos Screenshot",
     gitHub_URL: "https://github.com/dBish6/Ideal_User_Authentication_Demos",
+    deployed_URL: "https://dbish6.github.io/Ideal_User_Authentication_Demos/",
   },
   {
     id: 6,
