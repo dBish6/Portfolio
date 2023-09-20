@@ -6,7 +6,13 @@
 
 import { useState, useEffect, lazy, Suspense } from "react";
 import { lazily } from "react-lazily";
-import { HashRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
 
 // *Design Imports*
 import "./index.css";
@@ -47,14 +53,17 @@ function App() {
           loaderBG.remove();
           loaderContainer.remove();
           setDomLoading(false);
-          setTimeout(() => {
-            alert(
-              `DISCLAIMER:
+          !sessionStorage.getItem("disclaimerViewed") &&
+            setTimeout(() => {
+              alert(
+                `DISCLAIMER:
 Please note that this portfolio may not showcase my current coding and design skills to their fullest potential, as it is outdated. However, it is still being updated to include newer projects, applications, etc.
 
 I am currently at the early phases of the design process for version 3 of my portfolio. So, I RECOMMEND viewing my newer projects and applications that are featured in this portfolio, thanks for taking a look!`
-            );
-          }, 500);
+              );
+            }, 500);
+
+          sessionStorage.setItem("disclaimerViewed", "true");
         }
       }, 1000);
     }
@@ -85,7 +94,7 @@ I am currently at the early phases of the design process for version 3 of my por
 
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route element={<PortfolioHome />}>
@@ -128,7 +137,7 @@ I am currently at the early phases of the design process for version 3 of my por
             />
           </Routes>
         </Suspense>
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
