@@ -72,7 +72,6 @@ I am currently at the early phases of the design process for version 3 of my por
   const PortfolioHome = () => (
     <>
       <Navigation />
-      {/* Nested routes render out here. */}
       <main aria-label="Main Content" className="gridContainer">
         <Outlet />
       </main>
