@@ -9,7 +9,7 @@
     "url": "https://github.com/dBish6/Portfolio"
   },
   "engines": {
-    "node": "node@v20.8.0"
+    "node": "v20.8.0"
   },
   "scripts": {
     "dev": "WATCHPACK_POLLING=true next dev",
@@ -18,6 +18,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-aria/button": "^3.8.4",
+    "@react-aria/link": "^3.6.1",
     "framer-motion": "^10.16.4",
     "nanoid": "^5.0.3",
     "next": "13.5.6",
