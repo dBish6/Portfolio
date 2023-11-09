@@ -181,8 +181,10 @@ dist
 # .gitignore
 
 .DS_Store
+archive
 portfolio_v2/changeLog.txt
-portfolio_v3
 changeLog*
+notes*
+*.old
 # End of https://www.toptal.com/developers/gitignore/api/node
 
