@@ -13,7 +13,7 @@ import dynamic from "next/dynamic";
 
 import { ToastContextProvider } from "@contexts/ToastContext";
 
-import Layout from "@components/partials/Layout";
+import Layout from "@components/partials/layouts/Layout";
 
 import "@styles/globals.css";
 
