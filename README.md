@@ -1,6 +1,6 @@
 ## Important Note 🚧
 
-I've restructured my repository to make way for the latest version of my portfolio. The old `master` branch, which included `portfolio_v1` and `portfolio_v2` folders, is now exclusively for the newest version of my portfolio. The previous versions are now each preserved in their own branches named as their respective folders from the past. As of now, my portfolio is still being hosted using `portfolio_v2` until version 3 is completed (now finally fully focusing on completing the design).
+I've restructured my repository to make way for the latest version of my portfolio. The old `master` branch, which included `portfolio_v1` and `portfolio_v2` folders, is now exclusively for the newest version of my portfolio. The previous versions are now each preserved in their own branches named as their respective folders from the past. As of now, my portfolio is still being hosted using `portfolio_v2` until version 3 is completed.
 
 # Portfolio
 

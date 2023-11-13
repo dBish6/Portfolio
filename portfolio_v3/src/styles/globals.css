@@ -1,0 +1,505 @@
+/* Paragraph Font */
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/SofiaPro/SofiaProLight.woff2") format("woff2"),
+    url("/fonts/SofiaPro/SofiaProLight.woff") format("woff"),
+    url("/fonts/SofiaPro/SofiaProLight.eot") format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProLight.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/SofiaPro/SofiaProLight-Italic.woff2") format("woff2"),
+    url("/fonts/SofiaPro/SofiaProLight-Italic.woff") format("woff"),
+    url("/fonts/SofiaPro/SofiaProLight-Italic.eot") format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProLight-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProLight-Italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/SofiaPro/SofiaProRegular.woff2") format("woff2"),
+    url("/fonts/SofiaPro/SofiaProRegular.woff") format("woff"),
+    url("/fonts/SofiaPro/SofiaProRegular.eot") format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProRegular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/SofiaPro/SofiaProRegular-Italic.woff2") format("woff2"),
+    url("/fonts/SofiaPro/SofiaProRegular-Italic.woff") format("woff"),
+    url("/fonts/SofiaPro/SofiaProRegular-Italic.eot")
+      format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProRegular-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProRegular-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/SofiaPro/SofiaProMedium.woff2") format("woff2"),
+    url("/fonts/SofiaPro/SofiaProMedium.woff") format("woff"),
+    url("/fonts/SofiaPro/SofiaProMedium.eot") format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProMedium.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/SofiaPro/SofiaProMedium-Italic.woff2") format("woff2"),
+    url("/fonts/SofiaPro/SofiaProMedium-Italic.woff") format("woff"),
+    url("/fonts/SofiaPro/SofiaProMedium-Italic.eot") format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProMedium-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProMedium-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/SofiaPro/SofiaProSemiBold.woff2") format("woff2"),
+    url("/fonts/SofiaPro/SofiaProSemiBold.woff") format("woff"),
+    url("/fonts/SofiaPro/SofiaProSemiBold.eot") format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProSemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/fonts/SofiaPro/SofiaProSemiBold-Italic.woff2") format("woff2"),
+    url("/fonts/SofiaPro/SofiaProSemiBold-Italic.woff") format("woff"),
+    url("/fonts/SofiaPro/SofiaProSemiBold-Italic.eot")
+      format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProSemiBold-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/SofiaPro/SofiaProSemiBold-Italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Heading Font */
+@font-face {
+  font-family: "P22 Mackinac Pro";
+  src: url("/fonts/P22MackinacPro/p22mackinacpro-book_25.woff2") format("woff2"),
+    url("/fonts/P22MackinacPro/p22mackinacpro-book_25.woff") format("woff"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Book_25.eot")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Book_25.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Book_25.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "P22 Mackinac Pro";
+  src: url("/fonts/P22MackinacPro/p22mackinacpro-bookitalic_15.woff2")
+      format("woff2"),
+    url("/fonts/P22MackinacPro/p22mackinacpro-bookitalic_15.woff")
+      format("woff"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-BookItalic_15.eot")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-BookItalic_15.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-BookItalic_15.otf")
+      format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "P22 Mackinac Pro";
+  src: url("/fonts/P22MackinacPro/p22mackinacpro-medium_26.woff2")
+      format("woff2"),
+    url("/fonts/P22MackinacPro/p22mackinacpro-medium_26.woff") format("woff"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Medium_26.eot")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Medium_26.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Medium_26.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "P22 Mackinac Pro";
+  src: url("/fonts/P22MackinacPro/p22mackinacpro-meditalic_18.woff2")
+      format("woff2"),
+    url("/fonts/P22MackinacPro/p22mackinacpro-meditalic_18.woff") format("woff"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-MedItalic_18.eot")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-MedItalic_18.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-MedItalic_18.otf")
+      format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "P22 Mackinac Pro";
+  src: url("/fonts/P22MackinacPro/p22mackinacpro-bold_16.woff2") format("woff2"),
+    url("/fonts/P22MackinacPro/p22mackinacpro-bold_16.woff") format("woff"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Bold_16.eot")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Bold_16.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Bold_16.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "P22 Mackinac Pro";
+  src: url("/fonts/P22MackinacPro/p22mackinacpro-bolditalic_11.woff2")
+      format("woff2"),
+    url("/fonts/P22MackinacPro/p22mackinacpro-bolditalic_11.woff")
+      format("woff"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-BoldItalic_11.eot")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-BoldItalic_11.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-BoldItalic_11.otf")
+      format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "P22 Mackinac Pro";
+  src: url("/fonts/P22MackinacPro/p22mackinacpro-extrabold_12.woff")
+      format("woff2"),
+    url("/fonts/P22MackinacPro/p22mackinacpro-extrabold_12.woff2")
+      format("woff"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-ExtraBold_12.eot")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-ExtraBold_12.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-Medium_26.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "P22 Mackinac Pro";
+  src: url("/fonts/P22MackinacPro/p22mackinacpro-exbolditalic_17.woff2")
+      format("woff2"),
+    url("/fonts/P22MackinacPro/p22mackinacpro-exbolditalic_17.woff")
+      format("woff"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-ExBoldItalic_17.eot")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-ExBoldItalic_17.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/P22MackinacPro/P22MackinacPro-ExBoldItalic_17.otf")
+      format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "KG Always a Good Time";
+  src: url("/fonts/KGAlwaysAGoodTime/KGAlwaysAGoodTime.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+:root {
+  --c-pink700: #ad9494;
+  --c-pink600: #ddbebe;
+  --c-pink500: #f3d1d1;
+  --c-pink400: #f5dada;
+  --c-pink300: #f7e0e0;
+  --c-pink200: #f9eaea;
+
+  --c-purple700: #9494ad;
+  --c-purple600: #bebedd;
+  --c-purple500: #d1d1f3;
+  --c-purple400: #dadaf5;
+  --c-purple300: #e0e0f7;
+  --c-purple200: #eaeaf9;
+
+  --c-blue700: #94a1ad;
+  --c-blue600: #becfdd;
+  --c-blue500: #d1e3f3;
+  --c-blue400: #dae9f5;
+  --c-blue300: #e0ecf7;
+  --c-blue200: #eaf2f9;
+
+  --c-green700: #94ac94;
+  --c-green600: #bddcbd;
+  --c-green500: #d0f2d0;
+  --c-green400: #d9f5d9;
+  --c-green300: #e0f6e0;
+  --c-green200: #e9f9e9;
+
+  --c-yellow700: #adad94;
+  --c-yellow600: #ddddbe;
+  --c-yellow500: #f3f3d1;
+  --c-yellow400: #f5f5da;
+  --c-yellow300: #f7f7e0;
+  --c-yellow200: #f9f9ea;
+
+  --c-mint700: #94ada1;
+  --c-mint600: #beddcf;
+  --c-mint500: #d1f3e3;
+  --c-mint400: #daf5e9;
+  --c-mint300: #e0f7ec;
+  --c-mint200: #eaf9f2;
+
+  --c-heading1: #414141;
+  --c-heading2: #363636;
+
+  --h1-spec: italic 800 129px "P22 Mackinac Pro", serif;
+  --h1: italic 700 97px "P22 Mackinac Pro", serif;
+  --h2: italic 700 74px "P22 Mackinac Pro", serif;
+  --h3: 500 55px/120% "P22 Mackinac Pro", serif;
+  --h4: 500 42px/120% "P22 Mackinac Pro", serif;
+  --h5: 500 32px/120% "P22 Mackinac Pro", serif;
+  --h6: 500 24px/120% "P22 Mackinac Pro", serif;
+  --h7: 500 18px/120% "P22 Mackinac Pro", serif;
+
+  --c-para: #505050;
+  --c-para-faded: #707070;
+
+  --para-large: 300 24px/165% "Sofia Pro", sans-serif;
+  --para-medium: 300 20px/165% "Sofia Pro", sans-serif;
+  --para-regular: 300 18px/165% "Sofia Pro", sans-serif;
+  --para-small: 300 14px/165% "Sofia Pro", sans-serif;
+  --para-x-small: 300 12px/165% "Sofia Pro", sans-serif;
+  --para-xx-small: 300 10px/165% "Sofia Pro", sans-serif;
+
+  --c-outer-line: #b6b6b6;
+  --c-inner-line: #a3a3a3;
+
+  --btn-shadow1: 0px 4px 0px;
+  --btn-shadow2: 0px 3px 0px;
+  --btn-shadow-active: 0px 1px 0px;
+
+  background-color: #f2f2f2;
+  color-scheme: light;
+
+  /* --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #16abff33 0deg,
+    #0885ff33 55deg,
+    #54d6ff33 120deg,
+    #0071ff33 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(
+    #00000080,
+    #00000040,
+    #00000030,
+    #00000020,
+    #00000010,
+    #00000010,
+    #00000080
+  );
+
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135; */
+}
+
+/* html, */
+/* body {
+  min-height: 100vh;
+  overflow-x: hidden;
+} */
+/* body {
+  display: grid;
+  grid-template-rows: 500px 500px 500px;
+} */
+
+body,
+button,
+input {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  font: var(--para-regular);
+  font-weight: 300;
+  color: var(--c-para);
+}
+
+#__next {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* grid-template-rows: auto 994px auto; */
+  min-height: 100vh;
+}
+
+main {
+  /* padding: 0 1.5rem; */
+}
+
+/* @media screen and (max-width: 635px) {
+  main {
+    padding: 0 0.5rem;
+  }
+} */
+
+/* p {
+  line-height: 165%;
+} */
+
+a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  transition: 0.22s ease-in-out color, 0.22s ease-in-out text-decoration;
+  & .activeUnderline {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 1px;
+    background-color: transparent;
+    transition: 0.28s ease-in-out background-color;
+  }
+  &[data-pressed="true"] {
+    top: 2px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "P22 Mackinac Pro", serif;
+  color: var(--c-heading1);
+}
+
+/* hr {
+  display: block;
+
+  border-top: 1px solid #000;
+} */
+
+button {
+  position: relative;
+  color: var(--c-heading1);
+  background-color: transparent;
+  /* border: 0; */
+  cursor: pointer;
+}
+.primaryBtn {
+  height: 60px;
+  font-weight: 400;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  transform: translateY(4px);
+  transition: 0.22s ease-in-out background-color, 0.22s ease-in-out box-shadow;
+  &[data-hovered="true"],
+  &:focus-visible {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  &[data-pressed="true"] {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  & span {
+    display: grid;
+    place-items: center;
+    border: 1px solid;
+    border-radius: 10px;
+    height: 100%;
+    transform: translateY(-4px);
+    transition: 0.22s ease-in-out transform;
+    & p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 21px;
+      font-weight: 400;
+    }
+  }
+  &[data-hovered="true"] span,
+  &:focus-visible span {
+    transform: translateY(calc(-3.5px - 4px));
+  }
+  &[data-pressed="true"] span {
+    transform: translateY(calc(3.5px - 4px));
+    /* transform: translateY(calc(3.5px - 3px)); */
+    color: var(--c-heading2);
+  }
+}
+.iconBtn {
+}
+
+.homeSection {
+  background: linear-gradient(108deg, #f4f4f4, #f2f2f2);
+  padding-inline: 1.5rem;
+  max-width: 100vw;
+}
+
+footer {
+  padding: 112px 86px 2rem;
+}
+
+/* ul,
+ol {
+  list-style: none;
+} */
+
+/* @media screen and (min-width: 700px) {
+  html {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 1252px) {
+  .contentWrapper {
+    padding-inline: 2rem;
+  }
+}
+
+@media screen and (max-width: 494px) {
+  .contentWrapper {
+    padding-inline: 1rem;
+  }
+} */
+
+/* @media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+  }
+} */

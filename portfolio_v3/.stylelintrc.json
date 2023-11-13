@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "color-no-invalid-hex": true,
+    "unit-allowed-list": [
+      "rem",
+      "%",
+      "px",
+      "ch",
+      "deg",
+      "vh",
+      "vw",
+      "fr",
+      "ms",
+      "s"
+    ]
+  }
+}
