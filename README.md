@@ -21,5 +21,5 @@ Out now!
 _**Deployed Stable Version of the Website:** [www.davidbishops.info](https://www.davidbishops.info)_
 
 <p align="center">
-  Copyright (c) 2024 David Bishop
+  Copyright (c) 2026 David Bishop
 </p>
