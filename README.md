@@ -18,7 +18,7 @@ Out now!
 
 <br />
 
-_**Deployed Stable Version of the Website:** [www.davidbishop.info](https://www.davidbishop.info)_
+_**Deployed Stable Version of the Website:** [www.davidbishops.info](https://www.davidbishops.info)_
 
 <p align="center">
   Copyright (c) 2024 David Bishop
